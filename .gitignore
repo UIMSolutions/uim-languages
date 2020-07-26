@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/uim-language
+uim-language.so
+uim-language.dylib
+uim-language.dll
+uim-language.a
+uim-language.lib
+uim-language-test-*
+*.exe
+*.o
+*.obj
+*.lst
