@@ -1,9 +1,20 @@
 {
-	"authors": [
-		"Ozan"
-	],
-	"copyright": "Copyright © 2020, Ozan",
-	"description": "A minimal D application.",
-	"license": "proprietary",
-	"name": "uim-language"
+    "name": "uim-language",
+    "authors": ["UI Manufaktur Team"],
+    "description": "D library for programming languages",
+    "copyright": "Copyright © 2017-2020, UI Manufaktur UG",
+    "license": "MIT",
+    "targetType": "library",
+    "sourcePaths": [
+        "../uim-core",
+        "../uim-oop",
+        "../uim-json",
+        "./"
+    ],
+    "importPaths": [
+        "../uim-core",
+        "../uim-oop",
+        "../uim-json",
+        "./"
+    ]
 }

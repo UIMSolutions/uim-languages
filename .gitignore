@@ -13,3 +13,4 @@ uim-language-test-*
 *.o
 *.obj
 *.lst
+dub.selections.json
