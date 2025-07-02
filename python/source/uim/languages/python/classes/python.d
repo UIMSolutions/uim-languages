@@ -1,6 +1,6 @@
-module uim.python.classes.python;
+module uim.languages.python.classes.python;
 
-import uim.python;
+import uim.languages.python;
 
 class DPhython {
   this() {} 

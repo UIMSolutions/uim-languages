@@ -1,6 +1,6 @@
-module uim.python.helpers;
+module uim.languages.python.helpers;
 
-import uim.python;
+import uim.languages.python;
 
 string pyClass(string name, string inherited, string content) {
   return "";

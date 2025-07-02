@@ -1,4 +1,4 @@
-module uim.python;
+module uim.languages.python;
 
 public import std.algorithm;
 public import std.array;
