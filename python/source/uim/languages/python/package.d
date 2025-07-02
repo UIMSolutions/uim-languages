@@ -8,7 +8,12 @@ public import std.stdio;
 public import std.string;
 public import std.uuid;
 
-public import vibe.d;
+public import uim.language;
 
-public import uim.core;
-public import uim.oop;
+public {
+  import uim.languages.python.classes;
+  import uim.languages.python.helpers;
+  import uim.languages.python.lexers;
+  import uim.languages.python.parsers;
+  import uim.languages.python.tokens;
+}

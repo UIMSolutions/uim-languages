@@ -1,6 +1,7 @@
-module uim.languages.python.parser;
+module uim.languages.python.parsers;
 
 import uim.languages.python;
+@safe:
 
 auto parse(string content) {
   auto isComment = (string line) => line.startsWith('#');

@@ -1,27 +1,20 @@
-name "fortran"
-description "fortran language Wrapper"
-homepage "https://www.sueel.de/uim/languages/fortran"
+name "language"
+description "language Wrapper"
+homepage "https://www.sueel.de/uim/languages/language"
 authors "Ozan Nurettin Süel"
 copyright "Copyright © 2018-2025, Ozan Nurettin Süel"
 license "Apache-2.0"
-
-// target
-targetName "uim-fortran"
-targetType "library"
-
-// Exteral dependencies
 dependency "vibe-d" version="~>0.10.2"
 dependency "unit-threaded" version="~>2.2.2"
+dependency "uim-base" version="~>25.6.1"
 dependency "colored" version="~>0.0.31"
-
-dependency "uim-languages:language" path=".."
-
+targetType "library"
+targetName "uim-language"
 configuration "test_library" {
 	targetType "library"
-	versions "test_uim_fortran"
+	versions "test_uim_language"
 }
-
 configuration "test_all" {
 	targetType "library"
-	versions "test_uim_language" "test_uim_fortran"
+	versions "test_uim_language" "test_uim_language"
 }

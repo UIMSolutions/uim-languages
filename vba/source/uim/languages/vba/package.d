@@ -3,11 +3,17 @@ module uim.languages.vba;
 public import std.stdio;
 public import std.string;
 
-public import uim.core;
-public import uim.oop;
+public import uim.language;
 
-public import uim.languages.vba.access;
-public import uim.languages.vba.classes;
-public import uim.languages.vba.excel;
-public import uim.languages.vba.general;
-public import uim.languages.vba.powerpoint;
+public {
+  import uim.languages.vba.access;
+  import uim.languages.vba.classes;
+  import uim.languages.vba.excel;
+  import uim.languages.vba.exceptions;
+  import uim.languages.vba.helpers;
+  import uim.languages.vba.general;
+  import uim.languages.vba.lexers;
+  import uim.languages.vba.parsers;
+  import uim.languages.vba.powerpoint;
+  import uim.languages.vba.tokens;
+}
