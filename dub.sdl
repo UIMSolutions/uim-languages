@@ -1,0 +1,39 @@
+name "uim-base"
+description "UIM base library"
+homepage "https://www.sueel.de/uim/base"
+authors "Ozan Nurettin Süel"
+copyright "Copyright © 2018-2025, Ozan Nurettin Süel"
+license "Apache-2.0"
+
+// Target
+targetType "library"
+targetName "uim-base"
+
+// External dependencies
+dependency "dlib" version="~>1.3.2"
+dependency "colored" version="~>0.0.31"
+dependency "vibe-d" version="~>0.10.2"
+dependency "dyaml" version="~>0.10.0"
+dependency "unit-threaded" version="*"
+
+// uim dependencies
+dependency ":vibe" version="*"
+dependency ":phobos" version="*"
+dependency ":core" version="*"
+dependency ":errors" version="*"
+dependency ":oop" version="*"
+// dependency ":yaml" version="*"
+
+sourceFiles "./source/uim/base.d"
+configuration "test_all" {
+	targetType "library"
+	versions "test_uim_phobos" "test_uim_vibe" "test_uim_core" "test_uim_oop"  "test_uim_errors" "test_uim_exceptions"
+}
+
+// Subpackages
+subPackage "phobos"
+subPackage "vibe"
+subPackage "core"
+subPackage "oop"
+subPackage "errors"
+// subPackage "yaml"
