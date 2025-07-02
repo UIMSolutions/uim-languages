@@ -1,1 +1,1 @@
-module uim.languages.python.tokens;
+module uim.language.tokens;

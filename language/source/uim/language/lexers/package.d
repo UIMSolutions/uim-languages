@@ -1,1 +1,1 @@
-module uim.languages.python.lexers;
+module uim.language.lexers;
