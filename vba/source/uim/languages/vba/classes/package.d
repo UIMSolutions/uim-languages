@@ -1,7 +1,7 @@
 module uim.languages.vba.classes;
 
 public {
-  import uim.languages.vba;
+  import uim.languages.vba.classes.obj;
 }
 
 class DVBA {

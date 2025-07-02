@@ -3,9 +3,8 @@ module uim.languages.vba;
 public import std.stdio;
 public import std.string;
 
-public import uim.language;
-
 public {
+  import uim.language;
   import uim.languages.vba.access;
   import uim.languages.vba.classes;
   import uim.languages.vba.excel;

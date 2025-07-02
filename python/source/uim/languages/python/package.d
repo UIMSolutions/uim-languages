@@ -8,9 +8,8 @@ public import std.stdio;
 public import std.string;
 public import std.uuid;
 
-public import uim.language;
-
 public {
+  import uim.language;
   import uim.languages.python.classes;
   import uim.languages.python.helpers;
   import uim.languages.python.lexers;

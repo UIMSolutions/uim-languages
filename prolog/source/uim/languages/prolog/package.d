@@ -1,6 +1,7 @@
 module uim.languages.prolog;
 
 public {
+  import uim.language;
   import uim.languages.prolog.classes;
   import uim.languages.prolog.helpers;
   import uim.languages.prolog.lexers;

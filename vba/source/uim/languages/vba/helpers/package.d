@@ -6,21 +6,6 @@ string vbaDim(string name, string datatype, string defaultValue = "") {
   return 
 `Dim %s as %s
 %s  
-`.format(name, datatype, (defaultValue.length > 0 ? "name = "~defaultValue~"\n" : ""));
-}
-unittest {
-  // writeln(vbaFunction("test", ["a as Integer", "b as String"], "Integer", `a = a + 1`));
-/*  assert(vbaFunction("test", ["a as Integer", "b as String"], "Integer", `a = a + 1`) == 
-  `Function test(a as Integer,b as String) as Integer
-a = a + 1
-End Function
-`); */
-}
-
-string vbaDim(string name, string datatype, string defaultValue = "") {
-  return 
-`Dim %s as %s
-%s  
 `.format(name, datatype, (defaultValue.length > 0 ? name~" = "~defaultValue~"\n" : ""));
 }
 unittest {
