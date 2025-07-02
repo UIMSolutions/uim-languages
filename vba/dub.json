@@ -1,5 +1,5 @@
 {
-	"name": "prolog",
+	"name": "lang-vbas",
 	"description": "D library for Fortran projects",
   "authors": [
     "Sicherheitsschmiede",
@@ -9,7 +9,7 @@
   "license": "Apache-2.0",
 	"targetType": "library",
 	"dependencies": {
-			"vibe-d": "~>0.10.1"
+			"vibe-d": "~>0.9.6"
 	},
 	"sourcePaths": [
 			"../../LIBS/uim-core",

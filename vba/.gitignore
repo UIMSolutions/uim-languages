@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/uim-vba
+uim-vba.so
+uim-vba.dylib
+uim-vba.dll
+uim-vba.a
+uim-vba.lib
+uim-vba-test-*
+*.exe
+*.o
+*.obj
+*.lst

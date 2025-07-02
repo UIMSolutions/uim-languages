@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/uim-fortran
+uim-fortran.so
+uim-fortran.dylib
+uim-fortran.dll
+uim-fortran.a
+uim-fortran.lib
+uim-fortran-test-*
+*.exe
+*.o
+*.obj
+*.lst
