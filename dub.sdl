@@ -1,39 +1,29 @@
-name "uim-base"
-description "UIM base library"
+name "uim-languages"
+description "UIM languages library"
 homepage "https://www.sueel.de/uim/base"
 authors "Ozan Nurettin Süel"
 copyright "Copyright © 2018-2025, Ozan Nurettin Süel"
 license "Apache-2.0"
-
-// Target
-targetType "library"
-targetName "uim-base"
-
-// External dependencies
 dependency "dlib" version="~>1.3.2"
 dependency "colored" version="~>0.0.31"
+dependency "uim-languages:fortran" version="*"
 dependency "vibe-d" version="~>0.10.2"
-dependency "dyaml" version="~>0.10.0"
+dependency "uim-base" version="~>25.6.1"
+dependency "uim-languages:language" version="*"
+dependency "uim-languages:prolog" version="*"
+dependency "uim-languages:python" version="*"
 dependency "unit-threaded" version="*"
-
-// uim dependencies
-dependency ":vibe" version="*"
-dependency ":phobos" version="*"
-dependency ":core" version="*"
-dependency ":errors" version="*"
-dependency ":oop" version="*"
-// dependency ":yaml" version="*"
-
-sourceFiles "./source/uim/base.d"
+dependency "dyaml" version="~>0.10.0"
+dependency "uim-languages:vba" version="*"
+targetType "library"
+targetName "uim-languages"
+sourceFiles "./source/uim/languages.d"
 configuration "test_all" {
 	targetType "library"
-	versions "test_uim_phobos" "test_uim_vibe" "test_uim_core" "test_uim_oop"  "test_uim_errors" "test_uim_exceptions"
+	versions "test_uim_language" "test_uim_fortran" "test_uim_prolog" "test_uim_python" "test_uim_vba"
 }
-
-// Subpackages
-subPackage "phobos"
-subPackage "vibe"
-subPackage "core"
-subPackage "oop"
-subPackage "errors"
-// subPackage "yaml"
+subPackage "language"
+subPackage "fortran"
+subPackage "prolog"
+subPackage "python"
+subPackage "vba"

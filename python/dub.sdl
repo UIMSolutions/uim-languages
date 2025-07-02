@@ -1,12 +1,12 @@
-name "fortran"
-description "fortran language Wrapper"
-homepage "https://www.sueel.de/uim/languages/fortran"
+name "python"
+description "Python language Wrapper"
+homepage "https://www.sueel.de/uim/languages/python"
 authors "Ozan Nurettin Süel"
 copyright "Copyright © 2018-2025, Ozan Nurettin Süel"
 license "Apache-2.0"
 
 // target
-targetName "uim-fortran"
+targetName "uim-python"
 targetType "library"
 
 // Exteral dependencies
@@ -18,10 +18,10 @@ dependency "uim-languages:language" path=".."
 
 configuration "test_library" {
 	targetType "library"
-	versions "test_uim_fortran"
+	versions "test_uim_python"
 }
 
 configuration "test_all" {
 	targetType "library"
-	versions "test_uim_language" "test_uim_fortran"
+	versions "test_uim_language" "test_uim_python"
 }
