@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/uim-prolog
+uim-prolog.so
+uim-prolog.dylib
+uim-prolog.dll
+uim-prolog.a
+uim-prolog.lib
+uim-prolog-test-*
+*.exe
+*.o
+*.obj
+*.lst
