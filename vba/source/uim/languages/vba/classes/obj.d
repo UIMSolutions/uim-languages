@@ -1,6 +1,6 @@
-module uim.vba.classes.obj;
+module uim.languages.vba.classes.obj;
 
-import uim.vba;
+import uim.languages.vba;
 
 class DVBAObj {
   this() {

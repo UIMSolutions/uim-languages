@@ -1,6 +1,6 @@
-module uim.vba.parser;
+module uim.languages.vba.parser;
 
-import uim.vba;
+import uim.languages.vba;
 
 DVBAObj[] parse(string vbaCode) {
   return null;

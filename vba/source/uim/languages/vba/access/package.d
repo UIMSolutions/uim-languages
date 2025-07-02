@@ -1,3 +1,3 @@
-module uim.vba.access;
+module uim.languages.vba.access;
 
-import uim.vba;  
+import uim.languages.vba;  

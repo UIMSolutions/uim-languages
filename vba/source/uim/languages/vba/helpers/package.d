@@ -1,6 +1,6 @@
-module uim.vba.helpers;
+module uim.languages.vba.helpers;
 
-import uim.vba;
+import uim.languages.vba;
 
 string vbaDim(string name, string datatype, string defaultValue = "") {
   return 

@@ -1,3 +1,3 @@
-module uim.vba.excel;
+module uim.languages.vba.excel;
 
-import uim.vba;  
+import uim.languages.vba;  

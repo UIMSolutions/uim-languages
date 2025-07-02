@@ -1,4 +1,4 @@
-module uim.vba.powerpoint;
+module uim.languages.vba.powerpoint;
 
-import uim.vba;
+import uim.languages.vba;
   

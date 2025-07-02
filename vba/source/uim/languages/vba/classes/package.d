@@ -1,6 +1,6 @@
-module uim.vba.classes;
+module uim.languages.vba.classes;
 
-import uim.vba;
+import uim.languages.vba;
 
 class DVBA {
   this() {}

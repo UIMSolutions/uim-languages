@@ -1,3 +1,3 @@
-module uim.vba.general;
+module uim.languages.vba.general;
 
-import uim.vba;  
+import uim.languages.vba;  
