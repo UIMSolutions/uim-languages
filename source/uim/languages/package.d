@@ -10,8 +10,8 @@ public {
 public {
   import uim.language;
 
-  import uim.fortran;
-  import uim.prolog;
-  import uim.python;
-  import uim.vba;
+  import uim.languages.fortran;
+  import uim.languages.prolog;
+  import uim.languages.python;
+  import uim.languages.vba;
 }

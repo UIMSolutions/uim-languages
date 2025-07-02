@@ -17,7 +17,7 @@ dependency "dyaml" version="~>0.10.0"
 dependency "uim-languages:vba" version="*"
 targetType "library"
 targetName "uim-languages"
-sourceFiles "./source/uim/languages.d"
+sourceFiles "./source/uim/languages/*.d"
 configuration "test_all" {
 	targetType "library"
 	versions "test_uim_language" "test_uim_fortran" "test_uim_prolog" "test_uim_python" "test_uim_vba"
