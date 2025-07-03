@@ -1,5 +1,5 @@
-module langs.sql.parsers.builders.unionallstatement;
-import langs.sql;
+module uim.languages.sql.parsers.builders.unionallstatement;
+import uim.languages.sql;
 
 @safe:
 

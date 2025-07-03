@@ -1,9 +1,9 @@
-module langs.sql.parsers.builders.columns;
+module uim.languages.sql.parsers.builders.columns;
 
 public { // Modules
-    import langs.sql.parsers.builders.columns.definition;
-    import langs.sql.parsers.builders.columns.list;
-    import langs.sql.parsers.builders.columns.reference;
-    import langs.sql.parsers.builders.columns.type;
-    import langs.sql.parsers.builders.columns.typebracketexpression;
+    import uim.languages.sql.parsers.builders.columns.definition;
+    import uim.languages.sql.parsers.builders.columns.list;
+    import uim.languages.sql.parsers.builders.columns.reference;
+    import uim.languages.sql.parsers.builders.columns.type;
+    import uim.languages.sql.parsers.builders.columns.typebracketexpression;
 }

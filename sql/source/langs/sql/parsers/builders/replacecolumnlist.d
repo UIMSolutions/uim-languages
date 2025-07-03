@@ -1,5 +1,5 @@
-module langs.sql.parsers.builders.replacecolumnlist;
-import langs.sql;
+module uim.languages.sql.parsers.builders.replacecolumnlist;
+import uim.languages.sql;
 
 @safe:
 

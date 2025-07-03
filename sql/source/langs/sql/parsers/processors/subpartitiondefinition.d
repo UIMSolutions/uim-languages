@@ -1,6 +1,6 @@
-module langs.sql.parsers.processors.subpartitiondefinition;
+module uim.languages.sql.parsers.processors.subpartitiondefinition;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

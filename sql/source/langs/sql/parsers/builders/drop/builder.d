@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.drop.builder;
+module uim.languages.sql.parsers.builders.drop.builder;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

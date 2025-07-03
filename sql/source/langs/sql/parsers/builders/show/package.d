@@ -1,2 +1,2 @@
-module langs.sql.parsers.builders.show;
+module uim.languages.sql.parsers.builders.show;
 

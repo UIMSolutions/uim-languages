@@ -1,6 +1,6 @@
-module langs.sql.parsers.exceptions.unabletocalculateposition;
+module uim.languages.sql.parsers.exceptions.unabletocalculateposition;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

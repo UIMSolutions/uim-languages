@@ -1,6 +1,6 @@
-module langs.sql.parsers.exceptions.invalidparameter;
+module uim.languages.sql.parsers.exceptions.invalidparameter;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

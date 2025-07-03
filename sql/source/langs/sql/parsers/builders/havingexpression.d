@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.havingexpression;
+module uim.languages.sql.parsers.builders.havingexpression;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

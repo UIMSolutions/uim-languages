@@ -1,5 +1,5 @@
-module langs.sql.parsers.processors.sqlchunk;
-import langs.sql;
+module uim.languages.sql.parsers.processors.sqlchunk;
+import uim.languages.sql;
 
 @safe:
 // This class processes the SQL chunks.

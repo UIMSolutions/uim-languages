@@ -1,5 +1,5 @@
-module langs.sql.parsers.builders.replacestatement;
-import langs.sql;
+module uim.languages.sql.parsers.builders.replacestatement;
+import uim.languages.sql;
 
 @safe:
 // Builds the REPLACE statement 

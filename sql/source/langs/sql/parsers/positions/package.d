@@ -1,2 +1,2 @@
-module langs.sql.parsers.positions;
+module uim.languages.sql.parsers.positions;
 

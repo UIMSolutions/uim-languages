@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.columns.reference;
+module uim.languages.sql.parsers.builders.columns.reference;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

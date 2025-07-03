@@ -1,5 +1,5 @@
 
-module langs.sql.parsers.builders.unionstatement;
+module uim.languages.sql.parsers.builders.unionstatement;
 
 /**
  * This class : the builder for the whole Union statement. You can overwrite

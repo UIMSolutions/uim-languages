@@ -1,2 +1,2 @@
-module langs.sql.parsers.lexer;
+module uim.languages.sql.parsers.lexer;
 

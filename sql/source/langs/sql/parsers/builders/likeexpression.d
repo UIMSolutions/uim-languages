@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.likeexpression;
+module uim.languages.sql.parsers.builders.likeexpression;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

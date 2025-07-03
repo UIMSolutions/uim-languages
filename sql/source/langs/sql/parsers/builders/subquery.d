@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.subquery;
+module uim.languages.sql.parsers.builders.subquery;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

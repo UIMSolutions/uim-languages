@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.wherebracketexpression;
+module uim.languages.sql.parsers.builders.wherebracketexpression;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

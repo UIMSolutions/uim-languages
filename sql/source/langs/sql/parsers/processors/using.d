@@ -1,6 +1,6 @@
-module langs.sql.parsers.processors.using;
+module uim.languages.sql.parsers.processors.using;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 // This class processes the USING statements.

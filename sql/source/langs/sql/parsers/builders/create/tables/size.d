@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.create.tables.size;
+module uim.languages.sql.parsers.builders.create.tables.size;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

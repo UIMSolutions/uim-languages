@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.groupby.builder;
+module uim.languages.sql.parsers.builders.groupby.builder;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

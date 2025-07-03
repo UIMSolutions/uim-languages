@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.create.builder;
+module uim.languages.sql.parsers.builders.create.builder;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 // Builds the CREATE statement

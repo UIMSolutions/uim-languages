@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.create.tables.check;
+module uim.languages.sql.parsers.builders.create.tables.check;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

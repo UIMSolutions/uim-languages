@@ -1,5 +1,5 @@
-module langs.sql.parsers.builders.delete_;
+module uim.languages.sql.parsers.builders.delete_;
 
 public {
-  import langs.sql.parsers.builders.delete_.statement;
+  import uim.languages.sql.parsers.builders.delete_.statement;
 }

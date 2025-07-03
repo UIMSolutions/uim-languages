@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.index.comments;
+module uim.languages.sql.parsers.builders.index.comments;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

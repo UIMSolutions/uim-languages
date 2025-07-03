@@ -1,6 +1,6 @@
-module langs.sql.parsers.processors.describe;
+module uim.languages.sql.parsers.processors.describe;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 // This class processes the DESCRIBE statements.

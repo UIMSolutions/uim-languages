@@ -1,6 +1,6 @@
 
-module langs.sql.parsers.processors.groupby;
-import langs.sql;
+module uim.languages.sql.parsers.processors.groupby;
+import uim.languages.sql;
 
 @safe:
 // This class processes the GROUP-BY statements.

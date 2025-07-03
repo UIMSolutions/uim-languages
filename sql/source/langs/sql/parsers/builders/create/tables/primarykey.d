@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.create.tables.primarykey;
+module uim.languages.sql.parsers.builders.create.tables.primarykey;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.create.tables.datatype;
+module uim.languages.sql.parsers.builders.create.tables.datatype;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

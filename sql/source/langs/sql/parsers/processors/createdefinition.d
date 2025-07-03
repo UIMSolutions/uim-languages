@@ -1,6 +1,6 @@
-module langs.sql.parsers.processors.createdefinition;
+module uim.languages.sql.parsers.processors.createdefinition;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

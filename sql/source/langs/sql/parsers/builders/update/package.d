@@ -1,2 +1,2 @@
-module langs.sql.parsers.builders.update;
+module uim.languages.sql.parsers.builders.update;
 

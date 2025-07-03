@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.drop.statement;
+module uim.languages.sql.parsers.builders.drop.statement;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 // Builds the DROP statement

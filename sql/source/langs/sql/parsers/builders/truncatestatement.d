@@ -1,5 +1,5 @@
-module langs.sql.parsers.builders;
-import langs.sql;
+module uim.languages.sql.parsers.builders;
+import uim.languages.sql;
 
 @safe:
 // Builds the TRUNCATE statement 

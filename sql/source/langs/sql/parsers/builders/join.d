@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.join;
+module uim.languages.sql.parsers.builders.join;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 // Builds the JOIN statement parts (within FROM).

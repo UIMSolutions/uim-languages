@@ -1,6 +1,6 @@
-module langs.sql.parsers.processors.desc;
+module uim.languages.sql.parsers.processors.desc;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 // This class processes the DESC statement.

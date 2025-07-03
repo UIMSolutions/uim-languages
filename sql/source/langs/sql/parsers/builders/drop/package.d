@@ -1,10 +1,10 @@
-module langs.sql.parsers.builders.drop;
+module uim.languages.sql.parsers.builders.drop;
 
 public {
-  import langs.sql.parsers.builders.drop.builder;
-  import langs.sql.parsers.builders.drop.expression;
-  import langs.sql.parsers.builders.drop.index;
-  import langs.sql.parsers.builders.drop.indextable;
-  import langs.sql.parsers.builders.drop.schema;
-  import langs.sql.parsers.builders.drop.statement;
+  import uim.languages.sql.parsers.builders.drop.builder;
+  import uim.languages.sql.parsers.builders.drop.expression;
+  import uim.languages.sql.parsers.builders.drop.index;
+  import uim.languages.sql.parsers.builders.drop.indextable;
+  import uim.languages.sql.parsers.builders.drop.schema;
+  import uim.languages.sql.parsers.builders.drop.statement;
 }

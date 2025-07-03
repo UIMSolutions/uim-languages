@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.create.indexes.indextable;
+module uim.languages.sql.parsers.builders.create.indexes.indextable;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 // Builds the table part of a CREATE INDEX statement

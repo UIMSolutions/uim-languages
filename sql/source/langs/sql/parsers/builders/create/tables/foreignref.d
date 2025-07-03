@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.create.tables.foreignref;
+module uim.languages.sql.parsers.builders.create.tables.foreignref;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

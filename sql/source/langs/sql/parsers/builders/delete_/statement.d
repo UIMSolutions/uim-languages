@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.delete_.statement;
+module uim.languages.sql.parsers.builders.delete_.statement;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 // Builder for the whole Delete statement. 

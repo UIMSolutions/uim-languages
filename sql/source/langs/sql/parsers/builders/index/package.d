@@ -1,11 +1,11 @@
-module langs.sql.parsers.builders.index;
+module uim.languages.sql.parsers.builders.index;
 
 public {
-  import langs.sql.parsers.builders.index.algorithm;
-  import langs.sql.parsers.builders.index.column;
-  import langs.sql.parsers.builders.index.comment;
-  import langs.sql.parsers.builders.index.hintlist;
-  import langs.sql.parsers.builders.index.key;
-  import langs.sql.parsers.builders.index.lock;
-  import langs.sql.parsers.builders.index.type;
+  import uim.languages.sql.parsers.builders.index.algorithm;
+  import uim.languages.sql.parsers.builders.index.column;
+  import uim.languages.sql.parsers.builders.index.comment;
+  import uim.languages.sql.parsers.builders.index.hintlist;
+  import uim.languages.sql.parsers.builders.index.key;
+  import uim.languages.sql.parsers.builders.index.lock;
+  import uim.languages.sql.parsers.builders.index.type;
 }

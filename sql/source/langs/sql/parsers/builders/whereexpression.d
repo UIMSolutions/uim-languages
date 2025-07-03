@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.whereexpression;
+module uim.languages.sql.parsers.builders.whereexpression;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

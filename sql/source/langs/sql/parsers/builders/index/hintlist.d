@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.index.hintlist;
+module uim.languages.sql.parsers.builders.index.hintlist;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 // Builds the index hint list of a table.

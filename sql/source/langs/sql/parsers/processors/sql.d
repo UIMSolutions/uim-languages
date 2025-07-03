@@ -1,6 +1,6 @@
-module langs.sql.parsers.processors.sql;
+module uim.languages.sql.parsers.processors.sql;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 //This class processes the base SQL statements.

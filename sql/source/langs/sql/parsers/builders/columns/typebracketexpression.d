@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.columns.typebracketexpression;
+module uim.languages.sql.parsers.builders.columns.typebracketexpression;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 // Builds the bracket expressions within a column type.

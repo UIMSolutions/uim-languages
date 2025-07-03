@@ -1,7 +1,7 @@
-module langs.sql.parsers.builders.groupby;
+module uim.languages.sql.parsers.builders.groupby;
 
 public {
-    import langs.sql.parsers.builders.groupby.alias_;
-    import langs.sql.parsers.builders.groupby.builder;
-    import langs.sql.parsers.builders.groupby.expression;
+    import uim.languages.sql.parsers.builders.groupby.alias_;
+    import uim.languages.sql.parsers.builders.groupby.builder;
+    import uim.languages.sql.parsers.builders.groupby.expression;
 }

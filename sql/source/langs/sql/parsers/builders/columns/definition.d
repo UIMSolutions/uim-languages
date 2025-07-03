@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.columns.definition;
+module uim.languages.sql.parsers.builders.columns.definition;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 // Builds the column definition statement part of CREATE TABLE. 

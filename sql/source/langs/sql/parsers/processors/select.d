@@ -1,6 +1,6 @@
-module langs.sql.parsers.processors.select;
+module uim.languages.sql.parsers.processors.select;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 // This class processes the SELECT statements.

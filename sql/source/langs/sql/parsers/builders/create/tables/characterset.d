@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.create.tables.characterset;
+module uim.languages.sql.parsers.builders.create.tables.characterset;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

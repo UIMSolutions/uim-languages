@@ -1,6 +1,6 @@
-module langs.sql.parsers.exceptions.unsupportedfeature;
+module uim.languages.sql.parsers.exceptions.unsupportedfeature;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

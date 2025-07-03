@@ -1,6 +1,6 @@
-module langs.sql.parsers.processors.referencedefinition;
+module uim.languages.sql.parsers.processors.referencedefinition;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

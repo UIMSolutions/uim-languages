@@ -1,6 +1,6 @@
-module langs.sql.parsers.processors.rename;
+module uim.languages.sql.parsers.processors.rename;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

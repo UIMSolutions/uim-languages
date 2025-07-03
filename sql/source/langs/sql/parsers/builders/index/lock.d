@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.index.locks;
+module uim.languages.sql.parsers.builders.index.locks;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

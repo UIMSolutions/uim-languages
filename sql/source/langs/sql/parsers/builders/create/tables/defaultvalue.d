@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.create.tables.defaulvalue;
+module uim.languages.sql.parsers.builders.create.tables.defaulvalue;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

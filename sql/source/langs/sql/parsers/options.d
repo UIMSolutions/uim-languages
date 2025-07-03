@@ -1,6 +1,6 @@
-module langs.sql.parsers.optionsx;
+module uim.languages.sql.parsers.optionsx;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 final class Options {

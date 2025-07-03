@@ -1,6 +1,6 @@
-module langs.sql.parsers.helpers.json;
+module uim.languages.sql.parsers.helpers.json;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 bool isExpressionType(Json parsedSql, string typeName) {

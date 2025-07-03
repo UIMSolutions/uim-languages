@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.create.tables.collation;
+module uim.languages.sql.parsers.builders.create.tables.collation;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

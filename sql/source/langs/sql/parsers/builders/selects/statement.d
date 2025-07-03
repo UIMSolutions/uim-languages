@@ -1,4 +1,4 @@
-module langs.sql.parsers.builders.selects.statement;
+module uim.languages.sql.parsers.builders.selects.statement;
 
 // Builds the SELECT statement 
 class SelectStatementBuilder : ISqlBuilder {

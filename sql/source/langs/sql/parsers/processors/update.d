@@ -1,6 +1,6 @@
-module langs.sql.parsers.processors.update;
+module uim.languages.sql.parsers.processors.update;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 // This class processes the UPDATE statements.

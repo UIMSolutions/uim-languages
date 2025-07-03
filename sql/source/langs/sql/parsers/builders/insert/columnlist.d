@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.insert.columnlist;
+module uim.languages.sql.parsers.builders.insert.columnlist;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

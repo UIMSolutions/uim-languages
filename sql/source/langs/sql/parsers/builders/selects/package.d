@@ -1,8 +1,8 @@
-module langs.sql.parsers.builders.selects;
+module uim.languages.sql.parsers.builders.selects;
 
 public {
-  import langs.sql.parsers.builders.selects.bracketexpression;
-  import langs.sql.parsers.builders.selects.builder;
-  import langs.sql.parsers.builders.selects.expression;
-  import langs.sql.parsers.builders.selects.statement;
+  import uim.languages.sql.parsers.builders.selects.bracketexpression;
+  import uim.languages.sql.parsers.builders.selects.builder;
+  import uim.languages.sql.parsers.builders.selects.expression;
+  import uim.languages.sql.parsers.builders.selects.statement;
 }

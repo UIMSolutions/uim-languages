@@ -1,4 +1,4 @@
-module langs.sql.parsers.lexer;
+module uim.languages.sql.parsers.lexer;
 
 /**
  * Defines the characters, which are used to split the given SQL string. Part of SqlParser. */

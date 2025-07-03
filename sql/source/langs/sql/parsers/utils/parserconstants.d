@@ -1,6 +1,6 @@
-module langs.sql.parsers.utils.SQLParserConstants;
+module uim.languages.sql.parsers.utils.SQLParserConstants;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

@@ -1,6 +1,6 @@
-module langs.sql.parsers.positions.calculator;
+module uim.languages.sql.parsers.positions.calculator;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

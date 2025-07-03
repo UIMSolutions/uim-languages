@@ -1,5 +1,5 @@
-module langs.sql.parsers.processors.delete_;
-import langs.sql;
+module uim.languages.sql.parsers.processors.delete_;
+import uim.languages.sql;
 
 @safe:
 // Processes the DELETE statement parts and splits multi-table deletes.

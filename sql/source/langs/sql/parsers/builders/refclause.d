@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.refclause;
+module uim.languages.sql.parsers.builders.refclause;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

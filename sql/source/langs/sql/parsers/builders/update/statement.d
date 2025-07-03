@@ -1,5 +1,5 @@
-module langs.sql.parsers.builders.update.updatestatement;
-import langs.sql;
+module uim.languages.sql.parsers.builders.update.updatestatement;
+import uim.languages.sql;
 
 @safe:
 // Builds the UPDATE statement 

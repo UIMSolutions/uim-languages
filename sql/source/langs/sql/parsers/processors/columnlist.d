@@ -1,6 +1,6 @@
-module langs.sql.parsers.processors.columnlist;
+module uim.languages.sql.parsers.processors.columnlist;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

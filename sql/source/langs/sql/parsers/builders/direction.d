@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.direction;
+module uim.languages.sql.parsers.builders.direction;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 // Builds direction (e.g. of the order-by clause).

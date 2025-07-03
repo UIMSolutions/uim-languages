@@ -1,6 +1,6 @@
-module langs.sql.parsers.processors.partitiondefinitionprocessor;
+module uim.languages.sql.parsers.processors.partitiondefinitionprocessor;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

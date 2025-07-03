@@ -1,4 +1,4 @@
-# Package 📦 langs.sql.parsers
+# Package 📦 uim.languages.sql.parsers
 
 ## Packages
 

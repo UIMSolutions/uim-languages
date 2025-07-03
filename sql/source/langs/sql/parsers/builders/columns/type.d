@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.columns.type;
+module uim.languages.sql.parsers.builders.columns.type;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

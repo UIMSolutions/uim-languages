@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.orderby.position;
+module uim.languages.sql.parsers.builders.orderby.position;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

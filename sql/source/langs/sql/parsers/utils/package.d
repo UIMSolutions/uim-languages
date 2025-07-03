@@ -1,2 +1,2 @@
-module langs.sql.parsers.utils;
+module uim.languages.sql.parsers.utils;
 

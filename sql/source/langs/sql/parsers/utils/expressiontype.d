@@ -1,5 +1,5 @@
-module langs.sql.parsers.utils;
-import langs.sql;
+module uim.languages.sql.parsers.utils;
+import uim.languages.sql;
 
 @safe:
 // Defines all values, which are possible for the [expr_type] field within the parser output. */

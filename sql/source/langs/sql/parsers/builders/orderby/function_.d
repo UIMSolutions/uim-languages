@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.orderby.function_;
+module uim.languages.sql.parsers.builders.orderby.function_;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 // Builds functions within the ORDER-BY part. 

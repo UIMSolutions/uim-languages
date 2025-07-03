@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.create.tables.fulltextindex;
+module uim.languages.sql.parsers.builders.create.tables.fulltextindex;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

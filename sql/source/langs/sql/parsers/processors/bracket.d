@@ -1,6 +1,6 @@
-module langs.sql.parsers.processors.bracket;
+module uim.languages.sql.parsers.processors.bracket;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

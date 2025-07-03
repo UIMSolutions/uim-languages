@@ -1,6 +1,6 @@
-module langs.sql.parsers.exceptions.unabletocreatesql;
+module uim.languages.sql.parsers.exceptions.unabletocreatesql;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

@@ -1,8 +1,8 @@
-module langs.sql.parsers.builders.create;
+module uim.languages.sql.parsers.builders.create;
 
 public {
-    import langs.sql.parsers.builders.create.builder;
-    import langs.sql.parsers.builders.create.indexes;
-    import langs.sql.parsers.builders.create.statement;
-    import langs.sql.parsers.builders.create.tables;
+    import uim.languages.sql.parsers.builders.create.builder;
+    import uim.languages.sql.parsers.builders.create.indexes;
+    import uim.languages.sql.parsers.builders.create.statement;
+    import uim.languages.sql.parsers.builders.create.tables;
 }

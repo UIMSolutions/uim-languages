@@ -1,5 +1,5 @@
-module langs.sql.parsers.helpers;
+module uim.languages.sql.parsers.helpers;
 
 public {
-  import langs.sql.parsers.helpers.json;
+  import uim.languages.sql.parsers.helpers.json;
 }

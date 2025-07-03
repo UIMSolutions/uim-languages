@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.create.tables.table;
+module uim.languages.sql.parsers.builders.create.tables.table;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 // Builds the CREATE TABLE statement

@@ -1,6 +1,6 @@
-module langs.sql.parsers.builders.drop.indextable;
+module uim.languages.sql.parsers.builders.drop.indextable;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

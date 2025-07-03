@@ -1,6 +1,6 @@
-module source.langs.sql.parsers.builders.temptable;
+module source.uim.languages.sql.parsers.builders.temptable;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 
