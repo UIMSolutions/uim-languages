@@ -1,0 +1,27 @@
+name "basic"
+description "Basic language Wrapper"
+homepage "https://www.sueel.de/uim/languages/basic"
+authors "Ozan Nurettin Süel"
+copyright "Copyright © 2018-2025, Ozan Nurettin Süel"
+license "Apache-2.0"
+
+// target
+targetName "uim-basic"
+targetType "library"
+
+// Exteral dependencies
+dependency "vibe-d" version="~>0.10.2"
+dependency "unit-threaded" version="~>2.2.2"
+dependency "colored" version="~>0.0.31"
+
+dependency "uim-languages:language" path=".."
+
+configuration "test_library" {
+	targetType "library"
+	versions "test_uim_basic"
+}
+
+configuration "test_all" {
+	targetType "library"
+	versions "test_uim_language" "test_uim_basic"
+}

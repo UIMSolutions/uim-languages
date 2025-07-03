@@ -23,7 +23,13 @@ configuration "test_all" {
 	versions "test_uim_language" "test_uim_fortran" "test_uim_prolog" "test_uim_python" "test_uim_vba"
 }
 subPackage "language"
+subPackage "basic"
+subPackage "cobol"
 subPackage "fortran"
+subPackage "javascript"
+subPackage "pascal"
+subPackage "php"
 subPackage "prolog"
 subPackage "python"
+subPackage "sql"
 subPackage "vba"
