@@ -1,0 +1,2 @@
+module langs.pascal.parser;
+
