@@ -1,1 +1,1 @@
-module langs.pascal.tokens;
+module uim.languages.pascal.tokens;

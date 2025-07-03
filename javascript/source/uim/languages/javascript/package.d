@@ -1,21 +1,16 @@
 ﻿module uim.languages.javascript;
 
-mixin(ImportPhobos!());
-
-// Dub libraries
-public import vibe.d;
-
-// UIM libraries
-public import uim.core;
-public import uim.oop;
-
 // Local packages
-public import uim.languages.javascript.functions;
-public import uim.languages.javascript.classes;
-public import uim.languages.javascript.tools;
-public import uim.languages.javascript.error;
-public import uim.languages.javascript.conditional;
+public {
+    import uim.language;
+    import uim.languages.javascript.functions;
+    import uim.languages.javascript.classes;
+    import uim.languages.javascript.tools;
+    import uim.languages.javascript.error;
+    import uim.languages.javascript.conditional;
+}
 
+// JavaScript code generation functions
 auto jsEvent(string target, string event, string listener) {
   return "%s.addEventListener(%s, %s);".format(target, event, listener);
 }

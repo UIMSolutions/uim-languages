@@ -1,2 +1,2 @@
-module langs.pascal.keywords;
+module uim.languages.pascal.keywords;
 

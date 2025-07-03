@@ -1,2 +1,2 @@
-module langs.pascal.parser;
+module uim.languages.pascal.parser;
 

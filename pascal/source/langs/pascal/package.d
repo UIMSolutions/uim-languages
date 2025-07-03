@@ -1,4 +1,4 @@
-module langs.pascal;
+module uim.languages.pascal;
 
-public import langs.pascal.keywords;
-public import langs.pascal.parser;
+public import uim.languages.pascal.keywords;
+public import uim.languages.pascal.parser;
