@@ -1,4 +1,4 @@
-# Package 📦 langs.sql.helpers
+# Package 📦 uim.languages.sql.helpers
 
 ## Packages
 

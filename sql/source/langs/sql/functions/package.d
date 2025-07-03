@@ -1,5 +1,5 @@
-﻿module langs.sql.functions;
+﻿module uim.languages.sql.functions;
 
-public import langs.sql.functions.create_;
-public import langs.sql.functions.alter;
-public import langs.sql.functions.select;
+public import uim.languages.sql.functions.create_;
+public import uim.languages.sql.functions.alter;
+public import uim.languages.sql.functions.select;

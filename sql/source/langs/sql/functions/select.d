@@ -1,6 +1,6 @@
-﻿module langs.sql.functions.select;
+﻿module uim.languages.sql.functions.select;
 
-import langs.sql;
+import uim.languages.sql;
 @safe:
 class DSQLSelectFunction : DSQLStatement {
 	this() {}

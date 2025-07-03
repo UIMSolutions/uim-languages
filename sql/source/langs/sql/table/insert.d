@@ -1,6 +1,6 @@
-﻿module langs.sql.tables.insert;
+﻿module uim.languages.sql.tables.insert;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 class DSQLInsert : DSQLStatement {

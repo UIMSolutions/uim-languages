@@ -1,6 +1,6 @@
-﻿module langs.sql.tables.select;
+﻿module uim.languages.sql.tables.select;
 
-import langs.sql;
+import uim.languages.sql;
 
 string sqlSelectFromTable(string tableName, string attributes = "*") { return "SELECT " ~attributes~" FROM " ~tableName; }
 string sqlWhere(string condition) { return "WHERE " ~condition; }

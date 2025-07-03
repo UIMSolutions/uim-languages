@@ -1,6 +1,6 @@
-﻿module langs.sql.tables.dropcolumn;
+﻿module uim.languages.sql.tables.dropcolumn;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 class DSQLDropColumn : DSQLUpdateStatement {

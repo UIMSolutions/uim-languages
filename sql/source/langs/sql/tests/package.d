@@ -1,2 +1,2 @@
-module langs.sql.tests;
+module uim.languages.sql.tests;
 

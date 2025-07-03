@@ -1,4 +1,4 @@
-# Package 📦 langs.sql.functions
+# Package 📦 uim.languages.sql.functions
 
 ## Packages
 

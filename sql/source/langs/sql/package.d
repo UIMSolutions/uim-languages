@@ -3,7 +3,7 @@
 	License: Subject to the terms of the Apache 2.0 license, as written in the included LICENSE.txt file.  
 	Authors: Ozan Nurettin Süel, mailto:ons@sicherheitsschmiede.de                                                      
 **********************************************************************************************************/
-module langs.sql;
+module uim.languages.sql;
 
 mixin(ImportPhobos!());
 
@@ -20,12 +20,12 @@ public { // uim libraries
 }
 
 // Local packages
-public import langs.sql.helpers;
-public import langs.sql.statements;
-public import langs.sql.tables;
-public import langs.sql.tests;
-public import langs.sql.index;
-public import langs.sql.functions;
+public import uim.languages.sql.helpers;
+public import uim.languages.sql.statements;
+public import uim.languages.sql.tables;
+public import uim.languages.sql.tests;
+public import uim.languages.sql.index;
+public import uim.languages.sql.functions;
 
 string OR(string[] conditions) {
 	string[] c = new string[conditions.length];

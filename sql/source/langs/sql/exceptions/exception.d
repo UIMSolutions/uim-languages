@@ -1,6 +1,6 @@
-module langs.sql.exceptions.exception;
+module uim.languages.sql.exceptions.exception;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 

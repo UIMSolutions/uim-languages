@@ -1,6 +1,6 @@
-﻿module langs.sql.statements.update;
+﻿module uim.languages.sql.statements.update;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 class DSQLUpdateStatement : DSQLStatement {

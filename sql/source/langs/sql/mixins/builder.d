@@ -1,2 +1,2 @@
-module langs.sql.mixins.builder;
+module uim.languages.sql.mixins.builder;
 

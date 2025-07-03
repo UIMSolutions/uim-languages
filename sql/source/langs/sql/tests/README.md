@@ -1,5 +1,5 @@
-# Package 📦 langs.sql.tests
+# Package 📦 uim.languages.sql.tests
 
-- langs.sql.classes
-- langs.sql.interfaces
-- langs.sql.exceptions
+- uim.languages.sql.classes
+- uim.languages.sql.interfaces
+- uim.languages.sql.exceptions

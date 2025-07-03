@@ -1,6 +1,6 @@
-﻿module langs.sql.tables.altercolumn;
+﻿module uim.languages.sql.tables.altercolumn;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 class DSQLAlterColumn : DSQLUpdateStatement {

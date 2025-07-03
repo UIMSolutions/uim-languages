@@ -1,7 +1,7 @@
-﻿module langs.sql.statements;
+﻿module uim.languages.sql.statements;
 
 public {
-    import langs.sql.statements.statement;
-    import langs.sql.statements.update;
-    import langs.sql.statements.query;
+    import uim.languages.sql.statements.statement;
+    import uim.languages.sql.statements.update;
+    import uim.languages.sql.statements.query;
 }

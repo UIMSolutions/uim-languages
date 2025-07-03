@@ -1,1 +1,1 @@
-# Package 📦 langs.sql.exceptions
+# Package 📦 uim.languages.sql.exceptions

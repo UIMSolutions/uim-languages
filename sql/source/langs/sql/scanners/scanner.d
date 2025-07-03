@@ -1,2 +1,2 @@
-module langs.sql.scanners.scanner;
+module uim.languages.sql.scanners.scanner;
 

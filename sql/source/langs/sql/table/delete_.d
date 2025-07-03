@@ -1,6 +1,6 @@
-module langs.sql.tables.delete_;
+module uim.languages.sql.tables.delete_;
 
-import langs.sql;
+import uim.languages.sql;
 
 @safe:
 class DSQLDelete : DSQLStatement {

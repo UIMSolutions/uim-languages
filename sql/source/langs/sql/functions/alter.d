@@ -1,6 +1,6 @@
-﻿module langs.sql.functions.alter;
+﻿module uim.languages.sql.functions.alter;
 
-import langs.sql;
+import uim.languages.sql;
 @safe:
 class DSQLAlterFunction : DSQLStatement {
 	this() {}

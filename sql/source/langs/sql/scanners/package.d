@@ -1,5 +1,5 @@
-module langs.sql.scanners;
+module uim.languages.sql.scanners;
 
 public {
-    import langs.sql.scanners.scanner;
+    import uim.languages.sql.scanners.scanner;
 }

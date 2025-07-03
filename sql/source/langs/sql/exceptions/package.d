@@ -1,5 +1,5 @@
-module langs.sql.exceptions;
+module uim.languages.sql.exceptions;
 
 public {
-    import langs.sql.exceptions.exception;
+    import uim.languages.sql.exceptions.exception;
 }

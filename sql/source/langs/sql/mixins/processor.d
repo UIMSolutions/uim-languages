@@ -1,2 +1,2 @@
-module langs.sql.mixins.processor;
+module uim.languages.sql.mixins.processor;
 

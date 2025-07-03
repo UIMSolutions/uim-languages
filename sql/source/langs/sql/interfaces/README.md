@@ -1,1 +1,1 @@
-# Package 📦 langs.sql.interfaces
+# Package 📦 uim.languages.sql.interfaces

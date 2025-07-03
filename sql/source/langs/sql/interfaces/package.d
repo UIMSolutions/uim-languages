@@ -1,6 +1,6 @@
-module langs.sql.interfaces;
+module uim.languages.sql.interfaces;
 
 public {
-  import langs.sql.interfaces.builder;
-  import langs.sql.interfaces.processor;
+  import uim.languages.sql.interfaces.builder;
+  import uim.languages.sql.interfaces.processor;
 }

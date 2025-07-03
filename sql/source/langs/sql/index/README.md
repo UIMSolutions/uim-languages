@@ -1,1 +1,1 @@
-# Package 📦 langs.sql.index
+# Package 📦 uim.languages.sql.index

@@ -1,2 +1,2 @@
-module langs.sql.helpers;
+module uim.languages.sql.helpers;
 

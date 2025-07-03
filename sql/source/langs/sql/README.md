@@ -1,4 +1,4 @@
-# Package 📦 langs.sql
+# Package 📦 uim.languages.sql
 
 ## Packages
 

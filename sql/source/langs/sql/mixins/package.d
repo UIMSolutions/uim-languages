@@ -1,7 +1,7 @@
-module langs.sql.mixins;
+module uim.languages.sql.mixins;
 
 public {
-    import langs.sql.mixins.builder;
-    import langs.sql.mixins.processor;
+    import uim.languages.sql.mixins.builder;
+    import uim.languages.sql.mixins.processor;
 }
 

@@ -1,1 +1,1 @@
-# Package 📦 langs.sql.script
+# Package 📦 uim.languages.sql.script

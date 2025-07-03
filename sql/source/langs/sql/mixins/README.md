@@ -1,1 +1,1 @@
-# Package 📦 langs.sql.mixins
+# Package 📦 uim.languages.sql.mixins

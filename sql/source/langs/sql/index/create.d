@@ -1,6 +1,6 @@
-﻿module langs.sql.index.create;
+﻿module uim.languages.sql.index.create;
 
-import langs.sql;
+import uim.languages.sql;
 @safe:
 
 class DSQLCreateIndex : DSQLUpdateStatement {

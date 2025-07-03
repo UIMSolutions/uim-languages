@@ -1,6 +1,6 @@
-module langs.sql.tables.update;
+module uim.languages.sql.tables.update;
 
-import langs.sql;
+import uim.languages.sql;
 @safe:
 class DSQLUpdate : DSQLUpdateStatement  {
 	protected string _table;

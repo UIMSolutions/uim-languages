@@ -1,11 +1,11 @@
-﻿module langs.sql.tables;
+﻿module uim.languages.sql.tables;
 
 public {
-    import langs.sql.tables.altertable;
-    import langs.sql.tables.altercolumn;
-    import langs.sql.tables.dropcolumn;
-    import langs.sql.tables.insert;
-    import langs.sql.tables.update;
-    import langs.sql.tables.select;
-    import langs.sql.tables.delete_;
+    import uim.languages.sql.tables.altertable;
+    import uim.languages.sql.tables.altercolumn;
+    import uim.languages.sql.tables.dropcolumn;
+    import uim.languages.sql.tables.insert;
+    import uim.languages.sql.tables.update;
+    import uim.languages.sql.tables.select;
+    import uim.languages.sql.tables.delete_;
 }

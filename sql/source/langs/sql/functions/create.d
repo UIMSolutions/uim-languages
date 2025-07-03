@@ -1,6 +1,6 @@
-﻿module langs.sql.functions.create_;
+﻿module uim.languages.sql.functions.create_;
 
-import langs.sql;
+import uim.languages.sql;
 @safe:
 class DSQLCreateFunction : DSQLStatement {
 	this() {}

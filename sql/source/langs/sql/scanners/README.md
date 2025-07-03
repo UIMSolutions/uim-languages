@@ -1,1 +1,1 @@
-# Package 📦 langs.sql.scanners
+# Package 📦 uim.languages.sql.scanners
