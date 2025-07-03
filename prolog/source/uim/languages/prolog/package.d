@@ -1,10 +1,2 @@
-module uim.languages.prolog;
+module langs.prologs;
 
-public {
-  import uim.language;
-  import uim.languages.prolog.classes;
-  import uim.languages.prolog.helpers;
-  import uim.languages.prolog.lexers;
-  import uim.languages.prolog.parsers;
-  import uim.languages.prolog.tokens;
-}
