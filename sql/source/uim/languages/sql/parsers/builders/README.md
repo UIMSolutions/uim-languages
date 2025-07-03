@@ -1,4 +1,4 @@
-# Package 📦 langs.sgl
+# Package 📦 uim.sgl
 
 ## Packages
 

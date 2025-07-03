@@ -1,3 +1,3 @@
-module langs.cobol.helper;
+module uim.languages.cobol.helper;
 
-import langs.cobol;
+import uim.languages.cobol;

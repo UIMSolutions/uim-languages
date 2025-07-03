@@ -10,5 +10,6 @@ public {
   import uim.languages.basic.mixins;
   import uim.languages.basic.parsers;
   import uim.languages.basic.tokens;
+  import uim.languages.basic.tests;
 }
 
