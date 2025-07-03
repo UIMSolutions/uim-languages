@@ -18,7 +18,7 @@ version(test_uim_javascript) { unittest {
 
 /* @safe */ /* pure */ string toJS(T)(T[string] values, bool sortedKeys = false) {
 	string[] result; 
-	string[] keys = values.getKeys(sortedKeys);
+	string[] keys = values.keys(sortedKeys);
 
 	foreach(k; keys) {
 		auto key = k;

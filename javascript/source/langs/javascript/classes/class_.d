@@ -39,8 +39,8 @@ class DJSClass : DJSRoot {
 			if (_constructorParameters) result ~= "constructor(%s)%s".format(_constructorParameters.join(","), jsBlock(_constructor));
 		}
 		string[] inner;
-		foreach(k; _getters.getKeys.sort) inner ~= "get "~k~"()"~jsBlock(_getters[k]);
-		foreach(k; _setters.getKeys.sort) inner ~= "get "~k~jsBlock(_setters[k]);
+		foreach(k; _getters.keys.sort) inner ~= "get "~k~"()"~jsBlock(_getters[k]);
+		foreach(k; _setters.keys.sort) inner ~= "get "~k~jsBlock(_setters[k]);
 		result ~= inner.join(",")~"}";
 		return result; }
 }

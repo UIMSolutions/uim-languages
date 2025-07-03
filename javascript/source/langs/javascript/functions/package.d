@@ -51,7 +51,7 @@ version(test_uim_javascript) { unittest {
 
 string jsObject(string[string] values, bool sorted = true) {
 	string[] props;
-	foreach(k; values.getKeys(sorted)) props ~= k~":"~values[k];
+	foreach(k; values.keys.sort) props ~= k~":"~values[k];
 	return "{"~props.join(",")~"}"; }
 version(test_uim_javascript) { unittest {
 	assert(jsObject(["a":"1", "b":"2"]) == "{a:1,b:2}");
@@ -252,7 +252,7 @@ version(test_uim_javascript) { unittest {
 }}
 
 auto jsFetch(string url, string[string] options, string[] thens = null, string catch_ = null) {
-	string result = "fetch(%s,%s)".format(url, toJS(options));
+	string result = ""; // TODO "fetch(%s,%s)".format(url, toJS(options));
 	foreach(t; thens) result ~= ".then(%s)".format(t);
   if (catch_.length > 0) result ~= ".catch(%s)".format(catch_);
 	return result~";";
