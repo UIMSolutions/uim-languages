@@ -20,12 +20,23 @@ public { // uim libraries
 }
 
 // Local packages
-public import uim.languages.sql.helpers;
-public import uim.languages.sql.statements;
-public import uim.languages.sql.tables;
-public import uim.languages.sql.tests;
-public import uim.languages.sql.index;
-public import uim.languages.sql.functions;
+public {
+	import uim.languages;
+
+	import uim.languages.sql.exceptions;
+	import uim.languages.sql.functions;
+	import uim.languages.sql.helpers;
+	import uim.languages.sql.index;
+	import uim.languages.sql.interfaces;
+	import uim.languages.sql.mixins;
+	import uim.languages.sql.parsers;
+	import uim.languages.sql.scanners;
+	import uim.languages.sql.script;
+	import uim.languages.sql.statements;
+	import uim.languages.sql.tables;
+	import uim.languages.sql.tests;
+	import uim.languages.sql.tokens;
+}
 
 string OR(string[] conditions) {
 	string[] c = new string[conditions.length];
