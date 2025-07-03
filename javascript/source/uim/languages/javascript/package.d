@@ -3,11 +3,17 @@
 // Local packages
 public {
     import uim.language;
-    import uim.languages.javascript.functions;
     import uim.languages.javascript.classes;
-    import uim.languages.javascript.tools;
-    import uim.languages.javascript.error;
     import uim.languages.javascript.conditional;
+    import uim.languages.javascript.error;
+    import uim.languages.javascript.exceptions;
+    import uim.languages.javascript.functions;
+    import uim.languages.javascript.helpers;
+    import uim.languages.javascript.interfaces;
+    import uim.languages.javascript.lexers;
+    import uim.languages.javascript.parsers;
+    import uim.languages.javascript.tests;
+    import uim.languages.javascript.tools;
 }
 
 // JavaScript code generation functions

@@ -5,21 +5,6 @@
 **********************************************************************************************************/
 module uim.languages.sql;
 
-mixin(ImportPhobos!());
-
-// Dub
-public {
-	import vibe.d;
-  import vibe.http.session : HttpSession = Session;
-}
-
-public { // uim libraries
-  import uim.core;
-  import uim.oop;
-  import uim.languages;
-}
-
-// Local packages
 public {
 	import uim.languages;
 

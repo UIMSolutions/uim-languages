@@ -1,1 +1,1 @@
-module uim.languages.python.tokens;
+module uim.languages.fortan.tokens;

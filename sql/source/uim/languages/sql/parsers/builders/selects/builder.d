@@ -1,7 +1,6 @@
 module uim.languages.sql.parsers.builders.selects.builder;
 
 import uim.languages.sql;
-
 @safe:
 
 // Builds the SELECT statement from the [SELECT] field. 

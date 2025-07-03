@@ -2,10 +2,13 @@ module uim.languages.prolog;
 
 public {
   import uim.language;
-  import uim.languages.python.classes;
-  import uim.languages.python.exceptions;
-  import uim.languages.python.helpers;
-  import uim.languages.python.lexers;
-  import uim.languages.python.parsers;
-  import uim.languages.python.tokens;
+  import uim.languages.prolog.classes;
+  import uim.languages.prolog.exceptions;
+  import uim.languages.prolog.helpers;
+  import uim.languages.prolog.interfaces;
+  import uim.languages.prolog.lexers;
+  import uim.languages.prolog.mixins;
+  import uim.languages.prolog.parsers;
+  import uim.languages.prolog.tests;
+  import uim.languages.prolog.tokens;
 }

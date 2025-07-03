@@ -9,13 +9,13 @@ interface IProcessor {
      * This auto : the main functionality of a processor class.
      * Always use default valuses for additional parameters within overridden functions.
      */
-    Json process(strig[] tokens);
+    Json process(string[] tokens);
 
     // this auto splits up a SQL statement into easy to "parse" tokens for the SQL processor
     auto splitSQLIntoTokens(string sqlString);
 
-    Json processComment(myexpression);
+    // Json processComment(myexpression);
 
     // translates an array of objects into an associative array
-    auto toArray(mytokenList);
+    // auto toArray(mytokenList);
 }
