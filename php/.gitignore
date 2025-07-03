@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/uim-php
+uim-php.so
+uim-php.dylib
+uim-php.dll
+uim-php.a
+uim-php.lib
+uim-php-test-*
+*.exe
+*.o
+*.obj
+*.lst

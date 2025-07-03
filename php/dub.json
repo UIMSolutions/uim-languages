@@ -1,0 +1,9 @@
+{
+	"authors": [
+		"Ozan"
+	],
+	"copyright": "Copyright © 2020, Ozan",
+	"description": "A minimal D application.",
+	"license": "proprietary",
+	"name": "uim-php"
+}
