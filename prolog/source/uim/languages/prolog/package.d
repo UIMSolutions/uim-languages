@@ -1,4 +1,4 @@
-module langs.prologs;
+module uim.languages.prolog;
 
 public {
   import uim.language;

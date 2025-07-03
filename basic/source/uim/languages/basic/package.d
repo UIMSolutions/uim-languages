@@ -1,14 +1,12 @@
 module uim.languages.basic;
 
-public { // required uim libraries
-  import uim.core;
-  import uim.oop;
+public {
+  import uim.language;
+  import uim.languages.basic.classes;
+  import uim.languages.basic.exceptions;
+  import uim.languages.basic.helpers;
+  import uim.languages.basic.lexers;
+  import uim.languages.basic.parsers;
+  import uim.languages.basic.tokens;
 }
 
-public { // myname packages
-  import uim.languages.basic.classes;
-  import uim.languages.basic.interfaces;
-  import uim.languages.basic.helpers;
-  import uim.languages.basic.mixins;
-  import uim.languages.basic.tests;
-}
