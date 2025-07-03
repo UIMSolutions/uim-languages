@@ -1,1 +1,0 @@
-module langs.sql.script;

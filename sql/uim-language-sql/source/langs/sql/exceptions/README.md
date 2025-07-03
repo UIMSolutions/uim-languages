@@ -1,1 +1,0 @@
-# Package 📦 langs.sql.exceptions
