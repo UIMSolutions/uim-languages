@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the records within the INSERT statement. 
-class RecordBuilder : ISqlBuilder {
+class RecordBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("RECORD")) {

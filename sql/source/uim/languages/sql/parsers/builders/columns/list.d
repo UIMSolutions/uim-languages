@@ -8,7 +8,7 @@ import uim.languages.sql;
  * Builds column-list parts of CREATE TABLE. 
  * This class : the builder for column-list parts of CREATE TABLE. 
  */
-class ColumnListBuilder : ISqlBuilder {
+class ColumnListBuilder : DSqlBuilder {
 
   string build(Json parsedSql, string delim = ", ") {
     if (!parsedSql.isExpressionType("COLUMN_LIST")) {

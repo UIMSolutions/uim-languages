@@ -3,7 +3,7 @@ import uim.languages.sql;
 
 @safe:
 // Builds the TRUNCATE statement
-class TruncateBuilder : ISqlBuilder {
+class TruncateBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     string mySql = "TRUNCATE TABLE ";

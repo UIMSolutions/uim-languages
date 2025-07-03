@@ -8,7 +8,7 @@ import uim.languages.sql;
  * Builds the SELECT statements within parentheses. 
  * This class : the builder for queries within parentheses (no subqueries). 
  */
-class QueryBuilder : ISqlBuilder {
+class QueryBuilder : DSqlBuilder {
 
   string build(Json parsedSql, anIndex = 0) {
     if (!parsedSql.isExpressionType("QUERY")) {

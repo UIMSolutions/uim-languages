@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the SHOW statement. 
-class ShowBuilder : ISqlBuilder {
+class ShowBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     auto showSql = parsedSql["SHOW"];

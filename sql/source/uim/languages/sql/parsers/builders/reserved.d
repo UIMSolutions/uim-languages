@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds reserved keywords. 
-class ReservedBuilder : ISqlBuilder {
+class ReservedBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!this.isReserved(parsedSql)) { return ""; }

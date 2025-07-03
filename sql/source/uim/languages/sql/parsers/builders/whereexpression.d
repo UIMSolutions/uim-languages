@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds expressions within the WHERE part.
-class WhereExpressionBuilder : ISqlBuilder {
+class WhereExpressionBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("EXPRESSION")) {

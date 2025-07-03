@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds operators.
-class OperatorBuilder : ISqlBuilder {
+class OperatorBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("OPERATOR")) {

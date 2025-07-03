@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds auto statements. 
-class FunctionBuilder : ISqlBuilder {
+class FunctionBuilder : DSqlBuilder {
 
     string build(Json parsedSql) {
         if (!parsedSql.isExpressionType("AGGREGATE_FUNCTION")

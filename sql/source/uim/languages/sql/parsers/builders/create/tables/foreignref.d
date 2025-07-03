@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the FOREIGN KEY REFERENCES statement part of CREATE TABLE. */
-class ForeignRefBuilder : ISqlBuilder {
+class ForeignRefBuilder : DSqlBuilder {
 
     protected string buildTable(Json parsedSql) {
         auto myBuilder = new TableBuilder();

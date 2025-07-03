@@ -8,7 +8,7 @@ module uim.languages.sql.parsers.builders.unionstatement;
 
  
  * */
-class UnionStatementBuilder : ISqlBuilder {
+class UnionStatementBuilder : DSqlBuilder {
 
 	string build(Json parsedSql) {
 		string mySql = "";

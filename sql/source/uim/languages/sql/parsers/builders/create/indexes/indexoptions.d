@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 // Builds index options part of a CREATE INDEX statement.
-class CreateIndexOptionsBuilder : ISqlBuilder {
+class CreateIndexOptionsBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (parsedSql["options"].isEmpty) {

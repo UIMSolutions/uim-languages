@@ -3,7 +3,7 @@ import uim.languages.sql;
 
 @safe:
 // Builds the REPLACE statement 
-class ReplaceStatementBuilder : ISqlBuilder {
+class ReplaceStatementBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     // TODO: are there more than one tables possible (like [REPLACE][1])

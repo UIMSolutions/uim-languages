@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 // Builds the object list of a DROP statement. 
-class DropExpressionBuilder : ISqlBuilder {
+class DropExpressionBuilder : DSqlBuilder {
   this() {
   }
 

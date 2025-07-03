@@ -4,7 +4,7 @@ import uim.languages.sql;
 @safe:
 
 // Builder for the whole UNION ALL statement. 
-class UnionAllStatementBuilder : ISqlBuilder {
+class UnionAllStatementBuilder : DSqlBuilder {
   string build(Json parsedSql) {
     string mySql = "";
     auto select_builder = new SelectStatementBuilder();

@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 // Builds the column definition statement part of CREATE TABLE. 
-class ColumnDefinitionBuilder : ISqlBuilder {
+class ColumnDefinitionBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     // In Check

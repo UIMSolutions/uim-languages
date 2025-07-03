@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the [REPLACE] statement part. 
-class ReplaceBuilder : ISqlBuilder {
+class ReplaceBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     string mySql = parsedSql.byKeyValue

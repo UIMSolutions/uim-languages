@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds constant (String, Integer, etc.) parts.
-class ConstantBuilder : ISqlBuilder {
+class ConstantBuilder : DSqlBuilder {
 
     protected string buildAlias(Json parsedSql) {
         auto myBuilder = new AliasBuilder();

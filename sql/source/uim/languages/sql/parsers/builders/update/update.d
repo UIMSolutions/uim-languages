@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the UPDATE statement parts. 
-class UpdateBuilder : ISqlBuilder {
+class UpdateBuilder : DSqlBuilder {
 
   protected string buildTable(parsedSql, string idx) {
     auto myBuilder = new TableBuilder();

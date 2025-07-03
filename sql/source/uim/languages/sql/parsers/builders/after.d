@@ -3,7 +3,7 @@ module uim.languages.sql.parsers.builders;
 import uim.languages.sql;
 
 @safe:
-class AlterBuilder : ISqlBuilder {
+class AlterBuilder : DSqlBuilder {
   string build(Json parsedSql) {
     string mySql = "";
 

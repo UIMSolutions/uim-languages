@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 // Builds the table part of a CREATE INDEX statement
-class CreateIndexTableBuilder : ISqlBuilder {
+class CreateIndexTableBuilder : DSqlBuilder {
 
     string build(Json parsedSql) {
         if (parsedSql.isSet("on") || parsedSql["on"].isEmpty) {

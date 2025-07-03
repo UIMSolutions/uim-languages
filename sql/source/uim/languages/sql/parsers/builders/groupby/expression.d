@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds an expression within a GROUP-BY clause.
-class GroupByExpressionBuilder : ISqlBuilder {
+class GroupByExpressionBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("EXPRESSION")) {

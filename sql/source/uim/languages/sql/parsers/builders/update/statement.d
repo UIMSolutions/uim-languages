@@ -3,7 +3,7 @@ import uim.languages.sql;
 
 @safe:
 // Builds the UPDATE statement 
-class UpdateStatementBuilder : ISqlBuilder {
+class UpdateStatementBuilder : DSqlBuilder {
 
     string build(Json parsedSql) {
         string mySql = this.buildUPDATE(parsedSql["UPDATE"]) ~ " " ~ this.buildSET(

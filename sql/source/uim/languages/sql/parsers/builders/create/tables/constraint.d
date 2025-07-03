@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the constraint statement part of CREATE TABLE.
-class ConstraintBuilder : ISqlBuilder {
+class ConstraintBuilder : DSqlBuilder {
 
     string build(Json parsedSql) {
         if (!parsedSql.isExpressionType("CONSTRAINT")) {

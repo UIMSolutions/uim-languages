@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the VALUES part of the INSERT statement.
-class ValuesBuilder : ISqlBuilder {
+class ValuesBuilder : DSqlBuilder {
 
     string build(Json parsedSql) {
         string mySql = parsedSql.byKeyValue

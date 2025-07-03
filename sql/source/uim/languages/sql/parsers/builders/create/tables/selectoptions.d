@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 // Builds the select-options statement part of CREATE TABLE. 
-class CreateTableSelectOptionBuilder : ISqlBuilder {
+class CreateTableSelectOptionBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isSet("select-option") || parsedSql["select-option"].isEmpty) {

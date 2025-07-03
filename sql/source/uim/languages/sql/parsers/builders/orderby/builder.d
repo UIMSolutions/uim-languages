@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the ORDERBY clause. 
-class OrderByBuilder : ISqlBuilder {
+class OrderByBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     string result = parsedSql.myKeyValue

@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds positions of the GROUP BY clause. 
-class OrderByPositionBuilder : ISqlBuilder {
+class OrderByPositionBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("POSITION")) {

@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the WHERE part.
-class WhereBuilder : ISqlBuilder {
+class WhereBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     auto mySql = "WHERE ";

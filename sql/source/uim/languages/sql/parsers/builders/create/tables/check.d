@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the CHECK statement part of CREATE TABLE. 
-class CheckBuilder : ISqlBuilder {
+class CheckBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("CHECK")) {

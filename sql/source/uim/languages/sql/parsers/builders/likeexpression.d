@@ -10,7 +10,7 @@ import uim.languages.sql;
  * CREATE TABLE statement. There are difference to LIKE (without parenthesis), 
  * the latter is a top-level element of the output array.
  */
-class LikeExpressionBuilder : ISqlBuilder {
+class LikeExpressionBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("LIKE")) {

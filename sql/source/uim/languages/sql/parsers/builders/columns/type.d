@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the column type statement part of CREATE TABLE. */
-class ColumnTypeBuilder : ISqlBuilder {
+class ColumnTypeBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("COLUMN_TYPE")) {

@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the table expressions within the create definitions of CREATE TABLE. 
-class TableBracketExpressionBuilder : ISqlBuilder {
+class TableBracketExpressionBuilder : DSqlBuilder {
 
 
 

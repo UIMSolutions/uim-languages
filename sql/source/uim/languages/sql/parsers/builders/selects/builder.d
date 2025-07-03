@@ -4,7 +4,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the SELECT statement from the [SELECT] field. 
-class SelectBuilder : ISqlBuilder {
+class SelectBuilder : DSqlBuilder {
 
     /**
      * Returns a well-formatted delimiter string. If you don"t need nice SQL,

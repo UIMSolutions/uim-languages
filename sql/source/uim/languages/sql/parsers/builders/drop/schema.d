@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 // Builds the schema within the DROP statement. 
-class SchemaBuilder : ISqlBuilder {
+class SchemaBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("SCHEMA")) {

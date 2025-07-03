@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 // Builder for the whole Delete statement. 
-class DeleteStatementBuilder : ISqlBuilder {
+class DeleteStatementBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     string mySql = this.buildDelete(parsedSql["DELETE"]) ~ " " ~ this.buildFrom(parsedSql["FROM"]);

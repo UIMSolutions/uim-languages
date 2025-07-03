@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the RENAME statement 
-class RenameStatementBuilder : ISqlBuilder {
+class RenameStatementBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     auto myRename = parsedSql["RENAME"];

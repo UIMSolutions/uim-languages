@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 //Builds the database within the SHOW statement.
-class DatabaseBuilder : ISqlBuilder {
+class DatabaseBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("DATABASE")) {

@@ -8,7 +8,7 @@ import uim.languages.sql;
  * Builds reference clauses within a JOIN.
  * This class : the references clause within a JOIN.
  */
-class RefClauseBuilder : ISqlBuilder {
+class RefClauseBuilder : DSqlBuilder {
 
     string build(Json parsedSql) {
         if (parsedSql.isEmpty) {

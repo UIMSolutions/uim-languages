@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the table name/join options.
-class TableBuilder : ISqlBuilder {
+class TableBuilder : DSqlBuilder {
 
   string build(Json parsedSql, size_t index = 0) {
     if (!parsedSql.isExpressionType("TABLE")) {

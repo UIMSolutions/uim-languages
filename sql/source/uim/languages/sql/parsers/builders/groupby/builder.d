@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builder for the GROUP-BY clause. 
-class GroupByBuilder : ISqlBuilder {
+class GroupByBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     string mySql = parsedSql.byKeyValue

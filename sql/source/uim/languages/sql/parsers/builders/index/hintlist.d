@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 // Builds the index hint list of a table.
-class IndexHintListBuilder : ISqlBuilder {
+class IndexHintListBuilder : DSqlBuilder {
 
   auto hasHint(Json parsedSql) {
     return isset(parsedSql["hints"]);

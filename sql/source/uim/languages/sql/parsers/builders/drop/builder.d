@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // This class : the builder for the [DROP] part. */
-class DropBuilder : ISqlBuilder {
+class DropBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     auto dropSql = parsedSql["DROP"];

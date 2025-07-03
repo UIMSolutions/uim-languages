@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the collation expression part of CREATE TABLE.
-class CollationBuilder : ISqlBuilder {
+class CollationBuilder : DSqlBuilder {
 
     string build(Json parsedSql) {
         if (!parsedSql.isExpressionType("COLLATE")) {

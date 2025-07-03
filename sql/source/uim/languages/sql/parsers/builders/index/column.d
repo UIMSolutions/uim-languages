@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the column entries of the column-list parts of CREATE TABLE.
-class IndexColumnBuilder : ISqlBuilder {
+class IndexColumnBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("INDEX_COLUMN")) {

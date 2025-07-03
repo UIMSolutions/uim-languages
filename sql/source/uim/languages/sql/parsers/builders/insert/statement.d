@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the INSERT statement
-class InsertStatementBuilder : ISqlBuilder {
+class InsertStatementBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     // TODO: are there more than one tables possible (like [INSERT][1])

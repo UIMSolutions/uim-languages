@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 // Builds the CREATE statement 
-class CreateStatementBuilder : ISqlBuilder {
+class CreateStatementBuilder : DSqlBuilder {
 
     string build(Json parsedSql) {
         string mySql = this.buildCreate(parsedSql);

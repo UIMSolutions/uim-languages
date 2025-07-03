@@ -8,7 +8,7 @@
  * Builds the LIMIT statement.
  * This class : the builder LIMIT statement. 
  */
-class LimitBuilder : ISqlBuilder {
+class LimitBuilder : DSqlBuilder {
 
     string build(Json parsedSql) {
        mySql = (parsedSql["rowcount"]) . (parsedSql["offset"] ? " OFFSET " . parsedSql["offset"] : "");

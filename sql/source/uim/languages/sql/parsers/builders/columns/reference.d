@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 
-class ColumnReferenceBuilder : ISqlBuilder {
+class ColumnReferenceBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("COLREF")) {

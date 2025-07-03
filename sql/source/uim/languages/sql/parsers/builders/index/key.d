@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds index key part of a CREATE TABLE statement.
-class IndexKeyBuilder : ISqlBuilder {
+class IndexKeyBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("INDEX")) {

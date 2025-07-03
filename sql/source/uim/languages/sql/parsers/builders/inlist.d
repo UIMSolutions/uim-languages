@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds lists of values for the IN statement.
-class InListBuilder : ISqlBuilder {
+class InListBuilder : DSqlBuilder {
 
   protected string buildSubTree(parsedSql, string delim) {
     auto myBuilder = new SubTreeBuilder();

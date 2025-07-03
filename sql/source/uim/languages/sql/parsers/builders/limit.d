@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the LIMIT statement.
-class LimitBuilder : ISqlBuilder {
+class LimitBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     string mySql = (parsedSql["rowcount"].get!string) ~

@@ -6,7 +6,7 @@ import uim.languages.sql;
 /**
  * This class : the builder for alias references. 
  */
-class AliasReferenceBuilder : ISqlBuilder {
+class AliasReferenceBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("ALIAS")) {

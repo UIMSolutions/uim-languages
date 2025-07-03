@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds index lock part of a CREATE INDEX statement.
-class IndexLockBuilder : ISqlBuilder {
+class IndexLockBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("INDEX_LOCK")) {

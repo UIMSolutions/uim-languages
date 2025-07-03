@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds an alias within an ORDER-BY clause.
-class OrderByAliasBuilder : ISqlBuilder {
+class OrderByAliasBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("ALIAS")) {

@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the b racket expressions within a SELECT statement. */
-class SelectBracketExpressionBuilder : ISqlBuilder {
+class SelectBracketExpressionBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("BRACKET_EXPRESSION")) {

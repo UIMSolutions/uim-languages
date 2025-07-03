@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds simple expressions within a SELECT statement.
-class SelectExpressionBuilder : ISqlBuilder {
+class SelectExpressionBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("EXPRESSION")) {

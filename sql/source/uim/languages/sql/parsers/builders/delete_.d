@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 // Builds the DELETE statement
-class DeleteBuilder : ISqlBuilder {
+class DeleteBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     string mySql = "DELETE ";

@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds unary operators. 
-class SignBuilder : ISqlBuilder {
+class SignBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("SIGN")) {

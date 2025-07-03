@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the FROM statement
-class FromBuilder : ISqlBuilder {
+class FromBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     auto string mySql = "";

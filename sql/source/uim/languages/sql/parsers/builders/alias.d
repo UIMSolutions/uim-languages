@@ -3,7 +3,7 @@ module uim.languages.sql.parsers.builders;
 import uim.languages.sql;
 
 @safe:
-class AliasBuilder : ISqlBuilder {
+class AliasBuilder : DSqlBuilder {
 
   auto hasAlias(parsed) {
     return ("alias" in parsed);

@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the procedures within the SHOW statement. 
-class ProcedureBuilder : ISqlBuilder {
+class ProcedureBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("PROCEDURE")) {

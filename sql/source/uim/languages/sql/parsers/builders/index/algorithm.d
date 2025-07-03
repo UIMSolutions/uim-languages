@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds index algorithm part of a CREATE INDEX statement.
-class IndexAlgorithmBuilder : ISqlBuilder {
+class IndexAlgorithmBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("INDEX_ALGORITHM")) {

@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds bracket expressions within the WHERE part.
-class WhereBracketExpressionBuilder : ISqlBuilder {
+class WhereBracketExpressionBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("BRACKET_EXPRESSION")) {

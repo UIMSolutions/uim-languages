@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds index size part of a PRIMARY KEY statement part of CREATE TABLE.
-class IndexSizeBuilder : ISqlBuilder {
+class IndexSizeBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("INDEX_SIZE")) {

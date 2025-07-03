@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the LIKE statement part of a CREATE TABLE statement.
-class LikeBuilder : ISqlBuilder {
+class LikeBuilder : DSqlBuilder {
 
     protected string buildTable(parsedSql, size_t anIndex) {
         auto myBuilder = new TableBuilder();

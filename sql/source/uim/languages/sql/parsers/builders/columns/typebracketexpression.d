@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 // Builds the bracket expressions within a column type.
-class ColumnTypeBracketExpressionBuilder : ISqlBuilder {
+class ColumnTypeBracketExpressionBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("BRACKET_EXPRESSION")) {

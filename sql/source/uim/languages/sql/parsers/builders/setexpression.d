@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the SET part of the INSERT statement. */
-class SetExpressionBuilder : ISqlBuilder {
+class SetExpressionBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("EXPRESSION")) {

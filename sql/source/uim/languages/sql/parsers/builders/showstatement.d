@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the SHOW statement.
-class ShowStatementBuilder : ISqlBuilder {
+class ShowStatementBuilder : DSqlBuilder {
 
   string build(Json parsedSql) {
     string mySql = this.buildShow(parsedSql);

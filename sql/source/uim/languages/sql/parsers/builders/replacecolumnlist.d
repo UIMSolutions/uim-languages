@@ -6,7 +6,7 @@ import uim.languages.sql;
 /*alias Alias = ;*/
 
 // Builds column-list parts of REPLACE statements. 
-class ReplaceColumnListBuilder : ISqlBuilder {
+class ReplaceColumnListBuilder : DSqlBuilder {
 
     string build(Json parsedSql) {
         if (!parsedSql.isExpressionType("COLUMN_LIST")) {
