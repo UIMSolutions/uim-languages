@@ -1,0 +1,17 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/uim-cobol
+uim-cobol.so
+uim-cobol.dylib
+uim-cobol.dll
+uim-cobol.a
+uim-cobol.lib
+uim-cobol-test-*
+*.exe
+*.o
+*.obj
+*.lst
+dub.selections.json
+lang-cobol-test-library
