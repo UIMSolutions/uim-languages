@@ -1,7 +1,13 @@
+/****************************************************************************************************************
+* Copyright: © 2018-2025 Ozan Nurettin Süel (aka UIManufaktur)                                                  *
+* License: Subject to the terms of the Apache 2.0 license, as written in the included LICENSE.txt file.         *
+* Authors: Ozan Nurettin Süel (aka UIManufaktur)                                                                *
+*****************************************************************************************************************/
 module uim.languages.fortran;
 
-public {
+public { // Importing all necessary modules for the Fortran language support
   import uim.language;
+  // Importing the Fortran language module
   import uim.languages.fortran.classes;
   import uim.languages.fortran.exceptions;
   import uim.languages.fortran.helpers;

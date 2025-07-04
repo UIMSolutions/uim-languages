@@ -5,8 +5,10 @@
 *****************************************************************************************************************/
 module uim.languages.basic;
 
-public {
+public {// Importing all necessary modules for the Basic language support
   import uim.language;
+  
+  // Importing the Basic language module
   import uim.languages.basic.classes;
   import uim.languages.basic.exceptions;
   import uim.languages.basic.helpers;

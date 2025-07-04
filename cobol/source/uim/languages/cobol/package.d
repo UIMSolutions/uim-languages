@@ -1,7 +1,13 @@
+/****************************************************************************************************************
+* Copyright: © 2018-2025 Ozan Nurettin Süel (aka UIManufaktur)                                                  *
+* License: Subject to the terms of the Apache 2.0 license, as written in the included LICENSE.txt file.         *
+* Authors: Ozan Nurettin Süel (aka UIManufaktur)                                                                *
+*****************************************************************************************************************/
 module uim.languages.cobol;
 
-public {
+public { // Importing all necessary modules for the COBOL language support
   import uim.language;
+  // Importing the COBOL language module
   import uim.languages.cobol.classes;
   import uim.languages.cobol.exceptions;
   import uim.languages.cobol.helpers;
