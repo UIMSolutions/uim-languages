@@ -3,7 +3,7 @@ module uim.languages.sql.parsers.builders.statements.after;
 import uim.languages.sql;
 
 @safe:
-class AlterStatementBuilder : IBuilder {
+class AlterStatementBuilder : DSqlStatementBuilder {
 
   string build(Json parsedSql) {
     auto myAlter = parsedSql["ALTER"];

@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 // Builds the parentheses around a statement. */
-class BracketStatementBuilder : DSqlBuilder {
+class BracketStatementBuilder : DSqlStatementBuilder {
 
   string build(Json parsedSql) {
     string mySql = parsedSql["BRACKET"].byKeyValue
