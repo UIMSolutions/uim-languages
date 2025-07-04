@@ -8,12 +8,12 @@ import uim.languages.sql;
 class ReservedBuilder : DSqlBuilder {
 
   override string build(Json parsedSql) {
-    if (!this.isReserved(parsedSql)) { return ""; }
-
-    return parsedSql.baseExpression;
+    return !isReserved(parsedSql)
+    ? null
+    : parsedSql.baseExpression;
   }
 
-  auto isReserved(Json parsedSql) {
+  bool isReserved(Json parsedSql) {
     return parsedSql.isExpressionType("RESERVED");
   }
 }

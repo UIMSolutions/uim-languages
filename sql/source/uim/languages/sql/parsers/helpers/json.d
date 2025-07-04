@@ -13,10 +13,10 @@ bool anyExpressionType(Json parsedSql, string[] typeNames) {
 }
 
 bool isExpressionType(Json parsedSql, string typeName) {
-  return parsedSql.expressionType == typeName;
+  return parsedSql.hasKey("expr_type") && parsedSql.getString("expr_type") == typeName;
 }
 
-bool expressionType(Json parsedSql, string typeName) {
+string expressionType(Json parsedSql, string typeName) {
   return parsedSql.getString("expr_type");
 }
 

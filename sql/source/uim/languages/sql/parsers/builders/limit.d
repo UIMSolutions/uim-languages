@@ -10,7 +10,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the LIMIT statement.
-class LimitBuilder : ISqlBuilder {
+class LimitBuilder : DSqlBuilder {
 
   override string build(Json parsedSql) {
     string sql = parsedSql.getString("rowcount") ~

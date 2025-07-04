@@ -12,28 +12,27 @@ class RecordBuilder : DSqlBuilder {
       return parsedSql.get("base_expr", "");
     }
 
-    string mySql = parsedSql["data"].byKeyValue
+    string sql = parsedSql["data"].byKeyValue
       .map(kv => buildKeyValue(kv.key, kv.value))
       .join;
 
-   mySql = substr(mySql, 0, -2);
-    return "(" ~ mySql ~ ")";
+    sql = substr(sql, 0, -2);
+    return "(" ~ sql ~ ")";
   }
 
-  protected string buildKeyValue(string aKey, Json aValue) {
-    string result;
-    
-    result ~= this.buildConstant(aValue);
-    result ~= this.buildFunction(aValue);
-    result ~= this.buildOperator(aValue);
-    result ~= this.buildColRef(aValue);
+  protected string buildKeyValue(string key, Json value) {
+    string sql;
 
-    if (result.isEmpty) { // No change
-      throw new UnableToCreateSQLException(expressionType("RECORD"), aKey, aValue, "expr_type");
+    sql ~= this.buildConstant(value);
+    sql ~= this.buildFunction(value);
+    sql ~= this.buildOperator(value);
+    sql ~= this.buildColRef(value);
+
+    if (sql.isEmpty) { // No change
+      throw new UnableToCreateSQLException(expressionType("RECORD"), key, value, "expr_type");
     }
 
-    result ~= ", ";
-    return result;
+    return sql ~ ", ";
   }
 
   protected string buildOperator(Json parsedSql) {

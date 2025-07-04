@@ -15,48 +15,47 @@ import uim.languages.sql;
  */
 class HavingBuilder : WhereBuilder {
 
-    override string build(Json parsedSql) {
-        string mySql = "HAVING ";
-        foreach (myKey, myValue; parsedSql) {
-            size_t oldSqlLength = mySql.length;
+  override string build(Json parsedSql) {
+    string mySql = "HAVING ";
+    foreach (key, value; parsedSql) {
+      mySql ~= buildKeyValue(key, value);
+    }
+    return substr(mySql, 0, -1);
+  }
 
-           mySql ~= this.buildAliasReference(myValue);
-           mySql ~= this.buildOperator(myValue);
-           mySql ~= this.buildConstant(myValue);
-           mySql ~= this.buildColRef(myValue);
-           mySql ~= this.buildSubQuery(myValue);
-           mySql ~= this.buildInList(myValue);
-           mySql ~= this.buildFunction(myValue);
-           mySql ~= this.buildHavingExpression(myValue);
-           mySql ~= this.buildHavingBracketExpression(myValue);
-           mySql ~= this.buildUserVariable(myValue);
+  protected string buildKeyValue(string key, Json value) {
+    string sql;
 
-            if (mySql.length == oldSqlLength) {
-                throw new UnableToCreateSQLException("HAVING", myKey, myValue, "expr_type");
-            }
+    sql ~= buildAliasReference(value);
+    sql ~= buildOperator(value);
+    sql ~= buildConstant(value);
+    sql ~= buildColRef(value);
+    sql ~= buildSubQuery(value);
+    sql ~= buildInList(value);
+    sql ~= buildFunction(value);
+    sql ~= buildHavingExpression(value);
+    sql ~= buildHavingBracketExpression(value);
+    sql ~= buildUserVariable(value);
 
-           mySql ~= " ";
-        }
-        return substr(mySql, 0, -1);
+    if (sql.isEmpty) {
+      throw new UnableToCreateSQLException("HAVING", key, value, "expr_type");
     }
 
-    protected string buildKeyValue(string aKey, Json aValue) {
-        string result;
-        return result;
-    }
+    return sql ~ " ";
+  }
 
-    protected string buildAliasReference(Json parsedSql) {
-        auto myBuilder = new AliasReferenceBuilder();
-        return myBuilder.build(parsedSql);
-    }
+  protected string buildAliasReference(Json parsedSql) {
+    auto myBuilder = new AliasReferenceBuilder();
+    return myBuilder.build(parsedSql);
+  }
 
-    protected string buildHavingExpression(Json parsedSql) {
-        auto myBuilder = new HavingExpressionBuilder();
-        return myBuilder.build(parsedSql);
-    }
+  protected string buildHavingExpression(Json parsedSql) {
+    auto myBuilder = new HavingExpressionBuilder();
+    return myBuilder.build(parsedSql);
+  }
 
-    protected string buildHavingBracketExpression(Json parsedSql) {
-        auto myBuilder = new HavingBracketExpressionBuilder();
-        return myBuilder.build(parsedSql);
-    }
+  protected string buildHavingBracketExpression(Json parsedSql) {
+    auto myBuilder = new HavingBracketExpressionBuilder();
+    return myBuilder.build(parsedSql);
+  }
 }

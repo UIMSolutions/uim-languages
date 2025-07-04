@@ -13,10 +13,8 @@ import uim.languages.sql;
 class PositionBuilder : DSqlBuilder {
 
   override string build(Json parsedSql) {
-    if (!parsedSql.isExpressionType("POSITION")) {
-      return "";
-    }
-    
-    return parsedSql.baseExpression;
+    return !parsedSql.isExpressionType("POSITION")
+      ? null
+      : parsedSql.baseExpression;
   }
 }

@@ -14,5 +14,5 @@ interface ISqlBuilder {
      * @param Json parsedSQL a subtree of the SqlParser output array
      * returns part of an SQL statement.
      */
-  string build(Json parsedSQL);
+  override string build(Json parsedSql);
 }

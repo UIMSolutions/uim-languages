@@ -69,7 +69,7 @@ abstract class DProcessor {
         if (isQuote != myChar) {
           break;
         }
-        if (mySqlBuffer.isSet(myPos + 1) && isQuote == mySqlBuffer[myPos + 1]) {
+        if (mySqlBuffer.hasKey(myPos + 1) && isQuote == mySqlBuffer[myPos + 1]) {
           // escaped
           myPos++;
           break;
@@ -200,63 +200,71 @@ abstract class DProcessor {
         }
 
         protected auto isCommentToken(myToken) {
-          return myToken.isSet(0) && myToken.isSet(1)
+          return myToken.hasKey(0) && myToken.hasKey(1)
             && ((myToken[0] == "-" && myToken[1] == "-") || (myToken[0] == "/" && myToken[1] == "*"));
         }
 
-        protected auto isColumnReference(result) {
-          return (result.isSet("expr_type") && result["expr_type"].isExpressionType("COLREF");
+        protected auto isColumnReference(Json parsedSql) {
+          return parsedSql.isExpressionType("COLREF");
         }
 
-        protected auto isReserved(result) {
-          return (result.isSet("expr_type") && result["expr_type"].isExpressionType("RESERVED");
+        protected bool isReserved(Json parsedSql) {
+          return parsedSql.isExpressionType("RESERVED");
         }
 
-        protected auto isConstant(result) {
-          return (result.isSet("expr_type") && result["expr_type"].isExpressionType("CONSTANT");
+        protected bool isConstant(Json parsedSql) {
+          return parsedSql.isExpressionType("CONSTANT");
         }
 
-        protected auto isAggregateFunction(result) {
-          return (result.isSet("expr_type") && result["expr_type"].isExpressionType(
-            "AGGREGATE_FUNCTION");}
+        protected bool isAggregateFunction(Json parsedSql) {
+          return parsedSql.isExpressionType("AGGREGATE_FUNCTION");
+        }
 
-          protected auto isCustomFunction(result) {
-            return (result.isSet("expr_type") && result["expr_type"].isExpressionType(
-              "CUSTOM_FUNCTION");}
+        protected bool isCustomFunction(Json parsedSql) {
+          return parsedSql.isExpressionType("CUSTOM_FUNCTION");
+        }
 
-            protected auto isFunction(result) {
-              return (result.isSet("expr_type") && result["expr_type"].isExpressionType(
-                "SIMPLE_FUNCTION");}
+        protected bool isFunction(Json parsedSql) {
+          return parsedSql.isExpressionType("SIMPLE_FUNCTION");
+        }
 
-              protected auto isExpression(result) {
-                return (result.isSet("expr_type") && result["expr_type"].isExpressionType(
-                  "EXPRESSION");}
+        protected bool isExpression(reJson parsedSqlsult) {
+          return parsedSql.isExpressionType("EXPRESSION");
+        }
 
-                protected auto isBracketExpression(result) {
-                  return (result.isSet("expr_type") && result["expr_type"].isExpressionType(
-                    "BRACKET_EXPRESSION");}
+        protected bool isBracketExpression(Json parsedSql) {
+          return parsedSql.isExpressionType("BRACKET_EXPRESSION");
+        }
 
-                  protected auto isSubQuery(result) {
-                    return (result.isSet("expr_type") && result["expr_type"].isExpressionType(
-                      "SUBQUERY");}
+        protected auto isSubQuery(result) {
+          return parsedSql.isExpressionType("SUBQUERY");
+        }
 
-                    protected auto isComment(result) {
-                      return result.isSet("expr_type") && result["expr_type"].isExpressionType(
-                        "COMMENT");}
+        protected auto isComment(result) {
+          return parsedSql.isExpressionType("COMMENT");
+        }
 
-                      Json processComment(myexpression) {
-                        auto results = []; results["expr_type"] = expressionType("COMMENT");
-                          results["value"] = myexpression; return results;}
+        Json processComment(myexpression) {
+          auto results = [];
+          results["expr_type"] = expressionType("COMMENT");
+          results["value"] = myexpression;
+          return results;
+        }
 
-                          /**
+        /**
      * translates an array of objects into an associative array
      */
-                          auto toArray(mytokenList) {
-                            auto myExpression = []; mytokenList.each!(token => myExpresson = cast(ExpressionToken)token ? token
-                              .toArray() : token); return myExpression;}
+        auto toArray(mytokenList) {
+          auto myExpression = [];
+          mytokenList.each!(token => myExpresson = cast(ExpressionToken)token ? token
+            .toArray() : token);
+          return myExpression;
+        }
 
-                            protected auto array_insert_after(myarray, string aKey, myentry) {
-                              myidx = array_search(aKey, array_keys(myarray)); myarray = array_slice(myarray, 0, myidx + 1, true) + myentry
-                                + array_slice(myarray, myidx + 1, count(myarray) - 1, true);
-                              return myarray;}
-                            }
+        protected auto array_insert_after(myarray, string aKey, myentry) {
+          myidx = array_search(aKey, array_keys(myarray));
+          myarray = array_slice(myarray, 0, myidx + 1, true) + myentry
+            + array_slice(myarray, myidx + 1, count(myarray) - 1, true);
+          return myarray;
+        }
+        }

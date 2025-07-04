@@ -1,3 +1,8 @@
+/****************************************************************************************************************
+* Copyright: © 2018-2025 Ozan Nurettin Süel (aka UIManufaktur)                                                  *
+* License: Subject to the terms of the Apache 2.0 license, as written in the included LICENSE.txt file.         *
+* Authors: Ozan Nurettin Süel (aka UIManufaktur)                                                                *
+*****************************************************************************************************************/
 module uim.languages.sql.parsers.builders.inlist;
 
 import uim.languages.sql;
@@ -9,7 +14,7 @@ class InListBuilder : DSqlBuilder {
 
   protected string buildSubTree(parsedSql, string delim) {
     auto myBuilder = new SubTreeBuilder();
-    return myBuilder.build(parsedSql, string delim);
+    return myBuilder.build(parsedSql, delim);
   }
 
   override string build(Json parsedSql) {

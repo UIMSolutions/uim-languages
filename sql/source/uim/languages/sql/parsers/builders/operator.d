@@ -8,10 +8,8 @@ import uim.languages.sql;
 class OperatorBuilder : DSqlBuilder {
 
   override string build(Json parsedSql) {
-    if (!parsedSql.isExpressionType("OPERATOR")) {
-      return "";
-    }
-    
-    return parsedSql.baseExpression;
+    return !parsedSql.isExpressionType("OPERATOR")
+      ? null
+      : parsedSql.baseExpression;
   }
 }
