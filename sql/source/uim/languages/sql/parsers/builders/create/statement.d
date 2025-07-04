@@ -26,7 +26,7 @@ class CreateStatementBuilder : DSqlBuilder {
     }
 
     protected string buildCreate(Json parsedSql) {
-        auto myBuilder = new CreateBuilder();
+        auto myBuilder = new DCreateSqlBuilder();
         return myBuilder.build(parsedSql);
     }
 }

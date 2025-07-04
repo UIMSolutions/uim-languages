@@ -5,16 +5,18 @@ import uim.languages.sql;
 @safe:
 
 // Builds the LIMIT statement.
-class LimitBuilder : DSqlBuilder {
+class LimitBuilder : ISqlBuilder {
 
   string build(Json parsedSql) {
-    string mySql = (parsedSql["rowcount"].get!string) ~
-      (parsedSql["offset"].get!string
-          ? " OFFSET " ~ parsedSql["offset"].get!string : "");
+    string sql = parsedSql.getString("rowcount") ~
+      (parsedSql.has("offset") 
+        ? " OFFSET " ~ parsedSql.getString("offset") 
+        : "");
 
-    if (mySql.isEmpty) {
+    if (sql.isEmpty) {
       throw new UnableToCreateSQLException("LIMIT", "rowcount", parsedSql, "rowcount");
     }
-    return "LIMIT " ~ mySql;
+
+    return "LIMIT " ~ sql;
   }
 }

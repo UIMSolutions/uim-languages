@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 // Builds the CREATE statement
-class CreateBuilder : DSqlBuilder {
+class DCreateSqlBuilder : DSqlBuilder {
   this() {
   }
 

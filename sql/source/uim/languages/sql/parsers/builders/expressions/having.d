@@ -20,7 +20,7 @@ class HavingExpressionBuilder : WhereExpressionBuilder {
     return mySql;
   }
 
-  string buildKeyValue(string aKey, Json aValue) {
+  string buildKeyValue(string key, Json aValue) {
     string result;
     
     result ~= this.buildColRef(aValue);
@@ -33,7 +33,7 @@ class HavingExpressionBuilder : WhereExpressionBuilder {
     result ~= this.buildUserVariable(aValue);
 
     if (result.isEmpty) { // No change
-      throw new UnableToCreateSQLException("HAVING expression subtree", aKey, aValue, "expr_type");
+      throw new UnableToCreateSQLException("HAVING expression subtree", key, aValue, "expr_type");
     }
 
     result ~= " ";
