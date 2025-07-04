@@ -12,7 +12,7 @@ class LikeBuilder : DSqlBuilder {
         return myBuilder.build(parsedSql, anIndex);
     }
 
-    string build(Json parsedSql) {
+    override string build(Json parsedSql) {
         string mySql = this.buildTable(parsedSql, 0);
         if (mySql.isEmpty) {
             throw new UnableToCreateSQLException("LIKE", "", parsedSql, "table");

@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the CHARACTER SET part of a CREATE TABLE statement. 
 class CharacterSetBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("CHARSET")) {
       return "";
     }

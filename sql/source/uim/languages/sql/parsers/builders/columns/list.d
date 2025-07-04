@@ -10,7 +10,7 @@ import uim.languages.sql;
  */
 class ColumnListBuilder : DSqlBuilder {
 
-  string build(Json parsedSql, string delim = ", ") {
+  override string build(Json parsedSql, string delim = ", ") {
     if (!parsedSql.isExpressionType("COLUMN_LIST")) {
       return "";
     }

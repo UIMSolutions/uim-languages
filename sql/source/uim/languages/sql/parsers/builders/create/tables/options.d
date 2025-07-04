@@ -18,7 +18,7 @@ class CreateTableOptionsBuilder : IBuilder {
         return (parsedSql["delim"].isEmpty ? "" : (parsedSql["delim"])~" ").strip;
     }
 
-    string build(Json parsedSql) {
+    override string build(Json parsedSql) {
         if (!isset(parsedSql["options"]) || parsedSql["options"].isEmpty) {
             return "";
         }

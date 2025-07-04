@@ -6,7 +6,7 @@ import uim.languages.sql;
 // Builds the column definition statement part of CREATE TABLE. 
 class ColumnDefinitionBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     // In Check
     if (!parsedSql.isExpressionType("COLDEF")) {
       return null;

@@ -11,7 +11,7 @@ import uim.languages.sql;
 
 class ColumnReferenceBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("COLREF")) {
       return "";
     }

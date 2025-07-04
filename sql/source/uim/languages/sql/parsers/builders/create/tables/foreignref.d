@@ -22,7 +22,7 @@ class ForeignRefBuilder : DSqlBuilder {
         return myBuilder.build(parsedSql);
     }
 
-    string build(Json parsedSql) {
+    override string build(Json parsedSql) {
         if (!parsedSql.isExpressionType("REFERENCE")) {
             return "";
         }

@@ -6,7 +6,7 @@ import uim.languages.sql;
 // Builds the select-options statement part of CREATE TABLE. 
 class CreateTableSelectOptionBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isSet("select-option") || parsedSql["select-option"].isEmpty) {
       return "";
     }

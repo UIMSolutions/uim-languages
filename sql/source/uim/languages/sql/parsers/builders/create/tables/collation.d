@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the collation expression part of CREATE TABLE.
 class CollationBuilder : DSqlBuilder {
 
-    string build(Json parsedSql) {
+    override string build(Json parsedSql) {
         if (!parsedSql.isExpressionType("COLLATE")) {
             return "";
         }

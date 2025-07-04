@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the PRIMARY KEY statement part of CREATE TABLE. 
 class PrimaryKeyBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("PRIMARY_KEY")) {
       return "";
     }

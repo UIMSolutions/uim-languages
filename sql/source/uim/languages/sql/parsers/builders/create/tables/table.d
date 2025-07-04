@@ -6,7 +6,7 @@ import uim.languages.sql;
 // Builds the CREATE TABLE statement
 class CreateTableBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     string mySql = parsedSql["name"].get!string;
     mySql ~= this.buildCreateTableDefinition(parsedSql);
     mySql ~= this.buildCreateTableOptions(parsedSql);

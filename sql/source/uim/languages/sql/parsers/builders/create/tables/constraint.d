@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the constraint statement part of CREATE TABLE.
 class ConstraintBuilder : DSqlBuilder {
 
-    string build(Json parsedSql) {
+    override string build(Json parsedSql) {
         if (!parsedSql.isExpressionType("CONSTRAINT")) {
             return "";
         }

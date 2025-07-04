@@ -11,7 +11,7 @@ import uim.languages.sql;
 // Builds the bracket expressions within a column type.
 class ColumnTypeBracketExpressionBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("BRACKET_EXPRESSION")) {
       return "";
     }

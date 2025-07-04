@@ -6,7 +6,7 @@ import uim.languages.sql;
 // Builds the create definitions of CREATE TABLE.
 class CreateTableDefinitionBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!isset(parsedSql) || parsedSql["create-def"].isEmpty) {
       return "";
     }

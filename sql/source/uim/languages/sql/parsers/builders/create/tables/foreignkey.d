@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the FOREIGN KEY statement part of CREATE TABLE. 
 class ForeignKeyBuilder : IBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("FOREIGN_KEY")) {
       return "";
     }

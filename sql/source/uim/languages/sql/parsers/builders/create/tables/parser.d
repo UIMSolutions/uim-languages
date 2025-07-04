@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds index parser part of a PRIMARY KEY statement part of CREATE TABLE.
 class IndexParserBuilder : DSqlBuilder {
 
-    string build(Json parsedSql) {
+    override string build(Json parsedSql) {
         if (!parsedSql.isExpressionType(INDEX_PARSER)) {
             return "";
         }

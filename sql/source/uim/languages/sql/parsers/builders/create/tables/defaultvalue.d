@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the default value statement part of a column of a CREATE TABLE. 
 class DefaultValueBuilder : DSqlBuilder {
 
-    string build(Json parsedSql) {
+    override string build(Json parsedSql) {
         if (!parsedSql.isExpressionType("DEF_VALUE")) {
             return "";
         }

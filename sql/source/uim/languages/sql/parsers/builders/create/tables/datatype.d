@@ -10,7 +10,7 @@ import uim.languages.sql;
  */
 class DataTypeBuilder : IBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("DATA_TYPE")) {
       return "";
     }
