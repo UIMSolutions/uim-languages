@@ -1,4 +1,4 @@
-module uim.languages.sql.parsers.builders;
+module uim.languages.sql.parsers.builders.statements.bracket;
 
 import uim.languages.sql;
 

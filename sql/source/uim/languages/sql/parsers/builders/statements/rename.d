@@ -1,4 +1,4 @@
-module uim.languages.sql.parsers.builders;
+module uim.languages.sql.parsers.builders.statements.rename;
 
 import uim.languages.sql;
 

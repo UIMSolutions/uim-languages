@@ -1,4 +1,4 @@
-module uim.languages.sql.parsers.builders.showstatement;
+module uim.languages.sql.parsers.builders.statements.show;
 
 import uim.languages.sql;
 
