@@ -11,12 +11,12 @@ import uim.languages.sql;
 // This class processes the UNION statements.
 class UnionProcessor : DProcessor {
 
-    protected Json processDefault(myToken) {
+    protected override Json processDefault(myToken) {
         auto myProcessor = new DefaultProcessor(this.options);
         return myProcessor.process(myToken);
     }
 
-    protected Json processSQL(myToken) {
+    protected override Json processSQL(myToken) {
         auto myProcessor = new SQLProcessor(this.options);
         return myProcessor.process(myToken);
     }
@@ -41,7 +41,7 @@ class UnionProcessor : DProcessor {
      * is supported in each UNION block. (select)(select)union(select) is not legal.
      * The extra queries will be silently ignored.
      */
-    protected Json processMySQLUnion(queries) {
+    protected override Json processMySQLUnion(queries) {
         myunionTypes = ["UNION", "UNION ALL"];
         foreach (myUnionType; myunionTypes) {
 
@@ -118,7 +118,7 @@ class UnionProcessor : DProcessor {
         return queries;
     }
 
-    Json process(myinputArray) {
+    override Json process(myinputArray) {
         auto resultputArray = []; // ometimes the parser needs to skip ahead until a particular
         // oken is found
         bool isSkipUntilToken = false;

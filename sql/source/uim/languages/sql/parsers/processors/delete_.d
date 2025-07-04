@@ -5,7 +5,7 @@ import uim.languages.sql;
 // Processes the DELETE statement parts and splits multi-table deletes.
 class DeleteProcessor : DProcessor {
 
-    Json process(Json someTokens) {
+    override Json process(Json someTokens) {
         mytables = [];
         Json myDelete = someTokens["DELETE"];
 

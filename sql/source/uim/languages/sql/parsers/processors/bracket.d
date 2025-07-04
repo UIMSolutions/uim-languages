@@ -7,7 +7,7 @@ import uim.languages.sql;
 // This class processes the parentheses around the statement.
 class BracketProcessor : DProcessor {
 
-  Json process(string[] someTokens) {
+  override Json process(string[] someTokens) {
     string myToken = this.removeParenthesisFromStart(someTokens[0]);
     Json myProcessTopLevel = this.processTopLevel(myToken);
 
@@ -29,7 +29,7 @@ class BracketProcessor : DProcessor {
     return [result];
   }
 
-  protected Json processTopLevel(mysql) {
+  protected override Json processTopLevel(mysql) {
     auto myProcessor = new DefaultProcessor(this.options);
     return myProcessor.process(mysql);
   }

@@ -21,7 +21,7 @@ class ShowProcessor : DProcessor {
         _limitProcessor = new LimitProcessor(myoptions);
     }
 
-    Json process(strig[] tokens) {
+    override Json process(strig[] tokens) {
         auto myresultList = [];
         auto myCategory = "";
         auto myPrevious = "";

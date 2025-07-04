@@ -12,20 +12,20 @@ import uim.languages.sql;
 // This class processes the PARTITION BY statements within CREATE TABLE.
 class PartitionOptionsProcessor : DProcessor {
 
-    protected Json processExpressionList(myunparsed) {
+    protected override Json processExpressionList(myunparsed) {
         auto myProcessor = new ExpressionListProcessor(this.options);
         auto myExpression = this.removeParenthesisFromStart(myunparsed);
        myExpression = this.splitSQLIntoTokens(myExpression);
         return myProcessor.process(myExpression);
     }
 
-    protected Json processColumnList(myunparsed) {
+    protected override Json processColumnList(myunparsed) {
         auto myProcessor = new ColumnListProcessor(this.options);
        myExpression = this.removeParenthesisFromStart(myunparsed);
         return myProcessor.process(myExpression);
     }
 
-    protected Json processPartitionDefinition(myunparsed) {
+    protected override Json processPartitionDefinition(myunparsed) {
         auto myProcessor = new PartitionDefinitionProcessor(this.options);
         auto myExpression = this.removeParenthesisFromStart(myunparsed);
        myExpression = this.splitSQLIntoTokens(myExpression);
@@ -48,7 +48,7 @@ class PartitionOptionsProcessor : DProcessor {
         return createExpression("BRACKET_EXPRESSION", mytoken, "sub_tree" : false];
     }
 
-    Json process(strig[] tokens) {
+    override Json process(strig[] tokens) {
 
         Json result = Json.emptyObject;
         result["partition-options"] = Json.emptyArray;

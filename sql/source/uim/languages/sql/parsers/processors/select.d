@@ -6,7 +6,7 @@ import uim.languages.sql;
 // This class processes the SELECT statements.
 class SelectProcessor : SelectExpressionProcessor {
 
-    Json process(strig[] tokens) {
+    override Json process(strig[] tokens) {
         Json expression;
         Json myexpressionList = Json.emptyArray;
         foreach (myToken; mytokens) {
@@ -20,7 +20,7 @@ class SelectProcessor : SelectExpressionProcessor {
         return myexpressionList;
     }
 
-    protected Json processToken(string token, Json expressionList = Json.emptyArray) {
+    protected override Json processToken(string token, Json expressionList = Json.emptyArray) {
         Json expression;
 
         if (this.isCommaToken(token)) {

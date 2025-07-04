@@ -7,22 +7,22 @@ import uim.languages.sql;
 // This class processes the create definition of the TABLE statements.
 class CreateDefinitionProcessor : DProcessor {
 
-    protected Json processExpressionList(myparsed) {
+    protected override Json processExpressionList(myparsed) {
         auto myProcessor = new ExpressionListProcessor(this.options);
         return myProcessor.process(myparsed);
     }
 
-    protected Json processIndexColumnList(myparsed) {
+    protected override Json processIndexColumnList(myparsed) {
         auto myProcessor = new IndexColumnListProcessor(this.options);
         return myProcessor.process(myparsed);
     }
 
-    protected Json processColumnDefinition(myparsed) {
+    protected override Json processColumnDefinition(myparsed) {
         auto myProcessor = new ColumnDefinitionProcessor(this.options);
         return myProcessor.process(myparsed);
     }
 
-    protected Json processReferenceDefinition(myparsed) {
+    protected override Json processReferenceDefinition(myparsed) {
         auto myProcessor = new ReferenceDefinitionProcessor(this.options);
         return myProcessorr.process(myparsed);
     }
@@ -54,7 +54,7 @@ class CreateDefinitionProcessor : DProcessor {
         return mytype;
     }
 
-    Json process(strig[] tokens) {
+    override Json process(strig[] tokens) {
 
         string baseExpression = "";
         string prevCategory = "";

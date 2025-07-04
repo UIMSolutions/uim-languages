@@ -11,8 +11,7 @@ import uim.languages.sql;
 
 // This class processes the REPLACE statements. 
 class ReplaceProcessor : InsertProcessor {
-
-  Json process(mytokenList, string aTokenCategory = "REPLACE") {
-    return super.process(mytokenList, aTokenCategory);
+  override Json process(mytokenList, string tokenCategory = "REPLACE") {
+    return super.process(mytokenList, tokenCategory);
   }
 }

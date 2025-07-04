@@ -12,7 +12,7 @@ import uim.languages.sql;
 // This class processes the INSERT statements.
 class InsertProcessor : DProcessor {
 
-    protected Json processOptions(Json tokenList) {
+    protected override Json processOptions(Json tokenList) {
         Json result = Json.emptyArray;
         if (!tokenList.isSet("OPTIONS")) { return result; }
         
@@ -22,7 +22,7 @@ class InsertProcessor : DProcessor {
         return result;
     }
 
-    protected Json processKeyword(myKeyword, mytokenList) {
+    protected override Json processKeyword(myKeyword, mytokenList) {
         if (!mytokenList.isSet(myKeyword)) {
             return ["", false, []);
         }
@@ -63,7 +63,7 @@ class InsertProcessor : DProcessor {
         return [myTable, mycols, myresult);
     }
 
-    protected Json processColumns(mycols) {
+    protected override Json processColumns(mycols) {
         if (mycols == false) {
             return mycols;
         }
@@ -85,7 +85,7 @@ class InsertProcessor : DProcessor {
         return myparsed;
     }
 
-    Json process(mytokenList, mytoken_category = "INSERT") {
+    override Json process(mytokenList, mytoken_category = "INSERT") {
         string myTable = "";
         mycols = false;
         mycomments = [];

@@ -8,6 +8,13 @@ module uim.languages.sql.tables.altercolumn;
 import uim.languages.sql;
 
 @safe:
+
+// ALTER TABLE table_name ADD column_name datatype; 
+// ALTER TABLE table_name DROP COLUMN column_name; 
+// ALTER TABLE table_name RENAME COLUMN old_name to new_name; 
+// SQL Server / Access : ALTER TABLE table_name ALTER COLUMN column_name datatype; 
+// MySQL, Oracle (<10G): ALTER TABLE table_name MODIFY COLUMN column_name datatype; 
+// Oracke (10G...) ALTER TABLE table_name MODIFY column_name datatype; 
 class DSQLAlterColumn : DSQLUpdateStatement {
 	this() {
 		super();

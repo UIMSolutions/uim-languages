@@ -26,7 +26,7 @@ class SubpartitionDefinitionProcessor : DProcessor {
         return createExpression("BRACKET_EXPRESSION"), "base_expr" : myToken, "sub_tree" : false];
     }
 
-    Json process(strig[] tokens) {
+    override Json process(strig[] tokens) {
 
         auto myresult = [];
         string previousCategory = "";
@@ -193,7 +193,7 @@ class SubpartitionDefinitionProcessor : DProcessor {
         return myresult;
     }
 
-    Json processByCategory(string aCategory) {
+    override Json processByCategory(string aCategory) {
         switch (aCategory) {
 
                 case "MIN_ROWS":

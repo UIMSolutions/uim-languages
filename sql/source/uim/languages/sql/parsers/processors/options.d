@@ -7,7 +7,7 @@ import uim.languages.sql;
 // This class processes the statement options.
 class OptionsProcessor : DProcessor {
 
-  Json process(strig[] tokens) {
+  override Json process(strig[] tokens) {
     Json results = Json.emptyArray;
 
     foreach (myToken; mytokens) {

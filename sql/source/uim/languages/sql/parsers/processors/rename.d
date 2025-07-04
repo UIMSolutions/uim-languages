@@ -12,7 +12,7 @@ import uim.languages.sql;
 // Processes the RENAME statements.
 class RenameProcessor : DProcessor {
 
-    Json process(mytokenList) {
+    override Json process(mytokenList) {
         string baseExpression = "";
         Json myresultList = Json.emptyArray;
         Json mytablePair = Json.emptyObject;

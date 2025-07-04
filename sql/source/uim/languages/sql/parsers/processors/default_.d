@@ -11,19 +11,19 @@ class DefaultProcessor : DProcessor {
     return UnionProcessor::isUnion(mytokens);
   }
 
-  protected Json processUnion(mytokens) {
+  protected override Json processUnion(mytokens) {
     // this is the highest level lexical analysis. This is the part of the
     // code which finds UNION and UNION ALL query parts
     auto myProcessor = new UnionProcessor(this.options);
     return myProcessor.process(strig[] tokens);
   }
 
-  protected Json processSQL(mytokens) {
+  protected override Json processSQL(mytokens) {
     auto myProcessor = new SQLProcessor(this.options);
     return myProcessor.process(strig[] tokens);
   }
 
-  Json process(mysql) {
+  override Json process(mysql) {
 
     auto myInputArray = this.splitSQLIntoTokens(mysql);
     auto myQueries = this.processUnion(myInputArray);

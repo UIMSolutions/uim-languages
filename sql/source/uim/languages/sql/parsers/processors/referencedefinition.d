@@ -13,7 +13,7 @@ class ReferenceDefinitionProcessor : DProcessor {
         return myExpression;
     }
 
-    Json process(strig[] tokens) {
+    override Json process(strig[] tokens) {
 
        myExpression = createExpression("REFERENCE"), "base_expr" : false, "sub_tree" : []];
         baseExpression = "";

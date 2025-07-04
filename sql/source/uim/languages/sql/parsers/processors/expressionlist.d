@@ -7,7 +7,7 @@ import uim.languages.sql;
 // This class processes expression lists.
 class ExpressionListProcessor : DProcessor {
 
-    Json process(tokens) {
+    override Json process(tokens) {
         myresultList = [];
         bool isSkipNext = false;
         myprev = new ExpressionToken();

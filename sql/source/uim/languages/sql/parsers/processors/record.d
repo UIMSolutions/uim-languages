@@ -11,12 +11,12 @@ import uim.languages.sql;
 // This class processes records of an INSERT statement.
 class RecordProcessor : DProcessor {
 
-  protected Json processExpressionList(Json unparsed) {
+  protected override Json processExpressionList(Json unparsed) {
     auto myProcessor = new ExpressionListProcessor(this.options);
     return myProcessor.process(unparsed);
   }
 
-  Json process(Json unparsed) {
+  override Json process(Json unparsed) {
     auto unparsedCorrected = this.removeParenthesisFromStart(unparsed);
     auto myTokens = this.splitSQLIntoTokens(unparsedCorrected);
 

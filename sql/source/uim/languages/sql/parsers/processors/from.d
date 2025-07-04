@@ -10,17 +10,17 @@ import uim.languages.sql;
  * */
 class FromProcessor : DProcessor {
 
-    protected Json processExpressionList(myunparsed) {
+    protected override Json processExpressionList(myunparsed) {
         auto myProcessor = new ExpressionListProcessor(this.options);
         return myProcessor.process(myunparsed);
     }
 
-    protected Json processColumnList(myunparsed) {
+    protected override Json processColumnList(myunparsed) {
         auto myProcessor = new ColumnListProcessor(this.options);
         return myProcessor.process(myunparsed);
     }
 
-    protected Json processSQLDefault(myunparsed) {
+    protected override Json processSQLDefault(myunparsed) {
         auto myProcessor = new DefaultProcessor(this.options);
         return myProcessor.process(myunparsed);
     }
@@ -47,7 +47,7 @@ class FromProcessor : DProcessor {
         return result;
     }
 
-    protected Json processFromExpression(&parseInfo) {
+    protected override Json processFromExpression(&parseInfo) {
         result = [];
 
         if (parseInfo["hints"].isEmpty) {
@@ -118,7 +118,7 @@ class FromProcessor : DProcessor {
         return result;
     }
 
-    Json process(strig[] tokens) {
+    override Json process(strig[] tokens) {
         auto parseInfo = this.initParseInfo();
         auto myExpression = [];
         string tokenCategory = "";

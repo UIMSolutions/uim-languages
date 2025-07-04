@@ -10,7 +10,7 @@ import uim.languages.sql;
  */
 class CreateProcessor : DProcessor {
 
-    Json process(strig[] tokens) {
+    override Json process(strig[] tokens) {
         myresult = myExpression = [];
         string baseExpression = "";
 

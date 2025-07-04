@@ -12,14 +12,14 @@ import uim.languages.sql;
 // This class processes the PARTITION statements within CREATE TABLE.
 class PartitionDefinitionProcessor : DProcessor {
 
-    protected Json processExpressionList(myunparsed) {
+    protected override Json processExpressionList(myunparsed) {
         auto myProcessor = new ExpressionListProcessor(this.options);
        myExpression = this.removeParenthesisFromStart(myunparsed);
         auto myTokens = this.splitSQLIntoTokens(myExpression);
         return myProcessor.process(myTokens);
     }
 
-    protected Json processSubpartitionDefinition(myunparsed) {
+    protected override Json processSubpartitionDefinition(myunparsed) {
         auto myProcessor = new SubpartitionDefinitionProcessor(this.options);
        myExpression = this.removeParenthesisFromStart(myunparsed);
         auto myTokens = this.splitSQLIntoTokens(myExpression);
@@ -43,7 +43,7 @@ class PartitionDefinitionProcessor : DProcessor {
         newExpression["sub_tree"] = Json.emptyArray;
     }
 
-    Json process(strig[] tokens) {
+    override Json process(strig[] tokens) {
 auto myresult = [];
         string myPreviousCategory = "";
         string myCurrentCategory = "";

@@ -11,7 +11,7 @@ import uim.languages.sql;
  * */
 class ColumnDefinitionProcessor : DProcessor {
 
-    protected Json processExpressionList(myparsed) {
+    protected override Json processExpressionList(myparsed) {
         auto myProcessor = new ExpressionListProcessor(this.options);
        myExpression = this.removeParenthesisFromStart(myparsed);
        myExpression = this.splitSQLIntoTokens(myExpression);
@@ -19,7 +19,7 @@ class ColumnDefinitionProcessor : DProcessor {
         return myProcessor.process(myExpression);
     }
 
-    protected Json processReferenceDefinition(myparsed) {
+    protected override Json processReferenceDefinition(myparsed) {
         auto myProcessor = new ReferenceDefinitionProcessor(this.options);
         return myProcessor.process(myparsed);
     }
@@ -51,7 +51,7 @@ class ColumnDefinitionProcessor : DProcessor {
         return myExpression;
     }
 
-    Json process(strig[] tokens) {
+    override Json process(strig[] tokens) {
         string baseExpression = "";
         string currentCategory = "";
        myExpression = [];

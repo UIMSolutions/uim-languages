@@ -12,7 +12,7 @@ import uim.languages.sql;
 // Processes the SELECT expressions.
 class SelectExpressionProcessor : DProcessor {
 
-    protected Json processExpressionList(myunparsed) {
+    protected override Json processExpressionList(myunparsed) {
         auto myProcessor = new ExpressionListProcessor(this.options);
         return myprocessor.process(myunparsed);
     }
@@ -21,7 +21,7 @@ class SelectExpressionProcessor : DProcessor {
      * This fuction processes each SELECT clause.
      * We determine what (if any) alias is provided, and we set the type of expression.
      */
-    Json process(myexpression) {
+    override Json process(myexpression) {
         string[] tokens = this.splitSQLIntoTokens(myexpression);
         size_t numberOfTokens = tokens.length;
         if (numberOfTokens == 0) {

@@ -10,7 +10,7 @@ class IntoProcessor : DProcessor {
     * TODO: This is a dummy function, we cannot parse INTO as part of SELECT
     * at the moment
     */
-  Json process(mytokenList) {
+  override Json process(mytokenList) {
     myunparsed = mytokenList["INTO"];
     foreach (myKey, myToken; myunparsed) {
       if (this.isWhitespaceToken(myToken) || this.isCommaToken(myToken)) {

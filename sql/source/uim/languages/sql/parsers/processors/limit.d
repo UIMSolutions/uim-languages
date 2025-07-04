@@ -11,7 +11,7 @@ module uim.languages.sql.parsers.processors.limit;
   */
 class LimitProcessor : DProcessor {
 
-    Json process(string[] mytokens) {
+    override Json process(string[] mytokens) {
         string countRows = "";
         string offset = "";
 

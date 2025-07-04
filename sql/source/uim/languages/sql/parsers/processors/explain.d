@@ -22,7 +22,7 @@ class ExplainProcessor : DProcessor {
   }
 
   // TODO: refactor that function
-  Json process(tokens, myKeys = []) {
+  override Json process(tokens, myKeys = []) {
 
     string baseExpression = "";
     Json myExpression;

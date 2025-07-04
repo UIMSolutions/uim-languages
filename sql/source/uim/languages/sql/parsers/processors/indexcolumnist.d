@@ -14,7 +14,7 @@ class IndexColumnListProcessor : DProcessor {
         return ["name" : false, "no_quotes" : false, "length" : false, "dir" : false];
     }
 
-    Json process(mysql) {
+    override Json process(mysql) {
         mytokens = this.splitSQLIntoTokens(mysql);
 
        myExpression = this.initExpression();

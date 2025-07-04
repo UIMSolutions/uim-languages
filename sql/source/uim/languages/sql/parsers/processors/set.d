@@ -12,7 +12,7 @@ import uim.languages.sql;
 // Processes the SET statements.
 class SetProcessor : DProcessor {
 
-    protected Json processExpressionList(tokens) {
+    protected override Json processExpressionList(tokens) {
         auto myProcessor = new ExpressionListProcessor(this.options);
         return myProcessor.process(tokens);
     }
@@ -21,7 +21,7 @@ class SetProcessor : DProcessor {
      * A SET list is simply a list of key = value expressions separated by comma (,).
      * This auto produces a list of the key/value expressions.
      */
-    protected Json processAssignment(baseExpression) {
+    protected override Json processAssignment(baseExpression) {
         auto myAssignment = this.processExpressionList(this.splitSQLIntoTokens(baseExpression));
 
         // TODO: if the left side of the assignment is a reserved keyword, it should be changed to colref
@@ -31,7 +31,7 @@ class SetProcessor : DProcessor {
         return newExpression; 
     }
 
-    Json process(string[] tokens, bool isUpdate = false) {
+    override Json process(string[] tokens, bool isUpdate = false) {
         Json result;
         string baseExpression = "";
         bool anAssignment = false;

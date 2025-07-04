@@ -12,7 +12,7 @@ import uim.languages.sql;
 // This class processes the VALUES statements.
 class ValuesProcessor : DProcessor {
 
-    Json process(strig[] tokens) {
+    override Json process(strig[] tokens) {
 
         string currentCategory = "";
         myparsed = [];
@@ -97,12 +97,12 @@ class ValuesProcessor : DProcessor {
         return mytokens;
     }
 
-    protected Json processExpressionList(myunparsed) {
+    protected override Json processExpressionList(myunparsed) {
         auto myProcessor = new ExpressionListProcessor(this.options);
         return myProcessor.process(myunparsed);
     }
 
-    protected Json processRecord(myunparsed) {
+    protected override Json processRecord(myunparsed) {
         auto myProcessor = new RecordProcessor(this.options);
         return myProcessor.process(myunparsed);
     }

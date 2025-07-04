@@ -15,7 +15,7 @@ import uim.languages.sql;
  */
 class DropProcessor : DProcessor {
 
-    Json process(mytokenList) {
+    override Json process(mytokenList) {
         bool exists = false;
         string baseExpression = "";
         auto objectType = "";

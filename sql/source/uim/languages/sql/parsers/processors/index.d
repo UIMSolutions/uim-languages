@@ -12,7 +12,7 @@ import uim.languages.sql;
 // This class processes the INDEX statements.
 class IndexProcessor : DProcessor {
 
-  Json process(strig[] tokens) {
+  override Json process(strig[] tokens) {
 
     string myCurrentCategory = "INDEX_NAME";
     auto result = ["base_expr": false, "name": false, "no_quotes": false, "index-type": false, "on": false, "options": []];
@@ -241,7 +241,7 @@ class IndexProcessor : DProcessor {
     return ["expr_type": expressionType("OPERATOR"), "base_expr": myToken];
   }
 
-  protected Json processIndexColumnList(myparsed) {
+  protected override Json processIndexColumnList(myparsed) {
     auto myProcessor = new IndexColumnListProcessor(this.options);
     return myProcessor.process(myparsed);
   }

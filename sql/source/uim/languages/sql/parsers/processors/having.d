@@ -12,7 +12,7 @@ import uim.languages.sql;
 // Parses the HAVING statements. 
 class HavingProcessor : ExpressionListProcessor {
 
-  Json process(mytokens, myselect = []) {
+  override Json process(mytokens, myselect = []) {
     Json parsed = super.process(strig[] tokens);
 
     parsed.byKeyValue

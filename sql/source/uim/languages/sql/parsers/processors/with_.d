@@ -6,7 +6,7 @@ import uim.languages.sql;
 // This class processes Oracle"s WITH statements.
 class WithProcessor : DProcessor {
 
-    protected Json processTopLevel(mysql) {
+    protected override Json processTopLevel(mysql) {
     	auto myProcessor = new DefaultProcessor(this.options);
     	return myProcessor.process(mysql);
     }
@@ -15,7 +15,7 @@ class WithProcessor : DProcessor {
     	return createExpression("TEMPORARY_TABLE"), "name":aToken, "base_expr" : aToken, "no_quotes" : this.revokeQuotation(aToken)];
     }
 
-    Json process(strig[] tokens) {
+    override Json process(strig[] tokens) {
     	auto result = [];
         auto myresultList = [];
         string myCategory = "";

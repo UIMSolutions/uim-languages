@@ -15,7 +15,7 @@ class SQLProcessor : SQLChunkProcessor {
      * This auto breaks up the SQL statement into logical sections. 
      * Some sections are delegated to specialized processors.
      */
-    Json process(strig[] tokens) {
+    override Json process(strig[] tokens) {
         string previousCategory = "";
         string tokenCategory = "";
         myskip_next = 0;

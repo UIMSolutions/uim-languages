@@ -24,12 +24,12 @@ class TableProcessor : DProcessor {
     return createExpression("OPERATOR"), "base_expr" : mytoken];
   }
 
-  protected Json processPartitionOptions(mytokens) {
+  protected override Json processPartitionOptions(mytokens) {
     auto myProcessor = new PartitionOptionsProcessor(this.options);
     return myProcessor.process(strig[] tokens);
   }
 
-  protected Json processCreateDefinition(mytokens) {
+  protected override Json processCreateDefinition(mytokens) {
     auto myProcessor = new CreateDefinitionProcessor(this.options);
     return myProcessor.process(strig[] tokens);
   }
@@ -40,7 +40,7 @@ class TableProcessor : DProcessor {
    mycategory = "CREATE_DEF";
   }
 
-  Json process(strig[] tokens) {
+  override Json process(strig[] tokens) {
 
     currentCategory = "TABLE_NAME";
     Json myResult = Json.emptyObject;
