@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the statement options.
-class OptionsProcessor : Processor {
+class OptionsProcessor : DProcessor {
 
   Json process(strig[] tokens) {
     Json results = Json.emptyArray;

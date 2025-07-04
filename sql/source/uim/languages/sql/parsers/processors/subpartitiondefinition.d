@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the SUBPARTITION statements within CREATE TABLE. */
-class SubpartitionDefinitionProcessor : Processor {
+class SubpartitionDefinitionProcessor : DProcessor {
 
     protected Json getReservedType(myToken) {
       Json result = Json.emptyObject;

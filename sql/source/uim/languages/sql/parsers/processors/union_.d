@@ -3,13 +3,13 @@
 * License: Subject to the terms of the Apache 2.0 license, as written in the included LICENSE.txt file.         *
 * Authors: Ozan Nurettin Süel (aka UIManufaktur)                                                                *
 *****************************************************************************************************************/
-module uim.languages.sql.parsers.processors.union;
+module uim.languages.sql.parsers.processors.union_;
 
 import uim.languages.sql;
 
 @safe:
 // This class processes the UNION statements.
-class UnionProcessor : Processor {
+class UnionProcessor : DProcessor {
 
     protected Json processDefault(myToken) {
         auto myProcessor = new DefaultProcessor(this.options);

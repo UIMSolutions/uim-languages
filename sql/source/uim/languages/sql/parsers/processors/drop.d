@@ -1,3 +1,8 @@
+/****************************************************************************************************************
+* Copyright: © 2018-2025 Ozan Nurettin Süel (aka UIManufaktur)                                                  *
+* License: Subject to the terms of the Apache 2.0 license, as written in the included LICENSE.txt file.         *
+* Authors: Ozan Nurettin Süel (aka UIManufaktur)                                                                *
+*****************************************************************************************************************/
 module uim.languages.sql.parsers.processors.drop;
 
 import uim.languages.sql;
@@ -8,7 +13,7 @@ import uim.languages.sql;
  * This file : the processor for the DROP statements.
  * This class processes the DROP statements.
  */
-class DropProcessor : Processor {
+class DropProcessor : DProcessor {
 
     Json process(mytokenList) {
         bool exists = false;

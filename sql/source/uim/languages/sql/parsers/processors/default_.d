@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the incoming sql string.
-class DefaultProcessor : Processor {
+class DefaultProcessor : DProcessor {
 
   protected auto isUnion(mytokens) {
     return UnionProcessor::isUnion(mytokens);

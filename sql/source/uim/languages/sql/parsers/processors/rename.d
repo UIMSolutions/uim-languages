@@ -1,3 +1,8 @@
+/****************************************************************************************************************
+* Copyright: © 2018-2025 Ozan Nurettin Süel (aka UIManufaktur)                                                  *
+* License: Subject to the terms of the Apache 2.0 license, as written in the included LICENSE.txt file.         *
+* Authors: Ozan Nurettin Süel (aka UIManufaktur)                                                                *
+*****************************************************************************************************************/
 module uim.languages.sql.parsers.processors.rename;
 
 import uim.languages.sql;
@@ -5,7 +10,7 @@ import uim.languages.sql;
 @safe:
 
 // Processes the RENAME statements.
-class RenameProcessor : Processor {
+class RenameProcessor : DProcessor {
 
     Json process(mytokenList) {
         string baseExpression = "";

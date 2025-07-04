@@ -9,7 +9,7 @@ import uim.languages.sql;
  * This file : the processor for column definition part of a CREATE TABLE statement.
  * This class processes the column definition part of a CREATE TABLE statement.
  * */
-class ColumnDefinitionProcessor : Processor {
+class ColumnDefinitionProcessor : DProcessor {
 
     protected Json processExpressionList(myparsed) {
         auto myProcessor = new ExpressionListProcessor(this.options);

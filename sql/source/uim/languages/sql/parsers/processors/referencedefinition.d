@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the reference definition part of the CREATE TABLE statements.
-class ReferenceDefinitionProcessor : Processor {
+class ReferenceDefinitionProcessor : DProcessor {
 
     protected string buildReferenceDef(myExpression, baseExpression, myKey) {
        myExpression["till"] = myKey;

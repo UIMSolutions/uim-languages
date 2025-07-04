@@ -10,7 +10,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the VALUES statements.
-class ValuesProcessor : Processor {
+class ValuesProcessor : DProcessor {
 
     Json process(strig[] tokens) {
 

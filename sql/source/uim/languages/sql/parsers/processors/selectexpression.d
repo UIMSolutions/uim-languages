@@ -10,7 +10,7 @@ import uim.languages.sql;
 @safe:
 
 // Processes the SELECT expressions.
-class SelectExpressionProcessor : Processor {
+class SelectExpressionProcessor : DProcessor {
 
     protected Json processExpressionList(myunparsed) {
         auto myProcessor = new ExpressionListProcessor(this.options);
@@ -19,8 +19,7 @@ class SelectExpressionProcessor : Processor {
 
     /**
      * This fuction processes each SELECT clause.
-     * We determine what (if any) alias
-     * is provided, and we set the type of expression.
+     * We determine what (if any) alias is provided, and we set the type of expression.
      */
     Json process(myexpression) {
         string[] tokens = this.splitSQLIntoTokens(myexpression);

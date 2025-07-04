@@ -1,11 +1,16 @@
-module uim.languages.sql.parsers.processors;
+/****************************************************************************************************************
+* Copyright: © 2018-2025 Ozan Nurettin Süel (aka UIManufaktur)                                                  *
+* License: Subject to the terms of the Apache 2.0 license, as written in the included LICENSE.txt file.         *
+* Authors: Ozan Nurettin Süel (aka UIManufaktur)                                                                *
+*****************************************************************************************************************/
+module uim.languages.sql.parsers.processors.partitionoptions;
 
 import uim.languages.sql;
 
 @safe:
 
 // This class processes the PARTITION BY statements within CREATE TABLE.
-class PartitionOptionsProcessor : Processor {
+class PartitionOptionsProcessor : DProcessor {
 
     protected Json processExpressionList(myunparsed) {
         auto myProcessor = new ExpressionListProcessor(this.options);

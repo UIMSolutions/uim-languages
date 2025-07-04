@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the create definition of the TABLE statements.
-class CreateDefinitionProcessor : Processor {
+class CreateDefinitionProcessor : DProcessor {
 
     protected Json processExpressionList(myparsed) {
         auto myProcessor = new ExpressionListProcessor(this.options);

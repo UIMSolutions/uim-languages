@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the parentheses around the statement.
-class BracketProcessor : Processor {
+class BracketProcessor : DProcessor {
 
   Json process(string[] someTokens) {
     string myToken = this.removeParenthesisFromStart(someTokens[0]);

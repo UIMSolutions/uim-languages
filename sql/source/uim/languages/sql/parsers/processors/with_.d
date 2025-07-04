@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe: 
 // This class processes Oracle"s WITH statements.
-class WithProcessor : Processor {
+class WithProcessor : DProcessor {
 
     protected Json processTopLevel(mysql) {
     	auto myProcessor = new DefaultProcessor(this.options);
