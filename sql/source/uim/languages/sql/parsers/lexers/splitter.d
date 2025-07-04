@@ -1,7 +1,12 @@
+/****************************************************************************************************************
+* Copyright: © 2018-2025 Ozan Nurettin Süel (aka UIManufaktur)                                                  *
+* License: Subject to the terms of the Apache 2.0 license, as written in the included LICENSE.txt file.         *
+* Authors: Ozan Nurettin Süel (aka UIManufaktur)                                                                *
+*****************************************************************************************************************/
 module uim.languages.sql.parsers.lexer;
 
 /**
- * Defines the characters, which are used to split the given SQL string. Part of SqlParser. */
+ * Defines the characters, which are used to split the given SQL string. Part of SqlParser. * /
  * This class holds a sorted array of characters, which are used as stop token.
  * On every part of the array the given SQL string will be split into single tokens.
  * The array must be sorted by element size, longest first (3 chars . 2 chars . 1 char). */
