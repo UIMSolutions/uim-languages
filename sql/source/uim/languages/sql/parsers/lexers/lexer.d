@@ -15,279 +15,373 @@ import uim.languages.sql;
  * use to build the result array.
  */
 class SQLLexer {
+  protected LexerSplitter _splitters;
 
-    protected mysplitters;
-
-    /**
+  /**
      * Constructor.
      *
      * It initializes some fields.
      */
-    this() {
-        this.splitters = new LexerSplitter();
-    }
+  this() {
+    splitters(new LexerSplitter());
+  }
 
-    /**
+  /**
      * Ends the given string myhaystack with the string myneedle?
      * @return true, if the parameter myhaystack ends with the character sequences myneedle, false otherwise
      */
-    protected bool endsWith(string haystack, string aNeedle) {
-        return aNeedle.isEmpty 
-            ? true
-            : (substr(haystack, -length) == aNeedle);
-    }
+  protected bool endsWith(string haystack, string aNeedle) {
+    return aNeedle.isEmpty
+      ? true : (substr(haystack, -length) == aNeedle);
+  }
 
-    auto split(string aSql) {
-        if (!is_string(aSql)) {
-            throw new InvalidParameterException(aSql);
+  string[] split(string aSql) {
+    string[] tokens = preg_split(this.splitters.getSplittersRegexPattern(), aSql, 0, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+
+    return tokens.concatComments
+      .concatEscapeSequences
+      .balanceBackticks
+      .concatColReferences
+      .balanceParenthesis
+      .concatUserDefinedVariables
+      .concatScientificNotations
+      .concatNegativeNumbers;
+  }
+
+  protected auto concatNegativeNumbers(string[] tokens) {
+    auto clearedTokens = tokens.clearTokens;
+
+    size_t tokenCounter = 0;
+    size_t numberOfTokens = clearedTokens.length;
+    bool isPossibleSign = true;
+
+    while (tokenCounter < numberOfTokens) {
+      string token = clearedTokens[tokenCounter];
+
+      // a sign is also possible on the first position of the tokenlist
+      if (isPossibleSign == true) {
+        if (token == "-" || token == "+") {
+          if (isNumeric(clearedTokens[tokenCounter + 1])) {
+            clearedTokens[tokenCounter + 1] = token.clearedTokens[tokenCounter + 1];
+            clearedTokens[tokenCounter] = null; // clear the token;
+          }
         }
-        auto myTokens = preg_split(this.splitters.getSplittersRegexPattern(), aSql, 0, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
-        myTokens = this.concatComments(myTokens);
-        myTokens = this.concatEscapeSequences(myTokens);
-        myTokens = this.balanceBackticks(myTokens);
-        myTokens = this.concatColReferences(myTokens);
-        myTokens = this.balanceParenthesis(myTokens);
-        myTokens = this.concatUserDefinedVariables(myTokens);
-        myTokens = this.concatScientificNotations(myTokens);
-        myTokens = this.concatNegativeNumbers(myTokens);
-        return myTokens;
+        isPossibleSign = false;
+        continue;
+      }
+
+      // TODO: we can have sign of a number after "(" and ",", are others possible?
+      if (token.substr(-1, 1) == "," || token.substr(-1, 1) == "(") {
+        isPossibleSign = true;
+      }
+
+      tokenCounter++;
     }
 
-    protected auto concatNegativeNumbers(mytokens) {
+    return clearedTokens.clearTokens; // remove empty tokens
+  }
 
-    	size_t myTokenCounter = 0;
-    	size_t numberOfTokens = count(mytokens);
-    	bool isPossibleSign = true;
+  protected auto concatScientificNotations(string[] tokens) {
+    auto clearedTokens = tokens.clearTokens;
 
-    	while (myTokenCounter < numberOfTokens) {
+    size_t tokenCounter = 0;
+    size_t numberOfTokens = clearedTokens.length;
+    bool isScientific = false;
 
-    		if (!mytokens.iSet(myTokenCounter)) {
-    			 myTokenCounter++;
-    			continue;
-    		}
+    while (tokenCounter < numberOfTokens) {
 
-    		 mytoken = mytokens[myTokenCounter];
+      string token = clearedTokens[tokenCounter];
 
-    		// a sign is also possible on the first position of the tokenlist
-    		if (isPossibleSign == true) {
-				if (mytoken == "-" || mytoken == "+") {
-					if (is_numeric(mytokens[myTokenCounter + 1])) {
-						 mytokens[myTokenCounter + 1] = mytoken . mytokens[myTokenCounter + 1];
-						unset(mytokens[myTokenCounter]);
-					}
-				}
-				isPossibleSign = false;
-				continue;
-    		}
-
-    		// TODO: we can have sign of a number after "(" and ",", are others possible?
-    		if (substr(mytoken, -1, 1) == "," || substr(mytoken, -1, 1) == "(") {
-    			isPossibleSign = true;
-    		}
-
-    		 myTokenCounter++;
-   		}
-
-   		return array_values(mytokens);
-    }
-
-    protected auto concatScientificNotations(mytokens) {
-
-        size_t myTokenCounter = 0;
-        numberOfTokens = mytokens.length;
-        myscientific = false;
-
-        while (myTokenCounter < numberOfTokens) {
-
-            if (!mytokens.isSet(myTokenCounter)) {
-                myTokenCounter++;
-                continue;
-            }
-
-            mytoken = mytokens[myTokenCounter];
-
-            if (myscientific == true) {
-                if (mytoken == "-" || mytoken == "+") {
-                    mytokens[myTokenCounter - 1] ~= mytokens[myTokenCounter];
-                    mytokens[myTokenCounter - 1] ~= mytokens[myTokenCounter + 1];
-                    unset(mytokens[myTokenCounter]);
-                    unset(mytokens[myTokenCounter + 1]);
-
-                } else if (is_numeric(mytoken)) {
-                    mytokens[myTokenCounter - 1] ~= mytokens[myTokenCounter];
-                    unset(mytokens[myTokenCounter]);
-                }
-                myscientific = false;
-                continue;
-            }
-
-            if (substr(mytoken, -1, 1).toUpper == "E") {
-                myscientific = is_numeric(substr(mytoken, 0, -1));
-            }
-
-            myTokenCounter++;
+      if (isScientific == true) {
+        if (token == "-" || token == "+") {
+          clearedTokens[tokenCounter - 1] ~= clearedTokens[tokenCounter];
+          clearedTokens[tokenCounter - 1] ~= clearedTokens[tokenCounter + 1];
+          clearedTokens[tokenCounter] = null;
+          clearedTokens[tokenCounter + 1] = null;
+        } else if (isNumeric(token)) {
+          clearedTokens[tokenCounter - 1] ~= clearedTokens[tokenCounter];
+          clearedTokens[tokenCounter] = null;
         }
+        isScientific = false;
+        continue;
+      }
 
-        return array_values(mytokens);
+      if (token.substr(-1, 1).toUpper == "E") {
+        isScientific = token.substr(0, -1).isNumeric;
+      }
+
+      tokenCounter++;
     }
 
-    protected auto concatUserDefinedVariables(mytokens) {
-        size_t myTokenCounter = 0;
-        numberOfTokens = count(mytokens);
-        myuserdef = false;
+    return clearedTokens.clearTokens; // remove empty tokens
+  }
 
-        while (myTokenCounter < numberOfTokens) {
+  unittest {
+    import std.algorithm : equal;
+    import std.array : array;
 
-            if (!mytokens.iSet(myTokenCounter)) {
-                myTokenCounter++;
-                continue;
-            }
+    // Testable subclass exposing concatScientificNotations
+    class TestLexer : SQLLexer {
+      override string[] clearTokens(string[] tokens) {
+        return clearTokens(tokens);
+      }
 
-            mytoken = mytokens[myTokenCounter];
+      bool isNumeric(string s) {
+        return isNumeric(s);
+      }
 
-            if (myuserdef != false) {
-                mytokens[myuserdef] ~= mytoken;
-                unset(mytokens[myTokenCounter]);
-                if (mytoken != "@") {
-                    myuserdef = false;
-                }
-            }
+      string substr(string s, int start, int len = int.max) {
+        return substr(s, start, len);
+      }
 
-            if (myuserdef == false && mytoken == "@") {
-                myuserdef = myTokenCounter;
-            }
+      string toUpper(string s) {
+        return toUpper(s);
+      }
 
-            myTokenCounter++;
+      alias SQLLexer.concatScientificNotations concatScientificNotations;
+    }
+
+    auto lexer = new TestLexer();
+
+    // Test 1: Simple scientific notation with positive exponent
+    string[] tokens1 = ["1E", "+", "5"];
+    auto result1 = lexer.concatScientificNotations(tokens1.dup);
+    assert(result1.equal(["1E+5"]), "Simple scientific notation (+) failed");
+
+    // Test 2: Simple scientific notation with negative exponent
+    string[] tokens2 = ["2.5E", "-", "3"];
+    auto result2 = lexer.concatScientificNotations(tokens2.dup);
+    assert(result2.equal(["2.5E-3"]), "Simple scientific notation (-) failed");
+
+    // Test 3: Scientific notation with no sign (should join just the number)
+    string[] tokens3 = ["4E", "7"];
+    auto result3 = lexer.concatScientificNotations(tokens3.dup);
+    assert(result3.equal(["4E7"]), "Scientific notation (no sign) failed");
+
+    // Test 4: Multiple scientific notations in one array
+    string[] tokens4 = ["1E", "+", "2", "foo", "3.1E", "-", "1"];
+    auto result4 = lexer.concatScientificNotations(tokens4.dup);
+    assert(result4.equal(["1E+2", "foo", "3.1E-1"]), "Multiple scientific notations failed");
+
+    // Test 5: No scientific notation present
+    string[] tokens5 = ["abc", "123", "E", "xyz"];
+    auto result5 = lexer.concatScientificNotations(tokens5.dup);
+    assert(result5.equal(["abc", "123", "E", "xyz"]), "No scientific notation failed");
+
+    // Test 6: E at start of token, not scientific
+    string[] tokens6 = ["E", "10"];
+    auto result6 = lexer.concatScientificNotations(tokens6.dup);
+    assert(result6.equal(["E", "10"]), "E at start not scientific failed");
+
+    // Test 7: Lowercase e should not match (since code uses toUpper)
+    string[] tokens7 = ["5e", "+", "2"];
+    auto result7 = lexer.concatScientificNotations(tokens7.dup);
+    assert(result7.equal(["5e+2"]), "Lowercase e scientific notation failed");
+
+    // Test 8: Number with E but not numeric before E
+    string[] tokens8 = ["fooE", "+", "2"];
+    auto result8 = lexer.concatScientificNotations(tokens8.dup);
+    assert(result8.equal(["fooE", "+", "2"]), "Non-numeric before E failed");
+
+    // Test 9: E at end of token, but not numeric before
+    string[] tokens9 = ["abcE", "-", "1"];
+    auto result9 = lexer.concatScientificNotations(tokens9.dup);
+    assert(result9.equal(["abcE", "-", "1"]), "Non-numeric before E (2) failed");
+
+    // Test 10: Empty input
+    string[] tokens10;
+    auto result10 = lexer.concatScientificNotations(tokens10.dup);
+    assert(result10.length == 0, "Empty input failed");
+  }
+
+  protected auto concatUserDefinedVariables(string[] tokens) {
+    auto clearedTokens = tokens.clearTokens;
+
+    size_t tokenCounter = 0;
+    size_t numberOfTokens = clearedTokens.length;
+    size_t userdef = -1;
+    while (tokenCounter < numberOfTokens) {
+      string token = clearedTokens[tokenCounter];
+
+      if (userdef != -1) {
+        clearedTokens[userdef] ~= token;
+        clearedTokens[tokenCounter] = null; // clear the token;
+        if (token != "@") {
+          userdef = -1;
         }
+      }
 
-        return array_values(mytokens);
+      if (userdef == -1 && token == "@") {
+        userdef = tokenCounter;
+      }
+
+      tokenCounter++;
     }
 
-    protected auto concatComments(mytokens) {
+    return clearedTokens.clearTokens; // remove empty tokens
+  }
 
-        auto myTokenCounter = 0;
-        size_t numberOfTokens = count(mytokens);
-        mycomment = false;
-        mybackTicks = [];
-        myin_string = false;
-        myinline = false;
+  protected auto concatComments(string[] tokens) {
+    auto clearedTokens = tokens.clearTokens;
 
-        while (myTokenCounter < numberOfTokens) {
+    size_t numberOfTokens = clearedTokens.length;
+    auto tokenCounter = 0;
+    mycomment = false;
+    mybackTicks = [];
+    myin_string = false;
+    myinline = false;
 
-            if (!mytokens.iSet(myTokenCounter)) {
-                myTokenCounter++;
-                continue;
-            }
+    while (tokenCounter < numberOfTokens) {
+      string token = clearedTokens[tokenCounter];
 
-            mytoken = mytokens[myTokenCounter];
-
-            /*
+      /*
              * Check to see if we"re inside a value (i.e. back ticks).
              * If so inline comments are not valid.
              */
-            if (mycomment == false && this.isBacktick(mytoken)) {
-                if (!mybackTicks.isEmpty) {
-                    mylastBacktick = array_pop(mybackTicks);
-                    if (mylastBacktick != mytoken) {
-                        mybackTicks ~= mylastBacktick; // Re-add last back tick
-                        mybackTicks ~= mytoken;
-                    }
-                } else {
-                    mybackTicks ~= mytoken;
-                }
-            }
+      if (mycomment == false && this.isBacktick(token)) {
+        if (!mybackTicks.isEmpty) {
+          mylastBacktick = array_pop(mybackTicks);
+          if (mylastBacktick != token) {
+            mybackTicks ~= mylastBacktick; // Re-add last back tick
+            mybackTicks ~= token;
+          }
+        } else {
+          mybackTicks ~= token;
+        }
+      }
 
-            if(mycomment == false && (mytoken == "\"" || mytoken == "'")) {
-                myin_string = !myin_string;
-            }
-            if(!myin_string) {
-                if (mycomment != false) {
-                    if (myinline == true && (mytoken == "\n" || mytoken == "\r\n")) {
-                        mycomment = false;
-                    } else {
-                        unset(mytokens[myTokenCounter]);
-                        mytokens[mycomment] ~= mytoken;
-                    }
-                    if (myinline == false && (mytoken == "*/")) {
-                        mycomment = false;
-                    }
-                }
-
-                if ((mycomment == false) && (mytoken == "--") && mybackTicks.isEmpty) {
-                    mycomment = myTokenCounter;
-                    myinline = true;
-                }
-
-                if ((mycomment == false) && (substr(mytoken, 0, 1) == "#") && mybackTicks.isEmpty) {
-                    mycomment = myTokenCounter;
-                    myinline = true;
-                }
-
-                if ((mycomment == false) && (mytoken == "/*")) {
-                    mycomment = myTokenCounter;
-                    myinline = false;
-                }
-            }
-
-            myTokenCounter++;
+      if (mycomment == false && (token == "\"" || token == "'")) {
+        myin_string = !myin_string;
+      }
+      if (!myin_string) {
+        if (mycomment != false) {
+          if (myinline == true && (token == "\n" || token == "\r\n")) {
+            mycomment = false;
+          } else {
+            unset(clearedTokens[tokenCounter]);
+            clearedTokens[mycomment] ~= token;
+          }
+          if (myinline == false && (token == "*/")) {
+            mycomment = false;
+          }
         }
 
-        return array_values(mytokens);
-    }
-
-    protected auto isBacktick(mytoken) {
-        return (mytoken == """ || mytoken == "\"" || mytoken == "`");
-    }
-
-    protected auto balanceBackticks(mytokens) {
-        size_t myTokenCounter = 0;
-        numberOfTokens = count(mytokens);
-        while (myTokenCounter < numberOfTokens) {
-
-            if (!mytokens.iSet(myTokenCounter)) {
-                myTokenCounter++;
-                continue;
-            }
-
-            auto myToken = mytokens[myTokenCounter];
-
-            if (this.isBacktick(mytoken)) {
-                mytokens = this.balanceCharacter(mytokens, myTokenCounter, myToken);
-            }
-
-            myTokenCounter++;
+        if ((mycomment == false) && (token == "--") && mybackTicks.isEmpty) {
+          mycomment = tokenCounter;
+          myinline = true;
         }
 
-        return mytokens;
-    }
-
-    // backticks are not balanced within one token, so we have
-    // to re-combine some tokens
-    protected auto balanceCharacter(mytokens, myidx, mychar) {
-
-        mytoken_count = count(mytokens);
-        size_t myTokenCounter = myidx + 1;
-        while (myTokenCounter < mytoken_count) {
-
-            if (!mytokens.iSet(myTokenCounter)) {
-                myTokenCounter++;
-                continue;
-            }
-
-            auto myToken = mytokens[myTokenCounter];
-            mytokens[myidx] ~= myToken;
-            unset(mytokens[myTokenCounter]);
-
-            if (myToken == mychar) {
-                break;
-            }
-
-            myTokenCounter++;
+        if ((mycomment == false) && (substr(token, 0, 1) == "#") && mybackTicks.isEmpty) {
+          mycomment = tokenCounter;
+          myinline = true;
         }
-        return array_values(mytokens);
+
+        if ((mycomment == false) && (token == "/*")) {
+          mycomment = tokenCounter;
+          myinline = false;
+        }
+      }
+
+      tokenCounter++;
     }
 
-    /**
+    return clearedTokens.clearTokens; // remove empty tokens
+  }
+
+  protected bool isBacktick(string token) {
+    return (token == "\"" || token == "\'" || token == "`");
+  }
+
+  protected auto balanceBackticks(string[] tokens) {
+    auto clearedTokens = tokens.filter!(token => !token.isEmpty).array;
+
+    size_t numberOfTokens = clearedTokens.length;
+    size_t tokenCounter = 0;
+    while (tokenCounter < numberOfTokens) {
+      auto token = clearedTokens[tokenCounter];
+
+      if (this.isBacktick(token)) {
+        clearedTokens = balanceCharacter(clearedTokens, tokenCounter, token);
+      }
+
+      tokenCounter++;
+    }
+
+    return clearedTokens.clearTokens; // remove empty tokens
+  }
+
+  // #region balanceCharacter
+  // backticks are not balanced within one token, so we have
+  // to re-combine some tokens
+  protected auto balanceCharacter(string[] tokens, size_t pos, string endTxt) {
+    auto clearedTokens = tokens.clearTokens;
+
+    size_t numberOfTokens = clearedTokens.length;
+    size_t tokenCounter = pos + 1;
+    while (tokenCounter < numberOfTokens) {
+      auto token = clearedTokens[tokenCounter];
+      clearedTokens[pos] ~= token;
+      clearedTokens[tokenCounter] = null;
+
+      if (token == endTxt) {
+        break;
+      }
+
+      tokenCounter++;
+    }
+    return clearedTokens.clearTokens; // remove empty tokens
+  }
+  /// 
+  unittest {
+    // Helper: minimal stub for clearTokens (since original code expects it)
+    string[] clearTokens(string[] tokens) {
+      return tokens.filter!(t => t !is null && !t.empty).array;
+    }
+
+    // Minimal SQLLexer stub with only balanceCharacter and clearTokens
+    class TestLexer : SQLLexer {
+      override string[] clearTokens(string[] tokens) {
+        return tokens.filter!(t => t !is null && !t.empty).array;
+      }
+      // Expose protected for testing
+      alias SQLLexer.balanceCharacter balanceCharacter;
+    }
+
+    auto lexer = new TestLexer();
+
+    // Test 1: Simple case, balanced quotes
+    string[] tokens1 = ["'", "hello", "world", "'"];
+    auto result1 = lexer.balanceCharacter(tokens1, 0, "'");
+    assert(result1.equal(["'helloworld'"]), "Simple balanced quotes failed");
+
+    // Test 2: Unbalanced, no endTxt found
+    string[] tokens2 = ["'", "abc", "def"];
+    auto result2 = lexer.balanceCharacter(tokens2, 0, "'");
+    assert(result2.equal(["'abcdef"]), "Unbalanced quotes failed");
+
+    // Test 3: Nested, endTxt in the middle
+    string[] tokens3 = ["`", "foo", "`", "bar"];
+    auto result3 = lexer.balanceCharacter(tokens3, 0, "`");
+    assert(result3.equal(["`foo`", "bar"]), "Backtick balance failed");
+
+    // Test 4: Multiple tokens, endTxt at end
+    string[] tokens4 = ["\"", "a", "b", "c", "\""];
+    auto result4 = lexer.balanceCharacter(tokens4, 0, "\"");
+    assert(result4.equal(["\"abc\""]), "Double quote balance failed");
+
+    // Test 5: endTxt is not present at all
+    string[] tokens5 = ["`", "missing", "end"];
+    auto result5 = lexer.balanceCharacter(tokens5, 0, "`");
+    assert(result5.equal(["`missingend"]), "No endTxt present failed");
+
+    // Test 6: endTxt is at pos+1
+    string[] tokens6 = ["'", "'"];
+    auto result6 = lexer.balanceCharacter(tokens6, 0, "'");
+    assert(result6.equal(["''"]), "Immediate endTxt failed");
+  }
+  // #endregion balanceCharacter
+
+  /**
      * This auto concats some tokens to a column reference.
      * There are two different cases:
      *
@@ -295,99 +389,127 @@ class SQLLexer {
      * 2. If the next token starts with a dot, we will add it to the previous token
      *
      */
-    protected auto concatColReferences(mytokens) {
+  protected auto concatColReferences(string[] tokens) {
+    auto clearedTokens = tokens.clearTokens;
 
-        numberOfTokens = count(mytokens);
-        size_t myTokenCounter = 0;
-        while (myTokenCounter < numberOfTokens) {
+    size_t numberOfTokens = clearedTokens.length;
+    size_t tokenCounter = 0;
+    while (tokenCounter < numberOfTokens) {
 
-            if (!mytokens.iSet(myTokenCounter)) {
-                myTokenCounter++;
-                continue;
-            }
+      if (clearedTokens[tokenCounter][0] == ".") {
 
-            if (mytokens[myTokenCounter][0] == ".") {
-
-                // concat the previous tokens, till the token has been changed
-                myk = myTokenCounter - 1;
-                mylen = strlen(mytokens[myTokenCounter]);
-                while ((myk >= 0) && (mylen == strlen(mytokens[myTokenCounter]))) {
-                    if (!isset(mytokens[myk])) { // FIXME: this can be wrong if we have schema . table . column
-                        myk--;
-                        continue;
-                    }
-                    mytokens[myTokenCounter] = mytokens[myk] . mytokens[myTokenCounter];
-                    unset(mytokens[myk]);
-                    myk--;
-                }
-            }
-
-            if (this.endsWith(mytokens[myTokenCounter], ".") && !is_numeric(mytokens[myTokenCounter])) {
-
-                // concat the next tokens, till the token has been changed
-                myk = myTokenCounter + 1;
-                mylen = strlen(mytokens[myTokenCounter]);
-                while ((myk < numberOfTokens) && (mylen == strlen(mytokens[myTokenCounter]))) {
-                    if (!isset(mytokens[myk])) {
-                        myk++;
-                        continue;
-                    }
-                    mytokens[myTokenCounter] ~= mytokens[myk];
-                    unset(mytokens[myk]);
-                    myk++;
-                }
-            }
-
-            myTokenCounter++;
+        // concat the previous tokens, till the token has been changed
+        myk = tokenCounter - 1;
+        mylen = clearedTokens[tokenCounter].length;
+        while ((myk >= 0) && (mylen == strlen(clearedTokens[tokenCounter]))) {
+          if (!isset(clearedTokens[myk])) { // FIXME: this can be wrong if we have schema . table . column
+            myk--;
+            continue;
+          }
+          clearedTokens[tokenCounter] = clearedTokens[myk].clearedTokens[tokenCounter];
+          unset(clearedTokens[myk]);
+          myk--;
         }
+      }
 
-        return array_values(mytokens);
+      if (this.endsWith(clearedTokens[tokenCounter], ".") && !isNumeric(
+          clearedTokens[tokenCounter])) {
+
+        // concat the next clearedTokens, till the token has been changed
+        myk = tokenCounter + 1;
+        mylen = clearedTokens[tokenCounter].length;
+        while ((myk < numberOfTokens) && (mylen == clearedTokens[tokenCounter].length)) {
+          if (!isset(clearedTokens[myk])) {
+            myk++;
+            continue;
+          }
+          clearedTokens[tokenCounter] ~= clearedTokens[myk];
+          unset(clearedTokens[myk]);
+          myk++;
+        }
+      }
+
+      tokenCounter++;
     }
 
-    protected auto concatEscapeSequences(mytokens) {
-        mytokenCount = count(mytokens);
-        size_t myTokenCounter = 0;
-        while (myTokenCounter < mytokenCount) {
+    return clearedTokens.clearTokens; // remove empty tokens
+  }
 
-            if (this.endsWith(mytokens[myTokenCounter], "\\")) {
-                myTokenCounter++;
-                if (mytokens.iSet(myTokenCounter)) {
-                    mytokens[myTokenCounter - 1] ~= mytokens[myTokenCounter];
-                    unset(mytokens[myTokenCounter]);
-                }
-            }
-            myTokenCounter++;
+  protected string[] concatEscapeSequences(string[size_t] tokens) {
+    auto seqTokens = tokens.clearTokens;
+
+    size_t numberOfTokens = seqTokens.length;
+    size_t tokenCounter = 0;
+    while (tokenCounter < numberOfTokens) {
+      if (endsWith(seqTokens[tokenCounter], "\\")) {
+
+        tokenCounter++;
+        if (seqTokens.hasKey(tokenCounter)) {
+          tokens[tokenCounter - 1] ~= seqTokens[tokenCounter];
+          seqTokens.remove(tokenCounter);
         }
-        return array_values(mytokens);
+      }
+
+      tokenCounter++;
     }
 
-    protected auto balanceParenthesis(mytokens) {
-        mytoken_count = count(mytokens);
-        myTokenCounter = 0;
-        while (myTokenCounter < mytoken_count) {
-            if (mytokens[myTokenCounter] != "(") {
-                myTokenCounter++;
-                continue;
-            }
-            mycount = 1;
-            for (myn = myTokenCounter + 1; myn < mytoken_count; myn++) {
-                mytoken = mytokens[myn];
-                if (mytoken == "(") {
-                    mycount++;
-                }
-                if (mytoken == ")") {
-                    mycount--;
-                }
-                mytokens[myTokenCounter] ~= mytoken;
-                unset(mytokens[myn]);
-                if (mycount == 0) {
-                    myn++;
-                    break;
-                }
-            }
-            myTokenCounter = myn;
+    return seqTokens.values;
+  }
+
+  protected auto balanceParenthesis(string[] tokens) {
+    size_t numberOfTokens = clearedTokens.length;
+    size_t tokenCounter = 0;
+    while (tokenCounter < tokencounter) {
+      if (clearedTokens[tokenCounter] != "(") {
+        tokenCounter++;
+        continue;
+      }
+      mycount = 1;
+      for (myn = tokenCounter + 1; myn < tokencounter; myn++) {
+        token = clearedTokens[myn];
+        if (token == "(") {
+          mycount++;
         }
-        return array_values(mytokens);
+        if (token == ")") {
+          mycount--;
+        }
+        clearedTokens[tokenCounter] ~= token;
+        clearedTokens[myn] = null;
+        if (mycount == 0) {
+          myn++;
+          break;
+        }
+      }
+      tokenCounter = myn;
     }
+    return array_values(clearedTokens);
+  }
+
+  string[] removeTokens(string[] tokens, string[] removeTokens) {
+    string[size_t] resultingTokens = tokens.dup;
+    removeTokens.each!(token => resultingTokens = resultingTokens.removeToken(token));
+    return resultingTokens;
+  }
+
+  string[size_t] removeToken(string[size_t] tokens, string removeToken) {
+    // Remove empty tokens
+    string[size_t] resultingTokens = tokens.dup;
+    if (!removeToken.isEmpty && removeToken in resultingTokens) {
+      resultingTokens.remove(removeToken);
+    }
+    return resultingTokens; // remove empty tokens
+  }
+
+  string[size_t] clearTokens(string[size_t] tokens) {
+    // Remove empty tokens
+    string[size_t] clearedTokens;
+    return tokens.keys
+      .filter!(key => !clearedTokens[key].isEmpty)
+      .each!(key => clearedTokens[key] = tokens[key]);
+  }
+
+  string[] clearTokens(string[] tokens) {
+    // Remove empty tokens
+    return tokens.filter!(token => !token.isEmpty).array;
+  }
 }
-

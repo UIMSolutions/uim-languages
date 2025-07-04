@@ -6,7 +6,6 @@
 module uim.languages.sql.parsers.processors.index;
 
 import uim.languages.sql;
-
 @safe:
 
 // This class processes the INDEX statements.

@@ -6,7 +6,6 @@
 module uim.languages.sql.parsers.processors.drop;
 
 import uim.languages.sql;
-
 @safe:
 
 /**

@@ -5,6 +5,9 @@
 *****************************************************************************************************************/
 module uim.languages.sql.parsers.lexer;
 
+import uim.languages.sql;
+@safe:
+
 /**
  * Defines the characters, which are used to split the given SQL string. Part of SqlParser. * /
  * This class holds a sorted array of characters, which are used as stop token.

@@ -107,8 +107,8 @@ class PositionCalculator {
             myquotedBefore = in_array(aSql[mypos], ["`", "("), true);
             myquotedAfter = in_array(aSql[mypos + strlen(myValue) - 1], ["`", ")"), true);
             myafter = "";
-            if (isset(aSql[mypos + strlen(myValue)])) {
-                myafter = aSql[mypos + strlen(myValue)];
+            if (isset(aSql[mypos + myValue.length])) {
+                myafter = aSql[mypos + myValue.length];
             }
 
             // if we have an operator, it should be surrounded by
@@ -151,7 +151,7 @@ class PositionCalculator {
     }
 
     protected auto lookForBaseExpression(string aSql, & mycharPos, & myparsed, myKey, & mybacktracking) {
-        if (!is_numeric(myKey)) {
+        if (!isNumeric(myKey)) {
             if ((myKey == "UNION" || myKey == "UNION ALL")
                 || (myKey == "expr_type" && isset(this.flippedBacktrackingTypes[myparsed]))
                 || (myKey == "select-option" && myparsed != false) || (myKey == "alias" && myparsed != false)) {

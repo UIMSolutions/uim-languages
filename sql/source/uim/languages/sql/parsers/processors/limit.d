@@ -5,6 +5,9 @@
 *****************************************************************************************************************/
 module uim.languages.sql.parsers.processors.limit;
 
+import uim.languages.sql;
+@safe:
+
 /**
  * This file : the processor for the LIMIT statements.
  * This class processes the LIMIT statements.

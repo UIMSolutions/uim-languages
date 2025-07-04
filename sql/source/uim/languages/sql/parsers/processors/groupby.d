@@ -5,9 +5,10 @@
 * Authors: Ozan Nurettin Süel (aka UIManufaktur)                                                                *
 *****************************************************************************************************************/
 module uim.languages.sql.parsers.processors.groupby;
-import uim.languages.sql;
 
+import uim.languages.sql;
 @safe:
+
 // This class processes the GROUP-BY statements.
 class GroupByProcessor : OrderByProcessor {
 

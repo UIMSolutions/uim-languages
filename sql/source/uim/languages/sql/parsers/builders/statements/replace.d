@@ -4,8 +4,8 @@
 * Authors: Ozan Nurettin Süel (aka UIManufaktur)                                                                *
 *****************************************************************************************************************/
 module uim.languages.sql.parsers.builders.replacestatement;
-import uim.languages.sql;
 
+import uim.languages.sql;
 @safe:
 // Builds the REPLACE statement 
 class ReplaceStatementBuilder : DSqlBuilder {

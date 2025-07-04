@@ -1,3 +1,8 @@
+/****************************************************************************************************************
+* Copyright: © 2018-2025 Ozan Nurettin Süel (aka UIManufaktur)                                                  *
+* License: Subject to the terms of the Apache 2.0 license, as written in the included LICENSE.txt file.         *
+* Authors: Ozan Nurettin Süel (aka UIManufaktur)                                                                *
+*****************************************************************************************************************/
 module uim.languages.sql.parsers.processors.processor;
 
 import uim.languages.sql;
@@ -24,8 +29,8 @@ abstract class DProcessor {
      * tokens for the SQL processor
      */
   auto splitSQLIntoTokens(string sql) {
-    SQLLexer myLexer = new SQLLexer();
-    return myLexer.split(sql);
+    SQLLexer lexer = new SQLLexer();
+    return lexer.split(sql);
   }
 
   /**
@@ -191,17 +196,16 @@ abstract class DProcessor {
           return mytype;
         }
 
-        protected auto isCommaToken(myToken) {
-          return (myToken.strip == ",");
+        protected auto isCommaToken(string token) {
+          return (token.strip == ",");
         }
 
-        protected auto isWhitespaceToken(myToken) {
-          return (myToken.strip.isEmpty);
+        protected auto isWhitespaceToken(string token) {
+          return (token.strip.isEmpty);
         }
 
-        protected auto isCommentToken(myToken) {
-          return myToken.hasKey(0) && myToken.hasKey(1)
-            && ((myToken[0] == "-" && myToken[1] == "-") || (myToken[0] == "/" && myToken[1] == "*"));
+        protected auto isCommentToken(string token) {
+          return token.length > 1 && ((token[0..2] == "--") || (token[0..2] == "/*"));
         }
 
         protected auto isColumnReference(Json parsedSql) {
@@ -245,10 +249,10 @@ abstract class DProcessor {
         }
 
         Json processComment(myexpression) {
-          auto results = [];
-          results["expr_type"] = expressionType("COMMENT");
-          results["value"] = myexpression;
-          return results;
+          Json result = Json.emptyObject;
+          result["expr_type"] = expressionType("COMMENT");
+          result["value"] = myexpression;
+          return result;
         }
 
         /**

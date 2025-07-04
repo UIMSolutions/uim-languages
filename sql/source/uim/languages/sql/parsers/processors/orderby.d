@@ -23,7 +23,7 @@ class OrderByProcessor : DProcessor {
     return result;
   }
 
-  protected override Json processOrderExpression( & Json parseInfo, myselect) {
+  protected override Json processOrderExpression(ref Json parseInfo, myselect) {
     parseInfo["base_expr"] = parseInfo.baseExpression.strip;
 
     if (parseInfo.baseExpression.isEmpty) {
@@ -89,7 +89,7 @@ class OrderByProcessor : DProcessor {
         break;
 
       default:
-        if (this.isCommentToken(myToken)) {
+        if (isCommentToken(myToken)) {
           result ~= super.processComment(myToken]; break;}
 
           parseInfo.baseExpression ~= myToken;}

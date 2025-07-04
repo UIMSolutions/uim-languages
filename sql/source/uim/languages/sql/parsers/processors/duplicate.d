@@ -5,6 +5,9 @@
 *****************************************************************************************************************/
 module uim.languages.sql.parsers.processors.duplicate;
 
+import uim.languages.sql;
+@safe:
+
 // This class processes the DUPLICATE statements.
 class DuplicateProcessor : SetProcessor {
 
