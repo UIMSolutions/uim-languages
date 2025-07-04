@@ -10,9 +10,9 @@ import uim.languages.sql;
 @safe:
 
 // Builds expressions within the HAVING part.
+// SELECT column_name(s) FROM table_name WHERE condition GROUP BY column_name(s) HAVING condition ORDER BY column_name(s);
 class HavingExpressionBuilder : WhereExpressionBuilder {
-
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("EXPRESSION")) {
       return null;
     }

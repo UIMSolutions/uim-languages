@@ -8,7 +8,7 @@ class DropExpressionBuilder : DSqlBuilder {
   this() {
   }
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("EXPRESSION")) {
       return null;
     }

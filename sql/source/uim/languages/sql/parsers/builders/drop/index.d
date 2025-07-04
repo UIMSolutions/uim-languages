@@ -6,7 +6,7 @@ import uim.languages.sql;
 // This class : the builder for the DROP INDEX statement.
 class DropIndexBuilder : IBuilder {
   
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isSet("name")) {
       debug writeln("WARNING: In DropIndexBuilder: 'name' is missing.");
       return null;

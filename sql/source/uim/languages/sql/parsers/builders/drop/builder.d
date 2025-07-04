@@ -7,7 +7,7 @@ import uim.languages.sql;
 // This class : the builder for the [DROP] part. */
 class DropBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     auto dropSql = parsedSql["DROP"];
     string mySql = this.buildSubTree(dropSql);
 

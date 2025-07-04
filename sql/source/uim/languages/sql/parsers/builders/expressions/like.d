@@ -10,9 +10,10 @@ import uim.languages.sql;
  * CREATE TABLE statement. There are difference to LIKE (without parenthesis), 
  * the latter is a top-level element of the output array.
  */
+// SELECT * FROM Customers WHERE CustomerName LIKE 'a%'; 
 class LikeExpressionBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("LIKE")) {
       return "";
     }

@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builder for the table part of a DROP INDEX statement.
 class DropIndexTableBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isSet("on") || parsedSql["on"].isEmpty) {
       return null;
     }

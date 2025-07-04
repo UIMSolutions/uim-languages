@@ -9,7 +9,7 @@ class TableBracketExpressionBuilder : DSqlBuilder {
 
 
 
-    string build(Json parsedSql) {
+    override string build(Json parsedSql) {
         if (!parsedSql.isExpressionType("BRACKET_EXPRESSION")) {
             return "";
         }

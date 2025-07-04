@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds expressions within the WHERE part.
 class WhereExpressionBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("EXPRESSION")) {
       return "";
     }

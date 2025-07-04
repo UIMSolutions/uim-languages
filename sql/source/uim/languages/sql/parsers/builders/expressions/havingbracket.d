@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds bracket expressions within the HAVING part.
 class HavingBracketExpressionBuilder : WhereBracketExpressionBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("BRACKET_EXPRESSION")) {
       return "";
     }
