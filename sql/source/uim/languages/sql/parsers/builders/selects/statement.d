@@ -3,7 +3,7 @@ module uim.languages.sql.parsers.builders.selects.statement;
 // Builds the SELECT statement 
 class SelectStatementBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     string mySql = "";
     if (parsedSql.isSet("SELECT")) {
      mySql ~= this.buildSELECT(parsedSql["SELECT"]);

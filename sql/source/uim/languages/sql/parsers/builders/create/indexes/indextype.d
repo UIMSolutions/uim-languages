@@ -11,7 +11,7 @@ import uim.languages.sql;
 // Builds index type part of a CREATE INDEX statement. 
 class CreateIndexTypeBuilder : IndexTypeBuilder {
 
-    string build(Json parsedSql) {
+    override string build(Json parsedSql) {
         if (!parsedSql.isSet("index-type") || parsedSql["index-type"].isEmpty) {
             return "";
         }

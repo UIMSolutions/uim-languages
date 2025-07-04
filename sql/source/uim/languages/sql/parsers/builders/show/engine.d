@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the database within the SHOW statement. 
 class EngineBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("ENGINE")) {
       return "";
     }

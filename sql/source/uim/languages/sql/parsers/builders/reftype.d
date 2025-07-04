@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds reference type within a JOIN. 
 class RefTypeBuilder {
 
-    string build(Json parsedSql) {
+    override string build(Json parsedSql) {
         if (parsedSql.isEmpty) {
             return null;
         }

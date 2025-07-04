@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the table name/join options. 
 class TableExpressionBuilder : DSqlBuilder {
 
-    string build(Json parsedSql, size_t index = 0) {
+    override string build(Json parsedSql, size_t index = 0) {
         if (!parsedSql.isExpressionType("TABLE_EXPRESSION")) {
             return "";
         }

@@ -12,7 +12,7 @@ class IndexTypeBuilder : DSqlBuilder {
     return myBuilder.build(parsedSql);
   }
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("INDEX_TYPE")) {
       return null;
     }

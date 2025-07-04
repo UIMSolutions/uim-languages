@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds operators.
 class OperatorBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("OPERATOR")) {
       return "";
     }

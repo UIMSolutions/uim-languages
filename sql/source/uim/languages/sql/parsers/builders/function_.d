@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds auto statements. 
 class FunctionBuilder : DSqlBuilder {
 
-    string build(Json parsedSql) {
+    override string build(Json parsedSql) {
         if (!parsedSql.isExpressionType("AGGREGATE_FUNCTION")
             && parsedSql.isExpressionType("SIMPLE_FUNCTION")
             && parsedSql.isExpressionType("CUSTOM_FUNCTION")) {

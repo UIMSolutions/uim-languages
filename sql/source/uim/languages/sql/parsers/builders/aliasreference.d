@@ -1,3 +1,8 @@
+/****************************************************************************************************************
+* Copyright: © 2018-2025 Ozan Nurettin Süel (aka UIManufaktur)                                                  *
+* License: Subject to the terms of the Apache 2.0 license, as written in the included LICENSE.txt file.         *
+* Authors: Ozan Nurettin Süel (aka UIManufaktur)                                                                *
+*****************************************************************************************************************/
 module uim.languages.sql.parsers.builders;
 
 import uim.languages.sql;
@@ -8,11 +13,9 @@ import uim.languages.sql;
  */
 class AliasReferenceBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
-    if (!parsedSql.isExpressionType("ALIAS")) {
-      return null;
-    }
-    string mySql = parsedSql.baseExpression;
-    return mySql;
+  override string build(Json parsedSql) {
+    return !parsedSql.isExpressionType("ALIAS")
+      ? null
+      : parsedSql.baseExpression;
   }
 }

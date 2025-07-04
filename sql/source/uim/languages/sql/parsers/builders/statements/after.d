@@ -10,7 +10,7 @@ import uim.languages.sql;
 @safe:
 class AlterStatementBuilder : DSqlStatementBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     auto myAlter = parsedSql["ALTER"];
     string mySql = this.buildAlter(myAlterr);
 

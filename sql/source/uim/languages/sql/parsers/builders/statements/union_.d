@@ -15,7 +15,7 @@ module uim.languages.sql.parsers.builders.statements.union_;
 // @safe:
 // This class builds the SQL string for UNION statements.
 class UnionStatementBuilder : DSqlStatementBuilder {
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     string mySql = "";
     auto selectBuilder = new SelectStatementBuilder();
     bool first = true;

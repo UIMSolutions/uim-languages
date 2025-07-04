@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the records within the INSERT statement. 
 class RecordBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("RECORD")) {
       return parsedSql.get("base_expr", "");
     }

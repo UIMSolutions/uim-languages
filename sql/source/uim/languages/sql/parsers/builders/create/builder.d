@@ -13,7 +13,7 @@ class DCreateSqlBuilder : DSqlBuilder {
   this() {
   }
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isObject) {
       return null;
     }

@@ -12,7 +12,7 @@ import uim.languages.sql;
 // Builds the statements for [sub_tree] fields.
 class SubTreeBuilder : DSqlBuilder {
 
-  string build(Json parsedSql, string delim = " ") {
+  override string build(Json parsedSql, string delim = " ") {
     if (parsedSql["sub_tree"].isEmpty) {
       return "";
     }

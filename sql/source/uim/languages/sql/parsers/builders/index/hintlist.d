@@ -11,7 +11,7 @@ class IndexHintListBuilder : DSqlBuilder {
   }
 
   // TODO: the hint list should be enhanced to get base_expr fro position calculation
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isSet("hints") || parsedSql["hints"].isEmpty) {
       return "";
     }

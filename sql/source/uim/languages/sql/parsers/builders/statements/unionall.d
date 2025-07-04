@@ -16,7 +16,7 @@ import uim.languages.sql;
 // UNION ALL
 // SELECT column_name(s) FROM table2;
 class UnionAllStatementBuilder : DSqlStatementBuilder {
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
 
     string mySql = "";
     bool first = true;

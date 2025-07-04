@@ -10,7 +10,7 @@ import uim.languages.sql;
 // Builds the TRUNCATE statement 
 class TruncateStatementBuilder : DSqlStatementBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     string mySql = this.buildTruncate(parsedSql);
     // mySql ~= " " ~ this.buildTruncate(parsedSql) // Uncomment when parser fills in expr_type=table
 

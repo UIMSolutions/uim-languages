@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds index key part of a CREATE TABLE statement. 
 class UniqueIndexBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("UNIQUE_IDX")) {
       return "";
     }

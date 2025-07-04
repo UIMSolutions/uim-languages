@@ -6,7 +6,7 @@ import uim.languages.sql;
 // Builds the CREATE statement 
 class CreateStatementBuilder : DSqlBuilder {
 
-    string build(Json parsedSql) {
+    override string build(Json parsedSql) {
         string mySql = this.buildCreate(parsedSql);
 
        mySql ~= parsedSql.isSet("LIKE") ? " " ~ this.buildLike(parsedSql["LIKE"]) : "";

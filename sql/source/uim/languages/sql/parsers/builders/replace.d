@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the [REPLACE] statement part. 
 class ReplaceBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     string mySql = parsedSql.byKeyValue
       .map!(kv => buildKeyValue(kv.key, kv.value))
       .join;

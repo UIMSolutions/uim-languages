@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the ORDERBY clause. 
 class OrderByBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     string result = parsedSql.myKeyValue
       .map!(kv => buildKeyValue(kv.key, kv.value))
       .join;

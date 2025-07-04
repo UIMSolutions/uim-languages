@@ -6,7 +6,7 @@ import uim.languages.sql;
 // Builds index options part of a CREATE INDEX statement.
 class CreateIndexOptionsBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (parsedSql["options"].isEmpty) {
       return "";
     }

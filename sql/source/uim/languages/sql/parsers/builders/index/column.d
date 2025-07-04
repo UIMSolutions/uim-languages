@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the column entries of the column-list parts of CREATE TABLE.
 class IndexColumnBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("INDEX_COLUMN")) {
       return null;
     }

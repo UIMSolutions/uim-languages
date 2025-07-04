@@ -6,7 +6,7 @@ import uim.languages.sql;
 
 // Builds the view within the DROP statement. 
 class DViewBuilder : DSqlBuilder {
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     return parsedSql.isExpressionType("VIEW")
 ? parsedSql.baseExpression 
 : null;

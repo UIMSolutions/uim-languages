@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the SHOW statement. 
 class ShowBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     auto showSql = parsedSql["SHOW"];
 
     string result = showSql.byKeyValue

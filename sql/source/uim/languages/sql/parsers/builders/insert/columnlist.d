@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds column-list parts of INSERT statements.
 class InsertColumnListBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("COLUMN_LIST")) {
       return "";
     }

@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the procedures within the SHOW statement. 
 class ProcedureBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("PROCEDURE")) {
       return null;
     }

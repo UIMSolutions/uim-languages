@@ -11,7 +11,7 @@ import uim.languages.sql;
 // Builds the table part of a CREATE INDEX statement
 class CreateIndexTableBuilder : DSqlBuilder {
 
-    string build(Json parsedSql) {
+    override string build(Json parsedSql) {
         if (parsedSql.isSet("on") || parsedSql["on"].isEmpty) {
             return "";
         }

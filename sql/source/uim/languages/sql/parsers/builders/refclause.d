@@ -10,7 +10,7 @@ import uim.languages.sql;
  */
 class RefClauseBuilder : DSqlBuilder {
 
-    string build(Json parsedSql) {
+    override string build(Json parsedSql) {
         if (parsedSql.isEmpty) {
             return "";
         }

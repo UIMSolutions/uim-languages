@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 class AlterBuilder : DSqlBuilder {
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     string mySql = "";
 
     foreach (myTerm; parsedSql) {

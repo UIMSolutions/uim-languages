@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds positions of the GROUP BY clause. 
 class OrderByPositionBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("POSITION")) {
       return "";
     }

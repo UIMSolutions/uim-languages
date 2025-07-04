@@ -5,7 +5,7 @@ import uim.languages.sql;
 // Builds the UPDATE statement 
 class UpdateStatementBuilder : DSqlBuilder {
 
-    string build(Json parsedSql) {
+    override string build(Json parsedSql) {
         string mySql = this.buildUPDATE(parsedSql["UPDATE"]) ~ " " ~ this.buildSET(
             parsedSql["SET"]);
         if ("WHERE" in parsedSql["WHERE"]) {

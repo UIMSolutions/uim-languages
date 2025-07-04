@@ -12,7 +12,7 @@ class UpdateBuilder : DSqlBuilder {
     return myBuilder.build(parsedSql, idx);
   }
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     string mySql = parsedSql.byKeyValue
       .map!(kv => buildKeyValue(kv.key, kv.value))
       .join;

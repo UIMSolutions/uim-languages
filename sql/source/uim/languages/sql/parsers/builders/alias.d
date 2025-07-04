@@ -9,7 +9,7 @@ class AliasBuilder : DSqlBuilder {
     return ("alias" in parsed);
   }
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (parsedisSet("alias") || parsedSql["alias"].isEmpty) {
       return "";
     }

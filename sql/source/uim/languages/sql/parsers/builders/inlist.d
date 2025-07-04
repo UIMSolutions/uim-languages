@@ -12,7 +12,7 @@ class InListBuilder : DSqlBuilder {
     return myBuilder.build(parsedSql, string delim);
   }
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("IN_LIST")) {
       return null;
     }

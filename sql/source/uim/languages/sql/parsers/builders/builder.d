@@ -10,7 +10,7 @@ import uim.languages.sql;
 @safe:
 // Builds the CREATE statement
 class DSqlBuilder : DSqlBuilder {
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     return "";
   }
 }

@@ -6,7 +6,7 @@ import uim.languages.sql;
 // Builds the DELETE statement
 class DeleteBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     string mySql = "DELETE ";
 
     if (!parsedSql["options"].isEmpty) {

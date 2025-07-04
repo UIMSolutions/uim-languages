@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the WHERE part.
 class WhereBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     auto mySql = "WHERE ";
     parsedSql.byKeyValue
       .map!(kv => buildKeyValue(kv.key, kv.value))

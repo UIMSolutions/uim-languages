@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the statements for sub-queries. 
 class SubQueryBuilder : DSqlBuilder {
 
-  string build(Json parsedSql, size_t index = 0) {
+  override string build(Json parsedSql, size_t index = 0) {
     if (!parsedSql.isExpressionType("SUBQUERY")) {
       return "";
     }

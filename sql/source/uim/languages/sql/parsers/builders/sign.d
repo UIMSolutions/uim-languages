@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds unary operators. 
 class SignBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("SIGN")) {
       return null;
     }

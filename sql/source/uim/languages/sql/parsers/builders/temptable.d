@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the temporary table name/join options. 
 class TempTableBuilder : DSqlBuilder {
 
-  string build(Json parsedSql, size_t index = 0) {
+  override string build(Json parsedSql, size_t index = 0) {
     if (!parsedSql.isExpressionType("TEMPORARY_TABLE")) {
       return "";
     }

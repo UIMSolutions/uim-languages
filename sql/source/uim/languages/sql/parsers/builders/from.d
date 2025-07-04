@@ -12,7 +12,7 @@ import uim.languages.sql;
 // Builds the FROM statement
 class FromBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     auto string mySql = "";
     if (parsedSql.has("UNION ALL") || parsedSql.has("UNION")) {
       foreach (myunion_type, resulter_v; parsedSql) {

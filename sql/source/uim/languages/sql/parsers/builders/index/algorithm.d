@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds index algorithm part of a CREATE INDEX statement.
 class IndexAlgorithmBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("INDEX_ALGORITHM")) {
       return null;
     }

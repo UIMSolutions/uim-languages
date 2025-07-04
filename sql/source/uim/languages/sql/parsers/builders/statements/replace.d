@@ -10,7 +10,7 @@ import uim.languages.sql;
 // Builds the REPLACE statement 
 class ReplaceStatementBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     // TODO: are there more than one tables possible (like [REPLACE][1])
     string mySql = this.buildREPLACE(parsedSql["REPLACE"]);
    mySql ~= parsedSql.isSet("VALUES") ? " " ~ this.buildVALUES(parsedSql["VALUES"]) : "";

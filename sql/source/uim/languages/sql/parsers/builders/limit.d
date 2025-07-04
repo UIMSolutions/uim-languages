@@ -12,7 +12,7 @@ import uim.languages.sql;
 // Builds the LIMIT statement.
 class LimitBuilder : ISqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     string sql = parsedSql.getString("rowcount") ~
       (parsedSql.has("offset") 
         ? " OFFSET " ~ parsedSql.getString("offset") 

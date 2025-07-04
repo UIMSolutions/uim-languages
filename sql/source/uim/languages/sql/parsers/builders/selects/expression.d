@@ -1,3 +1,8 @@
+/****************************************************************************************************************
+* Copyright: © 2018-2025 Ozan Nurettin Süel (aka UIManufaktur)                                                  *
+* License: Subject to the terms of the Apache 2.0 license, as written in the included LICENSE.txt file.         *
+* Authors: Ozan Nurettin Süel (aka UIManufaktur)                                                                *
+*****************************************************************************************************************/
 module uim.languages.sql.parsers.builders.selects.selectexpression;
 
 import uim.languages.sql;
@@ -7,14 +12,10 @@ import uim.languages.sql;
 // Builds simple expressions within a SELECT statement.
 class SelectExpressionBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
-    if (!parsedSql.isExpressionType("EXPRESSION")) {
-      return "";
-    }
-
-    string mySql = this.buildSubTree(parsedSql, " ");
-   mySql ~= this.buildAlias(parsedSql);
-    return mySql;
+  override string build(Json parsedSql) {
+    return !parsedSql.isExpressionType("EXPRESSION")
+      ? ""
+      : buildSubTree(parsedSql, " ") ~ buildAlias(parsedSql);;
   }
 
   protected string buildSubTree(parsedSql, string delim) {

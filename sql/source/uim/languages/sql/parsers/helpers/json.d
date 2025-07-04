@@ -8,6 +8,10 @@ module uim.languages.sql.parsers.helpers.json;
 import uim.languages.sql;
 @safe:
 
+bool anyExpressionType(Json parsedSql, string[] typeNames) {
+  return typeNames.any!(name => parsedSql.isExpressionType(name));
+}
+
 bool isExpressionType(Json parsedSql, string typeName) {
   return parsedSql.expressionType == typeName;
 }

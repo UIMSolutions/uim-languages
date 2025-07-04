@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builder for the GROUP-BY clause. 
 class GroupByBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     string mySql = parsedSql.byKeyValue
       .map!(kv => buildKeyValue(kv.key, kv.value))
       .join;

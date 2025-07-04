@@ -11,7 +11,7 @@ import uim.languages.sql;
 // Builds the JOIN statement parts (within FROM).
 class JoinBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (parsedSql == "CROSS") {
       return ", ";
     }

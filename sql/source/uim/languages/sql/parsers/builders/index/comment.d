@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds index comment part of a CREATE INDEX statement. 
 class IndexCommentBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("COMMENT")) {
       return null;
     }

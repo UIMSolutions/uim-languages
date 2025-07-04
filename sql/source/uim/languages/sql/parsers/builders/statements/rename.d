@@ -12,7 +12,7 @@ import uim.languages.sql;
 // Builds the RENAME statement 
 class RenameStatementBuilder : DSqlStatementBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     auto myRename = parsedSql["RENAME"];
     string mySql = myRename["sub_tree"].byKeyValue
       .map!(kv => buildKeyValue(kv.key, kv.value))

@@ -10,7 +10,7 @@ import uim.languages.sql;
  */
 class QueryBuilder : DSqlBuilder {
 
-  string build(Json parsedSql, anIndex = 0) {
+  override string build(Json parsedSql, anIndex = 0) {
     if (!parsedSql.isExpressionType("QUERY")) {
       return "";
     }

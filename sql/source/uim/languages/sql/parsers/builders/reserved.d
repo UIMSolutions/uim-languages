@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds reserved keywords. 
 class ReservedBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!this.isReserved(parsedSql)) { return ""; }
 
     return parsedSql.baseExpression;

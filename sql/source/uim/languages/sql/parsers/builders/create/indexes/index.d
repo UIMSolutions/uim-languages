@@ -10,7 +10,7 @@ import uim.languages.sql;
 @safe:
 // Builds the CREATE INDEX statement
 class CreateIndexBuilder : DSqlBuilder {
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     string mySql = parsedSql["name"].get!string;
     mySql ~= " " ~ this.buildIndexType(parsedSql);
     mySql = mySql.strip;

@@ -15,7 +15,7 @@ import uim.languages.sql;
  */
 class HavingBuilder : WhereBuilder {
 
-    string build(Json parsedSql) {
+    override string build(Json parsedSql) {
         string mySql = "HAVING ";
         foreach (myKey, myValue; parsedSql) {
             size_t oldSqlLength = mySql.length;

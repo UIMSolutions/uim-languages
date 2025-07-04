@@ -11,7 +11,7 @@ import uim.languages.sql;
 
 // Builds the RENAME statement 
 class DSqlStatementBuilder : DSqlBuilder {
-  override string build(Json parsedSql) {
+  override override string build(Json parsedSql) {
     return "";
   }
 }

@@ -24,7 +24,7 @@ class SelectBuilder : DSqlBuilder {
         parsedSql["delim"]) ~ " ").strip;
   }
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     string mySql = "";
 
     foreach (myKey, myValue; parsedSql) {

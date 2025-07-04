@@ -6,7 +6,7 @@ import uim.languages.sql;
 // Builds functions within the ORDER-BY part. 
 class OrderByFunctionBuilder : FunctionBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     auto mySql = super.build(parsedSql);
     if (!mySql.isEmpty) {
      mySql ~= this.buildDirection(parsedSql);

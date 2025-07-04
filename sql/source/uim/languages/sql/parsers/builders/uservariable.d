@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds an user variable. 
 class UserVariableBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("USER_VARIABLE")) {
       return "";
     }

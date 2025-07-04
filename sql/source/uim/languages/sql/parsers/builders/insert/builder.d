@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the [INSERT] statement part.
 class InsertBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     string mySql = parsedSql.byKeyValue
       .map!(kv => buildKeyValue(kv.key, kv.value))
       .json;

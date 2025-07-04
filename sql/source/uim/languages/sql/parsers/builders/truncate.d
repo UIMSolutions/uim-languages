@@ -5,7 +5,7 @@ import uim.languages.sql;
 // Builds the TRUNCATE statement
 class TruncateBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     string mySql = "TRUNCATE TABLE ";
     auto myRight = -1;
 

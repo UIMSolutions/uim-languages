@@ -7,7 +7,7 @@ import uim.languages.sql;
 // Builds the INSERT statement
 class InsertStatementBuilder : DSqlBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     // TODO: are there more than one tables possible (like [INSERT][1])
     string mySql = this.buildINSERT(parsedSql["INSERT"]);
 

@@ -12,7 +12,7 @@ import uim.languages.sql;
 // Builds the SHOW statement.
 class ShowStatementBuilder : DSqlStatementBuilder {
 
-  string build(Json parsedSql) {
+  override string build(Json parsedSql) {
     string mySql = this.buildShow(parsedSql);
     if (parsedSql.isSet("WHERE")) {
       mySql ~= " " ~ this.buildWhere(parsedSql["WHERE"]);
