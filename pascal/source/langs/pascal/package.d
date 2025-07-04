@@ -5,5 +5,7 @@
 *****************************************************************************************************************/
 module uim.languages.pascal;
 
-public import uim.languages.pascal.keywords;
-public import uim.languages.pascal.parser;
+public {
+    import uim.languages.pascal.keywords;
+    import uim.languages.pascal.parser;
+}
