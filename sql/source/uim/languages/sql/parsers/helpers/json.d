@@ -1,31 +1,23 @@
 module uim.languages.sql.parsers.helpers.json;
 
 import uim.languages.sql;
-
 @safe:
+
 bool isExpressionType(Json parsedSql, string typeName) {
   return parsedSql.expressionType == typeName;
 }
 
 bool expressionType(Json parsedSql, string typeName) {
-  if (!parsedSql.isObject || !parsedSql.isSet("expr_type")) {
-    return false;
-  }
-
-  return parsedSql["expr_type"].get!string;
+  return parsedSql.getString("expr_type");
 }
 
 string baseExpression(Json parsedSql) {
-  if (!parsedSql.isObject || !parsedSql.isSet("base_expr")) {
-    return null;
-  }
-
-  return parsedSql.baseExpression;
+  return parsedSql.getString("base_expr");
 }
 
 Json createExpression(string type, string base) {
-  Json result = Json.emptyObject;
-  result["expr_type"] = expressionType(type);
-  result["base_expr"] = base;
-  return result;
+  Json expression = Json.emptyObject;
+  expression.set("expr_type", type);
+  expression.set("base_expr", base);
+  return expression;
 }
