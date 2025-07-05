@@ -14,7 +14,7 @@ class ShowBuilder : DSqlBuilder {
       .map!(kv => buildKeyValue(kv.key, kv.value))
       .join;
 
-    result = "SHOW " ~ substr(result, 0, -1);
+    result = "SHOW " ~ subString(result, 0, -1);
     return result;
   }
 

@@ -22,7 +22,7 @@ class FunctionBuilder : DSqlBuilder {
             .map!(kv => buildKeyValue(kv.key, kv.value))
             .join;
 
-        return parsedSql.baseExpression ~ "(" ~ substr(result, 0, -1)
+        return parsedSql.baseExpression ~ "(" ~ subString(result, 0, -1)
             ~ ")" ~ this.buildAlias(
                 parsedSql);
     }

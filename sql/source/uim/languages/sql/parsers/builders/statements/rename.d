@@ -19,7 +19,7 @@ class RenameStatementBuilder : DSqlStatementBuilder {
       .join;
 
    mySql = ("RENAME " ~ mySql).strip;
-    return (substr(mySql, -1) == "," ? substr(mySql, 0, -1) : mySql);
+    return (subString(mySql, -1) == "," ? subString(mySql, 0, -1) : mySql);
   }
 
   protected string buildKeyValue(string aKey, Json aValue) {

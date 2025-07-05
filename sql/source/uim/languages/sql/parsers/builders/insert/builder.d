@@ -12,7 +12,7 @@ class InsertBuilder : DSqlBuilder {
       .map!(kv => buildKeyValue(kv.key, kv.value))
       .json;
       
-    return "INSERT ".substr(mySql, 0, -1);
+    return "INSERT ".subString(mySql, 0, -1);
   }
 
   protected string buildKeyValue(string aKey, Json aValue) {

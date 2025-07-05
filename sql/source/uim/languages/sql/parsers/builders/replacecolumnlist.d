@@ -24,7 +24,7 @@ class ReplaceColumnListBuilder : DSqlBuilder {
 
            mySql ~= ", ";
         }
-        return "(" ~ substr(mySql, 0, -2) ~ ")";
+        return "(" ~ subString(mySql, 0, -2) ~ ")";
     }
 
     protected string buildColumn(Json parsedSql) {

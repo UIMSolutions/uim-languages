@@ -17,7 +17,7 @@ class DropExpressionBuilder : DSqlBuilder {
       .map!(kv => buildKeyValue(kv.key, kv.value))
       .join;
 
-    return substr(mySql, 0, -2);
+    return subString(mySql, 0, -2);
   }
 
   protected string buildKeyValue(string aKey, Json aValue) {

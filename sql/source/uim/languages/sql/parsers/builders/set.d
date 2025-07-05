@@ -12,7 +12,7 @@ class SetBuilder : DSqlBuilder {
       .map!(kv => buildKeyValue(kv.key, kv.value))
       .join;
 
-    return "SET " ~ substr(mySql, 0, -1);
+    return "SET " ~ subString(mySql, 0, -1);
   }
 
   protected string buildKeyValue(string aKey, Json aValue) {

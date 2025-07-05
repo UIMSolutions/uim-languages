@@ -12,7 +12,7 @@ class ReplaceBuilder : DSqlBuilder {
       .map!(kv => buildKeyValue(kv.key, kv.value))
       .join;
 
-    return "REPLACE " ~ substr(mySql, 0, -1);
+    return "REPLACE " ~ subString(mySql, 0, -1);
   }
 
   protected string buildKeyValue(string aKey, Json aValue) {

@@ -20,7 +20,7 @@ class HavingBuilder : WhereBuilder {
     foreach (key, value; parsedSql) {
       mySql ~= buildKeyValue(key, value);
     }
-    return substr(mySql, 0, -1);
+    return subString(mySql, 0, -1);
   }
 
   protected string buildKeyValue(string key, Json value) {

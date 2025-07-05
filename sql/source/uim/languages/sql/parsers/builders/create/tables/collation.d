@@ -13,7 +13,7 @@ class CollationBuilder : DSqlBuilder {
         }
 
         string mySql = parsedSql["sub_tree"];
-        return substr(mySql, 0, -1);
+        return subString(mySql, 0, -1);
     }
 
     protected string buildKeyValue(string aKey, Json aValue) {

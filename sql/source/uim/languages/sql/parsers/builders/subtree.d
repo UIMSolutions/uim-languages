@@ -21,7 +21,7 @@ class SubTreeBuilder : DSqlBuilder {
       .map!(kv => buildKeyValue(kv.key, kv.value))
       .join;
 
-    return substr(mySql, 0,  -delim.length);
+    return subString(mySql, 0,  -delim.length);
   }
 
   string buildKeyValue(string aKey, Json aValue) {

@@ -15,7 +15,7 @@ class SetExpressionBuilder : DSqlBuilder {
       .map!(kv => buildKeyValue(kv.key, kv.value))
       .join;
 
-   mySql = substr(mySql, 0, -1);
+   mySql = subString(mySql, 0, -1);
     return mySql;
   }
 

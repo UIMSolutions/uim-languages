@@ -11,28 +11,27 @@ import uim.languages.sql;
 // Builds the CREATE INDEX statement
 class CreateIndexBuilder : DSqlBuilder {
   override string build(Json parsedSql) {
-    string mySql = parsedSql["name"].get!string;
-    mySql ~= " " ~ this.buildIndexType(parsedSql);
-    mySql = mySql.strip;
-    mySql ~= " " ~ this.buildIndexTable(parsedSql);
-    mySql = mySql.strip;
-    mySql ~= this.buildIndexOptions(parsedSql);
-    return mySql.strip;
+    string sql = parsedSql.getString("name");
+    sql ~= " " ~ this.buildIndexType(parsedSql);
+    sql = sql.strip;
+    sql ~= " " ~ this.buildIndexTable(parsedSql);
+    sql = sql.strip;
+    sql ~= this.buildIndexOptions(parsedSql);
+    return sql.strip;
   }
 
   protected string buildIndexType(Json parsedSql) {
-    auto myBuilder = new CreateIndexTypeBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new CreateIndexTypeBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildIndexTable(Json parsedSql) {
-    auto myBuilder = new CreateIndexTableBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new CreateIndexTableBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildIndexOptions(Json parsedSql) {
-    auto myBuilder = new CreateIndexOptionsBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new CreateIndexOptionsBuilder();
+    return builder.build(parsedSql);
   }
-
 }

@@ -23,7 +23,7 @@ class IndexParserBuilder : DSqlBuilder {
 
             mySql ~= " ";
         }
-        return substr(mySql, 0, -1);
+        return subString(mySql, 0, -1);
     }
 
     protected string buildReserved(Json parsedSql) {

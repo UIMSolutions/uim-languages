@@ -12,7 +12,7 @@ class OrderByBuilder : DSqlBuilder {
       .map!(kv => buildKeyValue(kv.key, kv.value))
       .join;
 
-    return "ORDER BY " ~ substr(result, 0, -2);
+    return "ORDER BY " ~ subString(result, 0, -2);
   }
 
   string buildKeyValue(string aKey, Json aValue) {

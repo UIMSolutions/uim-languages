@@ -12,7 +12,7 @@ class GroupByBuilder : DSqlBuilder {
       .map!(kv => buildKeyValue(kv.key, kv.value))
       .join;
 
-   mySql = substr(mySql, 0, -2);
+   mySql = subString(mySql, 0, -2);
     return "GROUP BY " ~ mySql;
   }
 

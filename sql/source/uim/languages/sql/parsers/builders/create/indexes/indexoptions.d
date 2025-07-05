@@ -7,15 +7,15 @@ import uim.languages.sql;
 class CreateIndexOptionsBuilder : DSqlBuilder {
 
   override string build(Json parsedSql) {
-    if (parsedSql["options"].isEmpty) {
-      return "";
+    if (parsedSql.isEmpty("options")) {
+      return null; // No options to build
     }
 
-    string mySql = parsedSql["options"].byKeyValue
+    string sql = parsedSql["options"].byKeyValue
       .map!(kv => buildKeyValue(kv.key, kv.value))
       .join;
 
-    return " " ~ substr(mySql, 0, -1);
+    return " " ~ subString(sql, 0, -1);
   }
 
   protected string buildKeyValue(string aKey, Json aValue) {
@@ -37,32 +37,32 @@ class CreateIndexOptionsBuilder : DSqlBuilder {
   }
 
   protected string buildIndexParser(Json parsedSql) {
-    auto myBuilder = new IndexParserBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new IndexParserBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildIndexSize(Json parsedSql) {
-    auto myBuilder = new IndexSizeBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new IndexSizeBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildIndexType(Json parsedSql) {
-    auto myBuilder = new IndexTypeBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new IndexTypeBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildIndexComment(Json parsedSql) {
-    auto myBuilder = new IndexCommentBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new IndexCommentBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildIndexAlgorithm(Json parsedSql) {
-    auto myBuilder = new IndexAlgorithmBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new IndexAlgorithmBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildIndexLock(Json parsedSql) {
-    auto myBuilder = new IndexLockBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new IndexLockBuilder();
+    return builder.build(parsedSql);
   }
 }

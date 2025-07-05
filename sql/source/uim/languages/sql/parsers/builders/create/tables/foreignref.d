@@ -30,7 +30,7 @@ class ForeignRefBuilder : DSqlBuilder {
             .map!(kv => buildKeyValue(kv.key, kv.value))
             .join;
 
-        return substr(mySql, 0, -1);
+        return subString(mySql, 0, -1);
     }
 
     protected string buildKeyValue(string aKey, Json aValue) {

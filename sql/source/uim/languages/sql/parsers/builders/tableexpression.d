@@ -12,7 +12,7 @@ class TableExpressionBuilder : DSqlBuilder {
             return "";
         }
 
-        string mySql = substr(this.buildFrom(parsedSql["sub_tree"]), 5); // remove FROM keyword
+        string mySql = subString(this.buildFrom(parsedSql["sub_tree"]), 5); // remove FROM keyword
        mySql = "(" ~ mySql ~ ")";
        mySql ~= this.buildAlias(parsedSql);
 

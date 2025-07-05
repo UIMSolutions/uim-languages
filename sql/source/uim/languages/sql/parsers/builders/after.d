@@ -12,7 +12,7 @@ class AlterBuilder : DSqlBuilder {
         continue;
       }
 
-      if (substr(myTerm, 0, 1) == "(" ||
+      if (subString(myTerm, 0, 1) == "(" ||
         strpos(myTerm, "\n") != false) {
        mySql = mySql.rstrip;
       }

@@ -19,6 +19,6 @@ class TruncateBuilder : DSqlBuilder {
       }
     }
 
-    return substr(mySql, 0, myRight);
+    return subString(mySql, 0, myRight);
   }
 }

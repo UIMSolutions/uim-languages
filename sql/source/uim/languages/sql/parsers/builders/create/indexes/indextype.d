@@ -12,7 +12,7 @@ import uim.languages.sql;
 class CreateIndexTypeBuilder : IndexTypeBuilder {
 
     override string build(Json parsedSql) {
-        if (!parsedSql.isSet("index-type") || parsedSql["index-type"].isEmpty) {
+        if (!parsedSql.isEmpty("index-type")) {
             return "";
         }
         return super.build(parsedSql["index-type"]);

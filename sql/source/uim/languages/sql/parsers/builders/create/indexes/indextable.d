@@ -15,15 +15,16 @@ class CreateIndexTableBuilder : DSqlBuilder {
         if (parsedSql.isSet("on") || parsedSql["on"].isEmpty) {
             return "";
         }
+
         auto tableSql = parsedSql["on"];
         if (!tableSql.isExpressionType("TABLE")) {
             return "";
         }
-        return "ON %s %s".format(tableSql["name"], this.buildColumnList(tableSql["sub_tree"]));
+        return "ON %s %s".format(tableSql["name"], buildColumnList(tableSql["sub_tree"]));
     }
 
     protected string buildColumnList(Json parsedSql) {
-        auto myBuilder = new ColumnListBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new ColumnListBuilder();
+        return builder.build(parsedSql);
     }
 }

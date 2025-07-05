@@ -15,7 +15,7 @@ class DropBuilder : DSqlBuilder {
      mySql ~= "" ~ this.buildDropIndex(parsedSql["INDEX"]) ~ " ";
     }
 
-    return "DROP " ~ substr(mySql, 0, -1);
+    return "DROP " ~ subString(mySql, 0, -1);
   }
 
   protected string buildSubTree(Json parsedSql) {

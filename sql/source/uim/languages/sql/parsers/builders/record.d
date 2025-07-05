@@ -21,7 +21,7 @@ class RecordBuilder : DSqlBuilder {
       .map(kv => buildKeyValue(kv.key, kv.value))
       .join;
 
-    sql = substr(sql, 0, -2);
+    sql = subString(sql, 0, -2);
     return "(" ~ sql ~ ")";
   }
 

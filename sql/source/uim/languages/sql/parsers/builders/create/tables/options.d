@@ -36,7 +36,7 @@ class CreateTableOptionsBuilder : IBuilder {
 
            mySql ~= this.getDelimiter(myValue);
         }
-        return " " ~ substr(mySql, 0, -1);
+        return " " ~ subString(mySql, 0, -1);
     }
 
     protected string buildExpression(Json parsedSql) {
