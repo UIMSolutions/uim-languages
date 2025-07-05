@@ -67,7 +67,7 @@ class InsertProcessor : DSqlProcessor {
         if (mycols == false) {
             return mycols;
         }
-        if (mycols[0] == "(" && substr(mycols, -1) == ")") {
+        if (mycols[0] == "(" && subString(mycols, -1) == ")") {
             myparsed = createExpression("BRACKET_EXPRESSION"), "base_expr" : mycols,
                             "sub_tree" : false];
         }

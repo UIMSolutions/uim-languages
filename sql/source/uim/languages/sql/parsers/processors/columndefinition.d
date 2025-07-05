@@ -85,7 +85,7 @@ class ColumnDefinitionProcessor : DSqlProcessor {
             case ",":
             // we stop on a single comma and return
             // the myExpression entry and the index myKey
-               myExpression = this.buildColDef(myExpression, (substr(baseExpression, 0, -myToken.length)).strip, myoptions, myrefs,
+               myExpression = this.buildColDef(myExpression, (subString(baseExpression, 0, -myToken.length)).strip, myoptions, myrefs,
                    myKey - 1);
                 break 2;
 

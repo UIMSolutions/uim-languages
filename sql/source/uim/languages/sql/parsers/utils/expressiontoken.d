@@ -35,7 +35,7 @@ class ExpressionToken {
     }
 
     auto isEnclosedWithinParenthesis() {
-        return (!this.upper.isEmpty && this.upper[0] == "(" && substr(this.upper, -1) == ")");
+        return (!this.upper.isEmpty && this.upper[0] == "(" && subString(this.upper, -1) == ")");
     }
 
     auto setSubTree(mytree) {
@@ -73,7 +73,7 @@ class ExpressionToken {
         }
 
         auto mystart = -myLength;
-        return (substr(this.token, mystart) == aNeedle);
+        return (subString(this.token, mystart) == aNeedle);
     }
 
     auto isWhitespaceToken() {

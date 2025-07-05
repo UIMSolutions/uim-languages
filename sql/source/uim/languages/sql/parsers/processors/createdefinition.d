@@ -159,7 +159,7 @@ class CreateDefinitionProcessor : DSqlProcessor {
                 if (currentCategory == "INDEX_COL_LIST") {
                     myoption = createExpression("RESERVED"), "base_expr": strippedToken];
                    myExpression ~= createExpression("INDEX_PARSER"),
-                                    "base_expr" : substr(baseExpression, 0, -myToken.length),
+                                    "base_expr" : subString(baseExpression, 0, -myToken.length),
                                     "sub_tree" : [myoption)];
                     baseExpression = myToken;
                     currentCategory = "INDEX_PARSER";
@@ -172,7 +172,7 @@ class CreateDefinitionProcessor : DSqlProcessor {
                 if (currentCategory == "INDEX_COL_LIST") {
                     myoption = createExpression("RESERVED"), "base_expr": strippedToken];
                    myExpression ~= createExpression("INDEX_SIZE"),
-                                    "base_expr" : substr(baseExpression, 0, -myToken.length),
+                                    "base_expr" : subString(baseExpression, 0, -myToken.length),
                                     "sub_tree" : [myoption)];
                     baseExpression = myToken;
                     currentCategory = "INDEX_SIZE";
@@ -184,7 +184,7 @@ class CreateDefinitionProcessor : DSqlProcessor {
             // starts an index option
                 if (currentCategory == "INDEX_COL_LIST" || currentCategory == "PRIMARY") {
                     myoption = createExpression("RESERVED"), "base_expr": strippedToken];
-                   myExpression ~= ["base_expr" : substr(baseExpression, 0, -myToken.length), "trim" : strippedToken,
+                   myExpression ~= ["base_expr" : subString(baseExpression, 0, -myToken.length), "trim" : strippedToken,
                                     "category" : currentCategory, "sub_tree" : [myoption));
                     baseExpression = myToken;
                     currentCategory = "INDEX_TYPE";
@@ -244,7 +244,7 @@ class CreateDefinitionProcessor : DSqlProcessor {
             // this starts the next definition
                 mytype = this.correctExpressionType(myExpression);
                 myresult["create-def"] ~= ["expr_type" : mytype,
-                                                "base_expr" : substr(baseExpression, 0, -myToken.length).strip,
+                                                "base_expr" : subString(baseExpression, 0, -myToken.length).strip,
                                                 "sub_tree" : myExpression];
                 baseExpression = "";
                myExpression = [];
@@ -260,7 +260,7 @@ class CreateDefinitionProcessor : DSqlProcessor {
                     break;
 
                 case "PRIMARY":
-                    if (upperToken[0] == "(" && substr(upperToken, -1) == ")") {
+                    if (upperToken[0] == "(" && subString(upperToken, -1) == ")") {
                         // the column list
                         mycols = this.processIndexColumnList(this.removeParenthesisFromStart(strippedToken));
                        myExpression ~= createExpression("COLUMN_LIST"), "base_expr" : strippedToken,
@@ -273,7 +273,7 @@ class CreateDefinitionProcessor : DSqlProcessor {
                     break;
 
                 case "FOREIGN":
-                    if (upperToken[0] == "(" && substr(upperToken, -1) == ")") {
+                    if (upperToken[0] == "(" && subString(upperToken, -1) == ")") {
                         mycols = this.processIndexColumnList(this.removeParenthesisFromStart(strippedToken));
                        myExpression ~= createExpression("COLUMN_LIST"), "base_expr" : strippedToken,
                                         "sub_tree" : mycols);
@@ -288,7 +288,7 @@ class CreateDefinitionProcessor : DSqlProcessor {
                 case "KEY":
                 case "UNIQUE":
                 case "INDEX":
-                    if (upperToken[0] == "(" && substr(upperToken, -1) == ")") {
+                    if (upperToken[0] == "(" && subString(upperToken, -1) == ")") {
                         mycols = this.processIndexColumnList(this.removeParenthesisFromStart(strippedToken));
                        myExpression ~= createExpression("COLUMN_LIST"), "base_expr" : strippedToken,
                                         "sub_tree" : mycols];
@@ -329,7 +329,7 @@ class CreateDefinitionProcessor : DSqlProcessor {
                     continue 3;
 
                 case "CHECK":
-                    if (upperToken[0] == "(" && substr(upperToken, -1) == ")") {
+                    if (upperToken[0] == "(" && subString(upperToken, -1) == ")") {
                         myparsed = this.splitSQLIntoTokens(this.removeParenthesisFromStart(strippedToken));
                         myparsed = this.processExpressionList(myparsed);
                        myExpression ~= createExpression("BRACKET_EXPRESSION"), "base_expr" : strippedToken,

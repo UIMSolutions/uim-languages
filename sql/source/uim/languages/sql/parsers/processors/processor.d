@@ -80,7 +80,7 @@ abstract class DSqlProcessor {
           break;
         }
         // end
-        myChar = substr(mySqlBuffer, myStart, myPos - myStart);
+        myChar = subString(mySqlBuffer, myStart, myPos - myStart);
         results ~= str_replace(isQuote ~ isQuote, isQuote, myChar);
         myStart = myPos + 1;
         isQuote = false;
@@ -89,7 +89,7 @@ abstract class DSqlProcessor {
       case ".":
         if (isQuote == false) {
           // we have found a separator
-          myChar = substr(mySqlBuffer, myStart, myPos - myStart).strip;
+          myChar = subString(mySqlBuffer, myStart, myPos - myStart).strip;
           if (myChar != "") {
             results ~= myChar;
           }
@@ -105,7 +105,7 @@ abstract class DSqlProcessor {
     }
 
     if (isQuote == false && (myStart < bufferLength)) {
-      myChar = substr(mySqlBuffer, myStart, myPos - myStart).strip;
+      myChar = subString(mySqlBuffer, myStart, myPos - myStart).strip;
       if (myChar != "") {
         results ~= myChar;
       }
@@ -179,7 +179,7 @@ abstract class DSqlProcessor {
             return expressionType("USER_VARIABLE");
           }
 
-          mytype = substr(myexpression, 2, strpos(myexpression, ".", 2));
+          mytype = subString(myexpression, 2, strpos(myexpression, ".", 2));
 
           switch (mytype) {
           case "GLOBAL":

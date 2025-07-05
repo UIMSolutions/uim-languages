@@ -49,7 +49,7 @@ class IndexColumnListProcessor : DSqlProcessor {
                 break;
 
             default:
-                if (upperToken[0] == "(" && substr(upperToken, -1) == ")") {
+                if (upperToken[0] == "(" && subString(upperToken, -1) == ")") {
                     # the optional length
                    myExpression["length"] = this.removeParenthesisFromStart(strippedToken);
                     continue 2;

@@ -105,9 +105,9 @@ class PartitionOptionsProcessor : DSqlProcessor {
             case "PARTITIONS":
             case "SUBPARTITIONS":
                 currentCategory = "PARTITION_NUM";
-               myExpression = ["expr_type" : constant("SqlParser\utils\expressionType(" . substr(upperToken, 0, -1) ~ "_COUNT"),
+               myExpression = ["expr_type" : constant("SqlParser\utils\expressionType(" . subString(upperToken, 0, -1) ~ "_COUNT"),
                               "base_expr" : false, "sub_tree" : [this.getReservedType(strippedToken)),
-                              "storage" : substr(baseExpression, 0, - mytoken.length));
+                              "storage" : subString(baseExpression, 0, - mytoken.length));
                 baseExpression = mytoken;
                 continue 2;
 
@@ -121,7 +121,7 @@ class PartitionOptionsProcessor : DSqlProcessor {
             case "KEY":
                myExpression ~= ["expr_type" : constant("SqlParser\utils\expressionType(" ~ previousCategory ~ "_" . upperToken),
                                 "base_expr" : false, "linear" : (currentCategory == "LINEAR"), "sub_tree" : false,
-                                "storage" : substr(baseExpression, 0, - mytoken.length));
+                                "storage" : subString(baseExpression, 0, - mytoken.length));
 
                 mylast = array_pop(myparsed);
                 mylast["by"] = (currentCategory . " " ~ upperToken).strip; // currentCategory will be empty or LINEAR!
@@ -159,7 +159,7 @@ class PartitionOptionsProcessor : DSqlProcessor {
             case "RANGE":
             case "LIST":
                myExpression ~= ["expr_type" : constant("SqlParser\utils\expressionType(PARTITION_" . upperToken, false,
-                                "sub_tree" : false, "storage" : substr(baseExpression, 0, - mytoken.length));
+                                "sub_tree" : false, "storage" : subString(baseExpression, 0, - mytoken.length));
 
                 mylast = array_pop(myparsed);
                 mylast["by"] = upperToken;
@@ -176,7 +176,7 @@ class PartitionOptionsProcessor : DSqlProcessor {
             case "COLUMNS":
                 if (currentCategory.any!(["RANGE_EXPR", "LIST_EXPR"]) {
                    myExpression ~= this.getReservedType(strippedToken);
-                    currentCategory = substr(currentCategory, 0, -4) ~ upperToken;
+                    currentCategory = subString(currentCategory, 0, -4) ~ upperToken;
                     continue 2;
                 }
                 break;
@@ -293,7 +293,7 @@ class PartitionOptionsProcessor : DSqlProcessor {
 
                 case "":
                     if (previousCategory == "PARTITION" || previousCategory == "SUBPARTITION") {
-                        if (upperToken[0] == "(" && substr(upperToken, -1) == ")") {
+                        if (upperToken[0] == "(" && subString(upperToken, -1) == ")") {
                             // last part to process, it is only one token!
                             mylast = this.getBracketExpressionType(strippedToken);
                             mylast["sub_tree"] ~= this.processPartitionDefinition(strippedToken);

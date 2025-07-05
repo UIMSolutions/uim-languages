@@ -87,7 +87,7 @@ auto myresult = [];
                 if (myPreviousCategory == "PARTITION") {
                    auto myExpression = createExpression("PARTITION_VALUES", "");
                   myExpression["sub_tree"] = Json.emptyArray;
-                  myExpression["storage"] = substr(baseExpression, 0, - mytoken.length);
+                  myExpression["storage"] = subString(baseExpression, 0, - mytoken.length);
                     myparsed["sub_tree"] ~= myExpression;
 
                     baseExpression = mytoken;
@@ -147,7 +147,7 @@ auto myresult = [];
             case "COMMENT":
                 if (myPreviousCategory == "PARTITION") {
                    myExpression ~= createExpression(PARTITION_COMMENT, "base_expr" : false,
-                                    "sub_tree" : false, "storage" : substr(baseExpression, 0, - mytoken.length));
+                                    "sub_tree" : false, "storage" : subString(baseExpression, 0, - mytoken.length));
 
                     myparsed["sub_tree"] ~= myExpression;
                     baseExpression = mytoken;
@@ -163,7 +163,7 @@ auto myresult = [];
                 if (myPreviousCategory == "PARTITION") {
                     // followed by ENGINE
                    myExpression ~= createExpression("ENGINE"), "base_expr" : false, "sub_tree" : false,
-                                    "storage" : substr(baseExpression, 0, - mytoken.length));
+                                    "storage" : subString(baseExpression, 0, - mytoken.length));
 
                     myparsed["sub_tree"] ~= myExpression;
                     baseExpression = mytoken;
@@ -183,7 +183,7 @@ auto myresult = [];
                 }
                 if (myPreviousCategory == "PARTITION") {
                    myExpression ~= createExpression(ENGINE, "base_expr" : false, "sub_tree" : false,
-                                    "storage" : substr(baseExpression, 0, - mytoken.length));
+                                    "storage" : subString(baseExpression, 0, - mytoken.length));
 
                     myparsed["sub_tree"] ~= myExpression;
                     baseExpression = mytoken;
@@ -219,7 +219,7 @@ auto myresult = [];
                     // followed by DIRECTORY
                    myExpression ~= ["expr_type" : constant("SqlParser\utils\expressionType(PARTITION_" . upperToken . "_DIR"),
                                     "base_expr" : false, "sub_tree" : false,
-                                    "storage" : substr(baseExpression, 0, - mytoken.length));
+                                    "storage" : subString(baseExpression, 0, - mytoken.length));
 
                     myparsed["sub_tree"] ~= myExpression;
                     baseExpression = mytoken;
@@ -245,7 +245,7 @@ auto myresult = [];
                 if (myPreviousCategory == "PARTITION") {
                    myExpression ~= ["expr_type" : constant("SqlParser\utils\expressionType(PARTITION_" . upperToken),
                                     "base_expr" : false, "sub_tree" : false,
-                                    "storage" : substr(baseExpression, 0, - mytoken.length));
+                                    "storage" : subString(baseExpression, 0, - mytoken.length));
 
                     myparsed["sub_tree"] ~= myExpression;
                     baseExpression = mytoken;
@@ -318,7 +318,7 @@ auto myresult = [];
                 case "":
                     if (myPreviousCategory == "PARTITION") {
                         // last part to process, it is only one token!
-                        if (upperToken[0] == "(" && substr(upperToken, -1) == ")") {
+                        if (upperToken[0] == "(" && subString(upperToken, -1) == ")") {
                             mylast = this.getBracketExpressionType(strippedToken);
                             mylast["sub_tree"] ~= this.processSubpartitionDefinition(strippedToken);
                            myExpression ~= mylast;

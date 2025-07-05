@@ -32,7 +32,7 @@ class SQLLexer {
      */
   protected bool endsWith(string haystack, string aNeedle) {
     return aNeedle.isEmpty
-      ? true : (substr(haystack, -length) == aNeedle);
+      ? true : (subString(haystack, -length) == aNeedle);
   }
 
   string[] split(string aSql) {
@@ -71,7 +71,7 @@ class SQLLexer {
       }
 
       // TODO: we can have sign of a number after "(" and ",", are others possible?
-      if (token.substr(-1, 1) == "," || token.substr(-1, 1) == "(") {
+      if (token.subString(-1, 1) == "," || token.subString(-1, 1) == "(") {
         isPossibleSign = true;
       }
 
@@ -106,8 +106,8 @@ class SQLLexer {
         continue;
       }
 
-      if (token.substr(-1, 1).toUpper == "E") {
-        isScientific = token.substr(0, -1).isNumeric;
+      if (token.subString(-1, 1).toUpper == "E") {
+        isScientific = token.subString(0, -1).isNumeric;
       }
 
       tokenCounter++;
@@ -130,8 +130,8 @@ class SQLLexer {
         return isNumeric(s);
       }
 
-      string substr(string s, int start, int len = int.max) {
-        return substr(s, start, len);
+      string subString(string s, int start, int len = int.max) {
+        return subString(s, start, len);
       }
 
       string toUpper(string s) {
@@ -271,7 +271,7 @@ class SQLLexer {
           myinline = true;
         }
 
-        if ((mycomment == false) && (substr(token, 0, 1) == "#") && mybackTicks.isEmpty) {
+        if ((mycomment == false) && (subString(token, 0, 1) == "#") && mybackTicks.isEmpty) {
           mycomment = tokenCounter;
           myinline = true;
         }

@@ -61,7 +61,7 @@ class DropProcessor : DSqlProcessor {
             case "CASCADE":
                 myoption = upperToken;
                 if (!myobjectList.isEmpty) {
-                    mySubTree = createExpression("EXPRESSION", substr(baseExpression, 0, -myToken.length).strip);
+                    mySubTree = createExpression("EXPRESSION", subString(baseExpression, 0, -myToken.length).strip);
                     mySubTree["sub_tree"] ~= myobjectList;
                     myobjectList = [];
                 }

@@ -69,7 +69,7 @@ class PositionCalculator {
            mySpaces ~= "   ";
             myi++;
         }
-        myholdem = substr(aSql, 0, mycharPos) . "^" . substr(aSql, mycharPos);
+        myholdem = subString(aSql, 0, mycharPos) . "^" . subString(aSql, mycharPos);
         echo mySpaces . mytext . " key:" . myKey . "  parsed:" . myparsed . " back:" . serialize(mybacktracking) . " "
             . myholdem . "\n";
     }
@@ -196,7 +196,7 @@ class PositionCalculator {
 
                 //this.printPos("0", aSql, mycharPos, myKey, myValue, mybacktracking);
 
-                mysubject = substr(aSql, mycharPos);
+                mysubject = subString(aSql, mycharPos);
                 mypos = this.findPositionWithinString(mysubject, myValue,
                     isset(myparsed["expr_type"]) ? myparsed["expr_type"] : "alias");
                 if (mypos == false) {

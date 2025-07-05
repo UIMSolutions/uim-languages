@@ -70,7 +70,7 @@ class SubpartitionDefinitionProcessor : DSqlProcessor {
             case "COMMENT":
                 if (previousCategory == "SUBPARTITION") {
                    myExpression ~= createExpression("SUBPARTITION_COMMENT"), "base_expr" : false,
-                                    "sub_tree" : false, "storage" : substr(baseExpression, 0, -myToken.length)];
+                                    "sub_tree" : false, "storage" : subString(baseExpression, 0, -myToken.length)];
 
                     myparsed["sub_tree"] ~= myExpression;
                     baseExpression = myToken;
@@ -86,7 +86,7 @@ class SubpartitionDefinitionProcessor : DSqlProcessor {
                 if (previousCategory == "SUBPARTITION") {
                     // followed by ENGINE
                    myExpression ~= createExpression("ENGINE"), "base_expr" : false, "sub_tree" : false,
-                                    "storage" : substr(baseExpression, 0, -myToken.length)];
+                                    "storage" : subString(baseExpression, 0, -myToken.length)];
 
                     myparsed["sub_tree"] ~= myExpression;
                     baseExpression = myToken;
@@ -106,7 +106,7 @@ class SubpartitionDefinitionProcessor : DSqlProcessor {
                 }
                 if (previousCategory == "SUBPARTITION") {
                    myExpression ~= createExpression("ENGINE"), "base_expr" : false, "sub_tree" : false,
-                                    "storage" : substr(baseExpression, 0, -myToken.length)];
+                                    "storage" : subString(baseExpression, 0, -myToken.length)];
 
                     myparsed["sub_tree"] ~= myExpression;
                     baseExpression = myToken;
@@ -142,7 +142,7 @@ class SubpartitionDefinitionProcessor : DSqlProcessor {
                     // followed by DIRECTORY
                    myExpression ~= ["expr_type" : constant("SqlParser\utils\expressionType(SUBPARTITION_" ~ upperToken ~ "_DIR"),
                                     "base_expr" : false, "sub_tree" : false,
-                                    "storage" : substr(baseExpression, 0, -myToken.length)];
+                                    "storage" : subString(baseExpression, 0, -myToken.length)];
 
                     myparsed["sub_tree"] ~= myExpression;
                     baseExpression = myToken;
@@ -168,7 +168,7 @@ class SubpartitionDefinitionProcessor : DSqlProcessor {
                 if (previousCategory == "SUBPARTITION") {
                    myExpression ~= ["expr_type" : constant("SqlParser\utils\expressionType(SUBPARTITION_" . upperToken),
                                     "base_expr" : false, "sub_tree" : false,
-                                    "storage" : substr(baseExpression, 0, -myToken.length)];
+                                    "storage" : subString(baseExpression, 0, -myToken.length)];
 
                     myparsed["sub_tree"] ~= myExpression;
                     baseExpression = myToken;

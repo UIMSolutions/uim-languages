@@ -305,7 +305,7 @@ class TableProcessor : DSqlProcessor {
 
         case "":
           // after table name
-          if (myprevCategory == "TABLE_NAME" && upperToken[0] == "(" && substr(upperToken, -1) == ")") {
+          if (myprevCategory == "TABLE_NAME" && upperToken[0] == "(" && subString(upperToken, -1) == ")") {
            myunparsed = this.splitSQLIntoTokens(this.removeParenthesisFromStart(strippedToken));
            mycoldef = this.processCreateDefinition(myunparsed);
            myResult["create-def"] = createExpression("BRACKET_EXPRESSION"),

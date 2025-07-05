@@ -92,7 +92,7 @@ class IndexProcessor : DSqlProcessor {
         break;
 
       case "=" :  // the optional operator
-        if (substr(myCurrentCategory,  - 7, 7) == "_OPTION") {
+        if (subString(myCurrentCategory,  - 7, 7) == "_OPTION") {
          myExpression ~= this.getOperatorType(strippedToken);
           continue 2; // don"t change the category
         }
@@ -109,7 +109,7 @@ class IndexProcessor : DSqlProcessor {
 
       default : switch (myCurrentCategory) {
 
-        case "COLUMN_DEF" : if (upperToken[0] == "(" && substr(upperToken,  - 1) == ")") {
+        case "COLUMN_DEF" : if (upperToken[0] == "(" && subString(upperToken,  - 1) == ")") {
             mycols = this.processIndexColumnList(this.removeParenthesisFromStart(strippedToken));
             myresult["on"].baseExpression ~= baseExpression;
             myresult["on"]["sub_tree"] ~= ["expr_type": expressionType("COLUMN_LIST"),

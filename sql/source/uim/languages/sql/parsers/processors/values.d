@@ -37,7 +37,7 @@ class ValuesProcessor : DSqlProcessor {
             case "ON":
                 if (currentCategory.isEmpty) {
 
-                    baseExpression = substr(baseExpression, 0, -myToken.length).strip;
+                    baseExpression = subString(baseExpression, 0, -myToken.length).strip;
                     parsed = createExpression("RECORD", baseExpression);
                     parsed["data"] = this.processRecord(baseExpression);
                     parsed["delim"] = false;
@@ -62,7 +62,7 @@ class ValuesProcessor : DSqlProcessor {
             case ",":
                 if (currentCategory == "DUPLICATE") {
 
-                    baseExpression = substr(baseExpression, 0, -strlen(myToken)).strip;
+                    baseExpression = subString(baseExpression, 0, -strlen(myToken)).strip;
                     myres = this.processExpressionList(this.splitSQLIntoTokens(baseExpression));
                     myparsed ~= createExpression("EXPRESSION"), "base_expr" : baseExpression,
                                       "sub_tree" : (myres.isEmpty ? false : myres), "delim": strippedToken];

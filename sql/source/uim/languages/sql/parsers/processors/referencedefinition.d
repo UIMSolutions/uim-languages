@@ -34,7 +34,7 @@ class ReferenceDefinitionProcessor : DSqlProcessor {
             case ",":
             // we stop on a single comma
             //  or at the end of the array mytokens
-               myExpression = this.buildReferenceDef(myExpression, substr(baseExpression, 0, -myToken.length).strip, myKey - 1);
+               myExpression = this.buildReferenceDef(myExpression, subString(baseExpression, 0, -myToken.length).strip, myKey - 1);
                 break 2;
 
             case "REFERENCES":
@@ -86,7 +86,7 @@ class ReferenceDefinitionProcessor : DSqlProcessor {
             case "CASCADE":
                 if (strpos(currentCategory, "REF_OPTION_") == 0) {
                    myExpression["sub_tree"] ~= createExpression("RESERVED"), "base_expr": strippedToken];
-                   myExpression["on_"  ~ strtolower(substr(currentCategory, -6))] = upperToken;
+                   myExpression["on_"  ~ strtolower(subString(currentCategory, -6))] = upperToken;
                     continue 2;
                 }
                 # else ?
@@ -96,7 +96,7 @@ class ReferenceDefinitionProcessor : DSqlProcessor {
             case "NO":
                 if (strpos(currentCategory, "REF_OPTION_") == 0) {
                    myExpression["sub_tree"] ~= createExpression("RESERVED"), "base_expr": strippedToken];
-                   myExpression["on_" ~ substr(currentCategory, -6).toLower] = upperToken;
+                   myExpression["on_" ~ subString(currentCategory, -6).toLower] = upperToken;
                     currentCategory = "SEC_" . currentCategory;
                     continue 2;
                 }
@@ -107,7 +107,7 @@ class ReferenceDefinitionProcessor : DSqlProcessor {
             case "ACTION":
                 if (strpos(currentCategory, "SEC_REF_OPTION_") == 0) {
                    myExpression["sub_tree"] ~= createExpression("RESERVED"), "base_expr": strippedToken];
-                   myExpression["on_" ~ substr(currentCategory, -6).toLower] ~= " " ~ upperToken;
+                   myExpression["on_" ~ subString(currentCategory, -6).toLower] ~= " " ~ upperToken;
                     currentCategory = "REF_COL_LIST";
                     continue 2;
                 }
@@ -118,7 +118,7 @@ class ReferenceDefinitionProcessor : DSqlProcessor {
                 switch (currentCategory) {
 
                 case "REFERENCES":
-                    if (upperToken[0] == "(" && substr(upperToken, -1) == ")") {
+                    if (upperToken[0] == "(" && subString(upperToken, -1) == ")") {
                         // index_col_name list
                         auto myProcessor = new IndexColumnListProcessor(this.options);
                         mycols = myprocessor.process(this.removeParenthesisFromStart(strippedToken));

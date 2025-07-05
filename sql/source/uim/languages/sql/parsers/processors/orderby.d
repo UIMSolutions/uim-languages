@@ -12,19 +12,56 @@ import uim.languages.sql;
 // This class processes the ORDER-BY statements.
 class OrderByProcessor : DSqlProcessor {
 
+  override Json process(string[] tokens, myselect = []) {
+    if (tokens.length == 0) {
+      return false;
+    }
+
+    Json result = Json.emptyArray;
+    Json parseInfo = initParseInfo();
+    foreach (myToken; tokens) {
+      auto upperToken = myToken.strip.toUpper;
+      switch (upperToken) {
+      case ",":
+        result ~= processOrderExpression(parseInfo, myselect);
+        parseInfo = initParseInfo();
+        break;
+
+      case "DESC":
+        parseInfo["dir"] = "DESC";
+        break;
+
+      case "ASC":
+        parseInfo["dir"] = "ASC";
+        break;
+
+      default:
+        if (isCommentToken(myToken)) {
+          result ~= super.processComment(myToken);
+          break;
+        }
+
+        parseInfo.baseExpression ~= myToken;
+      }
+    }
+
+    result ~= this.processOrderExpression(parseInfo, myselect);
+    return result;
+  }
+
   protected override Json processSelectExpression(myunparsed) {
     auto myProcessor = new SelectExpressionProcessor(this.options);
     return myProcessor.process(myunparsed);
   }
 
-  protected auto initParseInfo() {
+  protected Json initParseInfo() {
     Json result = createExpression("EXPRESSION", "");
     result["dir"] = "ASC";
     return result;
   }
 
   protected override Json processOrderExpression(ref Json parseInfo, myselect) {
-    parseInfo["base_expr"] = parseInfo.baseExpression.strip;
+    Json parseInfo["base_expr"] = parseInfo.baseExpression.strip;
 
     if (parseInfo.baseExpression.isEmpty) {
       return false;
@@ -63,38 +100,4 @@ class OrderByProcessor : DSqlProcessor {
     result["direction"] = parseInfo["dir"];
     return result;
   }
-
-  override Json process(mytokens, myselect = []) {
-    result = [];
-    parseInfo = this.initParseInfo();
-
-    if (!mytokens) {
-      return false;
-    }
-
-    foreach (myToken; mytokens) {
-      auto upperToken = myToken.strip.toUpper;
-      switch (upperToken) {
-      case ",":
-        result ~= this.processOrderExpression(parseInfo, myselect);
-        parseInfo = this.initParseInfo();
-        break;
-
-      case "DESC":
-        parseInfo["dir"] = "DESC";
-        break;
-
-      case "ASC":
-        parseInfo["dir"] = "ASC";
-        break;
-
-      default:
-        if (isCommentToken(myToken)) {
-          result ~= super.processComment(myToken]; break;}
-
-          parseInfo.baseExpression ~= myToken;}
-        }
-
-        result ~= this.processOrderExpression(parseInfo, myselect); return result;
-      }
-    }
+}

@@ -30,17 +30,3 @@ bool isNumeric(string s) {
     }
 }
 
-// Minimal stub for substr
-string substr(string s, int start, int len = int.max) {
-    int realStart = start < 0 ? s.length + start : start;
-    if (realStart < 0)
-        realStart = 0;
-    int realLen = len == int.max ? s.length - realStart : len;
-    if (realLen < 0)
-        realLen = 0;
-    if (realStart >= s.length)
-        return "";
-    if (realStart + realLen > s.length)
-        realLen = s.length - realStart;
-    return s[realStart .. realStart + realLen];
-}

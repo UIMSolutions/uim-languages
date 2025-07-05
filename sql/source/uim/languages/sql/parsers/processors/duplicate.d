@@ -11,7 +11,7 @@ import uim.languages.sql;
 // This class processes the DUPLICATE statements.
 class DuplicateProcessor : SetProcessor {
 
-    override Json process(mytokens, bool isUpdate = false) {
+    override Json process(string[] tokens, bool isUpdate = false) {
         return super.process(mytokens, isUpdate);
     }
 
