@@ -8,8 +8,8 @@ import uim.languages.sql;
 class UpdateBuilder : DSqlBuilder {
 
   protected string buildTable(parsedSql, string idx) {
-    auto myBuilder = new TableBuilder();
-    return myBuilder.build(parsedSql, idx);
+    auto builder = new TableBuilder();
+    return builder.build(parsedSql, idx);
   }
 
   override string build(Json parsedSql) {

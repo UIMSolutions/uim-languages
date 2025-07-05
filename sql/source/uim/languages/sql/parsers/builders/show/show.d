@@ -37,38 +37,38 @@ class ShowBuilder : DSqlBuilder {
   }
 
   protected string buildTable(Json parsedSql, string delim) {
-    auto myBuilder = new TableBuilder();
-    return myBuilder.build(parsedSql, delim);
+    auto builder = new TableBuilder();
+    return builder.build(parsedSql, delim);
   }
 
   protected string buildFunction(Json parsedSql) {
-    auto myBuilder = new FunctionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new FunctionBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildProcedure(Json parsedSql) {
-    auto myBuilder = new ProcedureBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ProcedureBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildDatabase(Json parsedSql) {
-    auto myBuilder = new DatabaseBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new DatabaseBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildEngine(Json parsedSql) {
-    auto myBuilder = new EngineBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new EngineBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildConstant(Json parsedSql) {
-    auto myBuilder = new ConstantBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ConstantBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildReserved(Json parsedSql) {
-    auto myBuilder = new ReservedBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ReservedBuilder();
+    return builder.build(parsedSql);
   }
 
 }

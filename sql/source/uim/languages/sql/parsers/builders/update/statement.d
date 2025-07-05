@@ -15,17 +15,17 @@ class UpdateStatementBuilder : DSqlBuilder {
     }
 
     protected string buildWhere(Json parsedSql) {
-        auto myBuilder = new WhereBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new WhereBuilder();
+        return builder.build(parsedSql);
     }
 
     protected string buildSET(Json parsedSql) {
-        auto myBuilder = new SetBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new SetBuilder();
+        return builder.build(parsedSql);
     }
 
     protected string buildUPDATE(Json parsedSql) {
-        auto myBuilder = new UpdateBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new UpdateBuilder();
+        return builder.build(parsedSql);
     }
 }

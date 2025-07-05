@@ -18,7 +18,7 @@ class ConstantBuilder : DSqlBuilder {
   }
 
   protected string buildAlias(Json parsedSql) {
-    auto myBuilder = new AliasBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new AliasBuilder();
+    return builder.build(parsedSql);
   }
 }

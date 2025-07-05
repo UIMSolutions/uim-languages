@@ -18,12 +18,12 @@ class TruncateStatementBuilder : DSqlStatementBuilder {
   }
 
   protected string buildTruncate(Json parsedSql) {
-    auto myBuilder = new TruncateBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new TruncateBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildFROM(Json parsedSql) {
-    auto myBuilder = new FromBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new FromBuilder();
+    return builder.build(parsedSql);
   }
 }

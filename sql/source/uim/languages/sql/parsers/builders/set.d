@@ -28,7 +28,7 @@ class SetBuilder : DSqlBuilder {
   }
 
   protected string buildSetExpression(Json parsedSql) {
-    auto myBuilder = new SetExpressionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new SetExpressionBuilder();
+    return builder.build(parsedSql);
   }
 }

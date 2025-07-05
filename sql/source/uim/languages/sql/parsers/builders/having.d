@@ -45,17 +45,17 @@ class HavingBuilder : WhereBuilder {
   }
 
   protected string buildAliasReference(Json parsedSql) {
-    auto myBuilder = new AliasReferenceBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new AliasReferenceBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildHavingExpression(Json parsedSql) {
-    auto myBuilder = new HavingExpressionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new HavingExpressionBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildHavingBracketExpression(Json parsedSql) {
-    auto myBuilder = new HavingBracketExpressionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new HavingBracketExpressionBuilder();
+    return builder.build(parsedSql);
   }
 }
