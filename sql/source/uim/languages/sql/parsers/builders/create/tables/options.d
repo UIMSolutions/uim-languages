@@ -40,17 +40,17 @@ class CreateTableOptionsBuilder : IBuilder {
     }
 
     protected string buildExpression(Json parsedSql) {
-        auto myBuilder = new SelectExpressionBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new SelectExpressionBuilder();
+        return builder.build(parsedSql);
     }
 
     protected string buildCharacterSet(Json parsedSql) {
-        auto myBuilder = new CharacterSetBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new CharacterSetBuilder();
+        return builder.build(parsedSql);
     }
 
     protected string buildCollation(Json parsedSql) {
-        auto myBuilder = new CollationBuilder();
+        auto builder = new CollationBuilder();
         return myBuilderr.build(parsedSql);
     }
 

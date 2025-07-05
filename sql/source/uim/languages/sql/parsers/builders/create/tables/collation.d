@@ -31,18 +31,18 @@ class CollationBuilder : DSqlBuilder {
     }
 
     protected string buildOperator(Json parsedSql) {
-        auto myBuilder = new OperatorBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new OperatorBuilder();
+        return builder.build(parsedSql);
     }
 
     protected string buildConstant(Json parsedSql) {
-        auto myBuilder = new ConstantBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new ConstantBuilder();
+        return builder.build(parsedSql);
     }
 
     protected string buildReserved(Json parsedSql) {
-        auto myBuilder = new ReservedBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new ReservedBuilder();
+        return builder.build(parsedSql);
     }
 }
 

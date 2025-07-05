@@ -15,18 +15,18 @@ class CreateTableBuilder : DSqlBuilder {
   }
 
   protected string buildCreateTableDefinition(Json parsedSql) {
-    auto myBuilder = new CreateTableDefinitionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new CreateTableDefinitionBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildCreateTableOptions(Json parsedSql) {
-    auto myBuilder = new CreateTableOptionsBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new CreateTableOptionsBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildCreateTableSelectOption(Json parsedSql) {
-    auto myBuilder = new CreateTableSelectOptionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new CreateTableSelectOptionBuilder();
+    return builder.build(parsedSql);
   }
 }
 

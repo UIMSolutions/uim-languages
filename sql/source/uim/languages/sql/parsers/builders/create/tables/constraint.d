@@ -17,8 +17,8 @@ class ConstraintBuilder : DSqlBuilder {
     }
 
     protected string buildConstant(Json parsedSql) {
-        auto myBuilder = new ConstantBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new ConstantBuilder();
+        return builder.build(parsedSql);
     }
 }
 

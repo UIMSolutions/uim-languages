@@ -14,8 +14,8 @@ class CreateTableDefinitionBuilder : DSqlBuilder {
   }
 
   protected string buildTableBracketExpression(Json parsedSql) {
-    auto myBuilder = new TableBracketExpressionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new TableBracketExpressionBuilder();
+    return builder.build(parsedSql);
   }
 }
 

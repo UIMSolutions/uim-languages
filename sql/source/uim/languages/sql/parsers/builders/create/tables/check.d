@@ -35,13 +35,13 @@ class CheckBuilder : DSqlBuilder {
   }
 
   protected string buildSelectBracketExpression(Json parsedSql) {
-    auto myBuilder = new SelectBracketExpressionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new SelectBracketExpressionBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildReserved(Json parsedSql) {
-    auto myBuilder = new ReservedBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ReservedBuilder();
+    return builder.build(parsedSql);
   }
 }
 

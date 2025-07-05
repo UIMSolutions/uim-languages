@@ -15,18 +15,18 @@ class DeleteStatementBuilder : DSqlBuilder {
   }
 
   protected string buildWhere(Json parsedSql) {
-    auto myBuilder = new WhereBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new WhereBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildFrom(Json parsedSql) {
-    auto myBuilder = new FromBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new FromBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildDelete(Json parsedSql) {
-    auto myBuilder = new DeleteBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new DeleteBuilder();
+    return builder.build(parsedSql);
   }
 
 }

@@ -50,8 +50,8 @@ class HavingExpressionBuilder : WhereExpressionBuilder {
   }
 
   protected string buildHavingBracketExpression(Json parsedSql) {
-    auto myBuilder = new HavingBracketExpressionBuilder();
-    return myBuilderr.build(parsedSql);
+    auto builder = new HavingBracketExpressionBuilder();
+    return builder.build(parsedSql);
   }
 
 }

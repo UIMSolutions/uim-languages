@@ -16,17 +16,17 @@ class CreateStatementBuilder : DSqlBuilder {
     }
 
     protected string buildLike(Json parsedSql) {
-        auto myBuilder = new LikeBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new LikeBuilder();
+        return builder.build(parsedSql);
     }
 
     protected string buildSelectStatement(Json parsedSql) {
-        auto myBuilder = new SelectStatementBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new SelectStatementBuilder();
+        return builder.build(parsedSql);
     }
 
     protected string buildCreate(Json parsedSql) {
-        auto myBuilder = new DCreateSqlBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new DCreateSqlBuilder();
+        return builder.build(parsedSql);
     }
 }
