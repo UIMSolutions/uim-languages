@@ -31,12 +31,12 @@ class BracketStatementBuilder : DSqlStatementBuilder {
   }
 
   protected string buildSelectBracketExpression(Json parsedSql) {
-    auto myBuilder = new SelectBracketExpressionBuilder();
-    return myBuilder.build(parsedSql, " ");
+    auto builder = new SelectBracketExpressionBuilder();
+    return builder.build(parsedSql, " ");
   }
 
   protected string buildSelectStatement(Json parsedSql) {
-    auto myBuilder = new SelectStatementBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new SelectStatementBuilder();
+    return builder.build(parsedSql);
   }
 }

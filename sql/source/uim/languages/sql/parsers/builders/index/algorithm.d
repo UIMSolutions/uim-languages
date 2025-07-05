@@ -44,6 +44,6 @@ class IndexAlgorithmBuilder : DSqlBuilder {
 
   protected string buildOperator(Json parsedSql) {
     auto builder = new OperatorBuilder();
-    return myBuilderr.build(parsedSql);
+    return builder.build(parsedSql);
   }
 }

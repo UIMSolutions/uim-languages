@@ -67,7 +67,7 @@ class FunctionBuilder : DSqlBuilder {
 
     protected auto isReserved(Json parsedSql) {
         auto builder = new ReservedBuilder();
-        return myBuilderr.isReserved(parsedSql);
+        return builder.isReserved(parsedSql);
     }
 
     protected string buildSelectExpression(Json parsedSql) {

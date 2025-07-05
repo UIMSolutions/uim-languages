@@ -51,7 +51,7 @@ class CreateTableOptionsBuilder : IBuilder {
 
     protected string buildCollation(Json parsedSql) {
         auto builder = new CollationBuilder();
-        return myBuilderr.build(parsedSql);
+        return builder.build(parsedSql);
     }
 
 }

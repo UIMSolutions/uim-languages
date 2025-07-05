@@ -35,7 +35,7 @@ class ValuesBuilder : DSqlBuilder {
   }
 
   protected string buildRecord(Json parsedSql) {
-    auto myBuilder = new RecordBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new RecordBuilder();
+    return builder.build(parsedSql);
   }
 }

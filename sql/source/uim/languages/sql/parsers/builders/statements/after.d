@@ -18,12 +18,12 @@ class AlterStatementBuilder : DSqlStatementBuilder {
   }
 
   protected string buildSubTree(Json parsedSql) {
-    auto myBuilder = new SubTreeBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new SubTreeBuilder();
+    return builder.build(parsedSql);
   }
 
   private string buildAlter(Json parsedSql) {
-    auto myBuilder = new AlterBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new AlterBuilder();
+    return builder.build(parsedSql);
   }
 }

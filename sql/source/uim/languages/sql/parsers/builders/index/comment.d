@@ -44,6 +44,6 @@ class IndexCommentBuilder : DSqlBuilder {
 
   protected string buildConstant(Json parsedSql) {
     auto builder = new ConstantBuilder();
-    return myBuilderr.build(parsedSql);
+    return builder.build(parsedSql);
   }
 }

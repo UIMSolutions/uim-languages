@@ -8,8 +8,8 @@ import uim.languages.sql;
 class LikeBuilder : DSqlBuilder {
 
     protected string buildTable(parsedSql, size_t anIndex) {
-        auto myBuilder = new TableBuilder();
-        return myBuilder.build(parsedSql, anIndex);
+        auto builder = new TableBuilder();
+        return builder.build(parsedSql, anIndex);
     }
 
     override string build(Json parsedSql) {

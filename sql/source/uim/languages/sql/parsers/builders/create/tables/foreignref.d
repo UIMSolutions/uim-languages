@@ -8,18 +8,18 @@ import uim.languages.sql;
 class ForeignRefBuilder : DSqlBuilder {
 
     protected string buildTable(Json parsedSql) {
-        auto myBuilder = new TableBuilder();
-        return myBuilder.build(parsedSql, 0);
+        auto builder = new TableBuilder();
+        return builder.build(parsedSql, 0);
     }
 
     protected string buildColumnList(Json parsedSql) {
-        auto myBuilder = new ColumnListBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new ColumnListBuilder();
+        return builder.build(parsedSql);
     }
 
     protected string buildReserved(Json parsedSql) {
-        auto myBuilder = new ReservedBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new ReservedBuilder();
+        return builder.build(parsedSql);
     }
 
     override string build(Json parsedSql) {

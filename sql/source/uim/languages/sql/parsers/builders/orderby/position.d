@@ -15,7 +15,7 @@ class OrderByPositionBuilder : DSqlBuilder {
   }
 
   protected string buildDirection(Json parsedSql) {
-    auto myBuilder = new DirectionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new DirectionBuilder();
+    return builder.build(parsedSql);
   }
 }

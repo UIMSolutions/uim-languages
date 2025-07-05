@@ -37,12 +37,12 @@ class ColumnListBuilder : DSqlBuilder {
   }
 
   protected string buildIndexColumn(Json parsedSql) {
-    auto myBuilder = new IndexColumnBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new IndexColumnBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildColumnReference(Json parsedSql) {
-    auto myBuilder = new ColumnReferenceBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ColumnReferenceBuilder();
+    return builder.build(parsedSql);
   }
 }

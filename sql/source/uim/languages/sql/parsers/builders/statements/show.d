@@ -21,12 +21,12 @@ class ShowStatementBuilder : DSqlStatementBuilder {
   }
 
   protected string buildWhere(Json parsedSql) {
-    auto myBuilder = new WhereBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new WhereBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildShow(Json parsedSql) {
-    auto myBuilder = new ShowBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ShowBuilder();
+    return builder.build(parsedSql);
   }
 }

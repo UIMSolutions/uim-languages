@@ -21,7 +21,7 @@ class ColumnTypeBracketExpressionBuilder : DSqlBuilder {
   }
 
   protected string buildSubTree(parsedSql, string delim) {
-    auto myBuilder = new SubTreeBuilder();
-    return myBuilder.build(parsedSql, delim);
+    auto builder = new SubTreeBuilder();
+    return builder.build(parsedSql, delim);
   }
 }

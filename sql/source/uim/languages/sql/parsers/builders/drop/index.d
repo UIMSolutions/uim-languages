@@ -18,8 +18,8 @@ class DropIndexBuilder : IBuilder {
   }
 
   protected string buildIndexTable(Json parsedSql) {
-    auto myBuilder = new DropIndexTableBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new DropIndexTableBuilder();
+    return builder.build(parsedSql);
   }
 }
 

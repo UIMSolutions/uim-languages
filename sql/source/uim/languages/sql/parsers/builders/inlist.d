@@ -13,8 +13,8 @@ import uim.languages.sql;
 class InListBuilder : DSqlBuilder {
 
   protected string buildSubTree(parsedSql, string delim) {
-    auto myBuilder = new SubTreeBuilder();
-    return myBuilder.build(parsedSql, delim);
+    auto builder = new SubTreeBuilder();
+    return builder.build(parsedSql, delim);
   }
 
   override string build(Json parsedSql) {
