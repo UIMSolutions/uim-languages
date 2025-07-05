@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds index key part of a CREATE TABLE statement. 
-class FulltextIndexBuilder : IBuilder {
+class FulltextIndexBuilder : DSqlBuilder {
 
   override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("FULLTEXT_IDX")) {

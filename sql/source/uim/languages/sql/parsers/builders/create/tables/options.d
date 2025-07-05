@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // Builds the table-options statement part of CREATE TABLE.
-class CreateTableOptionsBuilder : IBuilder {
+class CreateTableOptionsBuilder : DSqlBuilder {
 
     /**
      * Returns a well-formatted delimiter string. If you don"t need nice SQL,

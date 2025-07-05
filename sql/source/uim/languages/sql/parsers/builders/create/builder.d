@@ -18,19 +18,19 @@ class DCreateSqlBuilder : DSqlBuilder {
       return null;
     }
 
-    auto myCreate = parsedSql["CREATE"];
-    string mySql = this.buildSubTree(myCreate);
+    auto create = parsedSql["CREATE"];
+    string sql = this.buildSubTree(create);
 
-    if (myCreate.isExpressionType("TABLE")
-      || myCreate.isExpressionType("TEMPORARY_TABLE")) {
-     mySql ~= " " ~ this.buildCreateTable(parsedSql["TABLE"]);
+    if (create.isExpressionType("TABLE")
+      || create.isExpressionType("TEMPORARY_TABLE")) {
+     sql ~= " " ~ this.buildCreateTable(parsedSql["TABLE"]);
     }
-    if (myCreate.isExpressionType("INDEX")) {
-     mySql ~= " " ~ this.buildCreateIndex(parsedSql["INDEX"]);
+    if (create.isExpressionType("INDEX")) {
+     sql ~= " " ~ this.buildCreateIndex(parsedSql["INDEX"]);
     }
 
     // TODO: add more expr_types here (like VIEW), if available in parser output
-    return "CREATE " ~ mySql;
+    return "CREATE " ~ sql;
   }
 
   protected string buildCreateTable(Json parsedSql) {

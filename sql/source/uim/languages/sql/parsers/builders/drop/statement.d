@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 // Builds the DROP statement
-class DropStatementBuilder : IBuilder {
+class DropStatementBuilder : DSqlBuilder {
 
   override string build(Json parsedSql) {
     return this.buildDROP(parsedSql);

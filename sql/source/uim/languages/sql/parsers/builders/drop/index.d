@@ -4,7 +4,7 @@ import uim.languages.sql;
 
 @safe:
 // This class : the builder for the DROP INDEX statement.
-class DropIndexBuilder : IBuilder {
+class DropIndexBuilder : DSqlBuilder {
   
   override string build(Json parsedSql) {
     if (!parsedSql.isSet("name")) {

@@ -8,7 +8,7 @@ import uim.languages.sql;
  * Builds the data-type statement part of CREATE TABLE.
  * This class : the builder for the data-type statement part of CREATE TABLE. 
  */
-class DataTypeBuilder : IBuilder {
+class DataTypeBuilder : DSqlBuilder {
 
   override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("DATA_TYPE")) {
