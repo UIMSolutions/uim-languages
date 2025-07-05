@@ -7,11 +7,6 @@ import uim.languages.sql;
 // Builds index type part of a PRIMARY KEY statement part of CREATE TABLE.
 class IndexTypeBuilder : DSqlBuilder {
 
-  protected string buildReserved(Json parsedSql) {
-    auto myBuilder = new ReservedBuilder();
-    return myBuilder.build(parsedSql);
-  }
-
   override string build(Json parsedSql) {
     if (!parsedSql.isExpressionType("INDEX_TYPE")) {
       return null;
@@ -34,5 +29,10 @@ class IndexTypeBuilder : DSqlBuilder {
 
     result ~= " ";
     return result;
+  }
+
+  protected string buildReserved(Json parsedSql) {
+    auto builder = new ReservedBuilder();
+    return builder.build(parsedSql);
   }
 }

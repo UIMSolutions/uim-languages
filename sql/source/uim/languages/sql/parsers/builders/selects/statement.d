@@ -36,47 +36,47 @@ class SelectStatementBuilder : DSqlBuilder {
   }
 
   protected string buildSELECT(Json parsedSql) {
-    auto myBuilder = new SelectBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new SelectBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildFROM(Json parsedSql) {
-    auto myBuilder = new FromBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new FromBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildWhere(Json parsedSql) {
-    auto myBuilder = new WhereBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new WhereBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildGROUP(Json parsedSql) {
-    auto myBuilder = new GroupByBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new GroupByBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildHAVING(Json parsedSql) {
-    auto myBuilder = new HavingBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new HavingBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildORDER(Json parsedSql) {
-    auto myBuilder = new OrderByBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new OrderByBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildLIMIT(Json parsedSql) {
-    auto myBuilder = new LimitBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new LimitBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildUNION(Json parsedSql) {
-    auto myBuilder = new UnionStatementBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new UnionStatementBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildUNIONALL(Json parsedSql) {
-    auto myBuilder = new UnionAllStatementBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new UnionAllStatementBuilder();
+    return builder.build(parsedSql);
   }
 }

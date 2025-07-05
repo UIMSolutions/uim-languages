@@ -21,22 +21,22 @@ class ReplaceStatementBuilder : DSqlBuilder {
   }
 
   protected string buildVALUES(Json parsedSql) {
-    auto myBuilder = new ValuesBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ValuesBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildREPLACE(Json parsedSql) {
-    auto myBuilder = new ReplaceBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ReplaceBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildSELECT(Json parsedSql) {
-    auto myBuilder = new SelectStatementBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new SelectStatementBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildSET(Json parsedSql) {
-    auto myBuilder = new SetBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new SetBuilder();
+    return builder.build(parsedSql);
   }
 }

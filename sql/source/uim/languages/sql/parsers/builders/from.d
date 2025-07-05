@@ -51,18 +51,18 @@ class FromBuilder : DSqlBuilder {
   }
 
   protected string buildTable(parsedSql, myKey) {
-    auto myBuilder = new TableBuilder();
-    return myBuilder.build(parsedSql, myKey);
+    auto builder = new TableBuilder();
+    return builder.build(parsedSql, myKey);
   }
 
   protected string buildTableExpression(parsedSql, myKey) {
-    auto myBuilder = new TableExpressionBuilder();
-    return myBuilder.build(parsedSql, myKey);
+    auto builder = new TableExpressionBuilder();
+    return builder.build(parsedSql, myKey);
   }
 
   protected string buildSubQuery(parsedSql, myKey) {
-    auto myBuilder = new SubQueryBuilder();
-    return myBuilder.build(parsedSql, myKey);
+    auto builder = new SubQueryBuilder();
+    return builder.build(parsedSql, myKey);
   }
 
 }

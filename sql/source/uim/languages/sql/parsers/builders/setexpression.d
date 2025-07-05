@@ -46,32 +46,32 @@ class SetExpressionBuilder : DSqlBuilder {
   }
 
   protected string buildColRef(Json parsedSql) {
-    auto myBuilder = new ColumnReferenceBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ColumnReferenceBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildConstant(Json parsedSql) {
-    auto myBuilder = new ConstantBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ConstantBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildOperator(Json parsedSql) {
-    auto myBuilder = new OperatorBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new OperatorBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildFunction(Json parsedSql) {
-    auto myBuilder = new FunctionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new FunctionBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildBracketExpression(Json parsedSql) {
-    auto myBuilder = new SelectBracketExpressionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new SelectBracketExpressionBuilder();
+    return builder.build(parsedSql);
   }
 
   protected austringto buildSign(Json parsedSql) {
-    auto myBuilder = new SignBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new SignBuilder();
+    return builder.build(parsedSql);
   }
 }

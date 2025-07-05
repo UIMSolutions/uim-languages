@@ -40,6 +40,6 @@ class GroupByExpressionBuilder : DSqlBuilder {
 
   protected string buildReserved(Json parsedSql) {
     auto builder = new ReservedBuilder();
-    return myBuilderr.build(parsedSql);
+    return builder.build(parsedSql);
   }
 }

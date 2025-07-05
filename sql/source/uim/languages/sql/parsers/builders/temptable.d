@@ -24,22 +24,22 @@ class TempTableBuilder : DSqlBuilder {
   }
 
   protected string buildAlias(Json parsedSql) {
-    auto myBuilder = new AliasBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new AliasBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildJoin(Json parsedSql) {
-    auto myBuilder = new JoinBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new JoinBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildRefType(Json parsedSql) {
-    auto myBuilder = new RefTypeBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new RefTypeBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildRefClause(Json parsedSql) {
-    auto myBuilder = new RefClauseBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new RefClauseBuilder();
+    return builder.build(parsedSql);
   }
 }

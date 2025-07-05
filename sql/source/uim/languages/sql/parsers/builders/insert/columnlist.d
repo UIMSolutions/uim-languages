@@ -33,7 +33,7 @@ class InsertColumnListBuilder : DSqlBuilder {
   }
 
   protected string buildColumn(Json parsedSql) {
-    auto myBuilder = new ColumnReferenceBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ColumnReferenceBuilder();
+    return builder.build(parsedSql);
   }
 }

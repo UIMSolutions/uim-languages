@@ -51,32 +51,32 @@ class SelectBuilder : DSqlBuilder {
   }
 
   protected string buildConstant(Json parsedSql) {
-    auto myBuilder = new ConstantBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ConstantBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildFunction(Json parsedSql) {
-    auto myBuilder = new FunctionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new FunctionBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildSelectExpression(Json parsedSql) {
-    auto myBuilder = new SelectExpressionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new SelectExpressionBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildSelectBracketExpression(Json parsedSql) {
-    auto myBuilder = new SelectBracketExpressionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new SelectBracketExpressionBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildColRef(Json parsedSql) {
-    auto myBuilder = new ColumnReferenceBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ColumnReferenceBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildReserved(Json parsedSql) {
-    auto myBuilder = new ReservedBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ReservedBuilder();
+    return builder.build(parsedSql);
   }
 }
