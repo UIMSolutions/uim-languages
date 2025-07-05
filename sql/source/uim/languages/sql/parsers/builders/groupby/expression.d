@@ -34,12 +34,12 @@ class GroupByExpressionBuilder : DSqlBuilder {
   }
 
   protected string buildColRef(Json parsedSql) {
-    auto myBuilder = new ColumnReferenceBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ColumnReferenceBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildReserved(Json parsedSql) {
-    auto myBuilder = new ReservedBuilder();
+    auto builder = new ReservedBuilder();
     return myBuilderr.build(parsedSql);
   }
 }

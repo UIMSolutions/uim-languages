@@ -32,27 +32,27 @@ class InsertBuilder : DSqlBuilder {
   }
 
   protected string buildTable(Json parsedSql) {
-    auto myBuilder = new TableBuilder();
-    return myBuilder.build(parsedSql, 0);
+    auto builder = new TableBuilder();
+    return builder.build(parsedSql, 0);
   }
 
   protected string buildSubQuery(Json parsedSql) {
-    auto myBuilder = new SubQueryBuilder();
-    return myBuilder.build(parsedSql, 0);
+    auto builder = new SubQueryBuilder();
+    return builder.build(parsedSql, 0);
   }
 
   protected string buildReserved(Json parsedSql) {
-    auto myBuilder = new ReservedBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ReservedBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildBracketExpression(Json parsedSql) {
-    auto myBuilder = new SelectBracketExpressionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new SelectBracketExpressionBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildColumnList(Json parsedSql) {
-    auto myBuilder = new InsertColumnListBuilder();
-    return myBuilder.build(parsedSql, 0);
+    auto builder = new InsertColumnListBuilder();
+    return builder.build(parsedSql, 0);
   }
 }

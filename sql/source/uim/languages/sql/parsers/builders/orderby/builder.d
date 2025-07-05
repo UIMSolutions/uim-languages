@@ -34,37 +34,37 @@ class OrderByBuilder : DSqlBuilder {
   }
 
   protected string buildFunction(Json parsedSql) {
-    auto myBuilder = new OrderByFunctionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new OrderByFunctionBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildReserved(Json parsedSql) {
-    auto myBuilder = new OrderByReservedBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new OrderByReservedBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildColRef(Json parsedSql) {
-    auto myBuilder = new OrderByColumnReferenceBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new OrderByColumnReferenceBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildAlias(Json parsedSql) {
-    auto myBuilder = new OrderByAliasBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new OrderByAliasBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildExpression(Json parsedSql) {
-    auto myBuilder = new OrderByExpressionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new OrderByExpressionBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildBracketExpression(Json parsedSql) {
-    auto myBuilder = new OrderByBracketExpressionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new OrderByBracketExpressionBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildPosition(Json parsedSql) {
-    auto myBuilder = new OrderByPositionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new OrderByPositionBuilder();
+    return builder.build(parsedSql);
   }
 }

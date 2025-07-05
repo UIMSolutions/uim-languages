@@ -34,27 +34,27 @@ class GroupByBuilder : DSqlBuilder {
   }
 
   protected string buildColRef(Json parsedSql) {
-    auto myBuilder = new ColumnReferenceBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ColumnReferenceBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildPosition(Json parsedSql) {
-    auto myBuilder = new PositionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new PositionBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildFunction(Json parsedSql) {
-    auto myBuilder = new FunctionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new FunctionBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildGroupByAlias(Json parsedSql) {
-    auto myBuilder = new GroupByAliasBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new GroupByAliasBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildGroupByExpression(Json parsedSql) {
-    auto myBuilder = new GroupByExpressionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new GroupByExpressionBuilder();
+    return builder.build(parsedSql);
   }
 }

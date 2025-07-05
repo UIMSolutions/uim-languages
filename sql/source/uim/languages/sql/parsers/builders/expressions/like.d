@@ -45,12 +45,12 @@ class LikeExpressionBuilder : DSqlBuilder {
   }
 
   protected string buildTable(parsedSql, myindex) {
-    auto myBuilder = new TableBuilder();
-    return myBuilder.build(parsedSql, myindex);
+    auto builder = new TableBuilder();
+    return builder.build(parsedSql, myindex);
   }
 
   protected string buildReserved(Json parsedSql) {
-    auto myBuilder = new ReservedBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ReservedBuilder();
+    return builder.build(parsedSql);
   }
 }

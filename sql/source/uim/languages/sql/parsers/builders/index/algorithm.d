@@ -29,22 +29,21 @@ class IndexAlgorithmBuilder : DSqlBuilder {
       throw new UnableToCreateSQLException("CREATE INDEX algorithm subtree", aKey, aValue, "expr_type");
     }
 
-    result ~= " ";
-    return result;
+    return result ~ " ";
   }
 
   protected string buildReserved(Json parsedSql) {
-    auto myBuilder = new ReservedBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ReservedBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildConstant(Json parsedSql) {
-    auto myBuilder = new ConstantBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ConstantBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildOperator(Json parsedSql) {
-    auto myBuilder = new OperatorBuilder();
+    auto builder = new OperatorBuilder();
     return myBuilderr.build(parsedSql);
   }
 }

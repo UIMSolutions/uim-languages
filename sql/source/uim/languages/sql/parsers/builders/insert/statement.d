@@ -25,23 +25,23 @@ class InsertStatementBuilder : DSqlBuilder {
   }
 
   protected string buildValues(Json parsedSql) {
-    auto myBuilder = new ValuesBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ValuesBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildINSERT(Json parsedSql) {
-    auto myBuilder = new InsertBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new InsertBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildSelect(Json parsedSql) {
-    auto myBuilder = new SelectStatementBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new SelectStatementBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildSet(Json parsedSql) {
-    auto myBuilder = new SetBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new SetBuilder();
+    return builder.build(parsedSql);
   }
 
 }

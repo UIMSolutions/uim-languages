@@ -38,12 +38,12 @@ class IndexCommentBuilder : DSqlBuilder {
   }
 
   protected string buildReserved(Json parsedSql) {
-    auto myBuilder = new ReservedBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ReservedBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildConstant(Json parsedSql) {
-    auto myBuilder = new ConstantBuilder();
+    auto builder = new ConstantBuilder();
     return myBuilderr.build(parsedSql);
   }
 }
