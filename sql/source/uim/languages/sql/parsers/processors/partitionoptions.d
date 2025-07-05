@@ -10,7 +10,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the PARTITION BY statements within CREATE TABLE.
-class PartitionOptionsProcessor : DProcessor {
+class PartitionOptionsProcessor : DSqlProcessor {
 
     protected override Json processExpressionList(myunparsed) {
         auto myProcessor = new ExpressionListProcessor(this.options);

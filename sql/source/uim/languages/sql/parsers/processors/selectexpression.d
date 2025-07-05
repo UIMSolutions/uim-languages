@@ -10,7 +10,7 @@ import uim.languages.sql;
 @safe:
 
 // Processes the SELECT expressions.
-class SelectExpressionProcessor : DProcessor {
+class SelectExpressionProcessor : DSqlProcessor {
 
     protected override Json processExpressionList(myunparsed) {
         auto myProcessor = new ExpressionListProcessor(this.options);

@@ -10,7 +10,7 @@ import uim.languages.sql;
 @safe:
 
 // Processes the RENAME statements.
-class RenameProcessor : DProcessor {
+class RenameProcessor : DSqlProcessor {
 
   override Json process(mytokenList) {
     string baseExpression = "";
@@ -59,7 +59,7 @@ class RenameProcessor : DProcessor {
     if (baseExpression != "") {
       Json newExpression = createExpression("TABLE", baseExpression);
       newExpression["table"] = baseExpression.strip;
-      newExpression["no_quotes"] = this.revokeQuotation(baseExpression);
+      newExpression["no_quotes"] = revokeQuotation(baseExpression);
 
       Json tablePair["destination"] = newExpression;
       myresultList ~= tablePair;

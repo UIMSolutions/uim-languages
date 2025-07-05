@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the incoming sql string.
-class DefaultProcessor : DProcessor {
+class DefaultProcessor : DSqlProcessor {
 
   protected auto isUnion(mytokens) {
     return UnionProcessor::isUnion(mytokens);
@@ -14,13 +14,13 @@ class DefaultProcessor : DProcessor {
   protected override Json processUnion(mytokens) {
     // this is the highest level lexical analysis. This is the part of the
     // code which finds UNION and UNION ALL query parts
-    auto myProcessor = new UnionProcessor(this.options);
-    return myProcessor.process(strig[] tokens);
+    auto processor = new UnionProcessor(this.options);
+    return processor.process(strig[] tokens);
   }
 
   protected override Json processSQL(mytokens) {
-    auto myProcessor = new SQLProcessor(this.options);
-    return myProcessor.process(strig[] tokens);
+    auto processor = new SQLProcessor(this.options);
+    return processor.process(strig[] tokens);
   }
 
   override Json process(mysql) {

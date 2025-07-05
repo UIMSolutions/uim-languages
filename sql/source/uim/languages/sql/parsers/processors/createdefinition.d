@@ -5,25 +5,25 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the create definition of the TABLE statements.
-class CreateDefinitionProcessor : DProcessor {
+class CreateDefinitionProcessor : DSqlProcessor {
 
     protected override Json processExpressionList(myparsed) {
-        auto myProcessor = new ExpressionListProcessor(this.options);
-        return myProcessor.process(myparsed);
+        auto processor = new ExpressionListProcessor(this.options);
+        return processor.process(myparsed);
     }
 
     protected override Json processIndexColumnList(myparsed) {
-        auto myProcessor = new IndexColumnListProcessor(this.options);
-        return myProcessor.process(myparsed);
+        auto processor = new IndexColumnListProcessor(this.options);
+        return processor.process(myparsed);
     }
 
     protected override Json processColumnDefinition(myparsed) {
-        auto myProcessor = new ColumnDefinitionProcessor(this.options);
-        return myProcessor.process(myparsed);
+        auto processor = new ColumnDefinitionProcessor(this.options);
+        return processor.process(myparsed);
     }
 
     protected override Json processReferenceDefinition(myparsed) {
-        auto myProcessor = new ReferenceDefinitionProcessor(this.options);
+        auto processor = new ReferenceDefinitionProcessor(this.options);
         return myProcessorr.process(myparsed);
     }
 

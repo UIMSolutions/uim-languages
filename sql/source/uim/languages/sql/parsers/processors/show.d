@@ -12,7 +12,7 @@ import uim.languages.sql;
 /**
  * This class processes the SHOW statements.
  * */
-class ShowProcessor : DProcessor {
+class ShowProcessor : DSqlProcessor {
 
     private LimitProcessor _limitProcessor;
 

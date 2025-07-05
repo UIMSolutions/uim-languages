@@ -5,11 +5,11 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the parentheses around the statement.
-class BracketProcessor : DProcessor {
+class BracketProcessor : DSqlProcessor {
 
-  override Json process(string[] someTokens) {
-    string myToken = this.removeParenthesisFromStart(someTokens[0]);
-    Json myProcessTopLevel = this.processTopLevel(myToken);
+  override Json process(string[] tokens) {
+    string myToken = removeParenthesisFromStart(tokens[0]);
+    Json myProcessTopLevel = processTopLevel(myToken);
 
     Json myRemainingExpressions = getRemainingNotBracketExpression(myProcessTopLevel);
 
@@ -22,7 +22,7 @@ class BracketProcessor : DProcessor {
      myProcessTopLevel["sub_tree"] ~= myProcessTopLevel;
     }
 
-    Json result = createExpression("BRACKET_EXPRESSION", someTokens[0].strip);
+    Json result = createExpression("BRACKET_EXPRESSION", tokens[0].strip);
     result["sub_tree"] ~= myProcessTopLevel;
     result["remaining_expressions"] = myRemainingExpressions;
 
@@ -30,8 +30,8 @@ class BracketProcessor : DProcessor {
   }
 
   protected override Json processTopLevel(mysql) {
-    auto myProcessor = new DefaultProcessor(this.options);
-    return myProcessor.process(mysql);
+    auto processor = new DefaultProcessor(this.options);
+    return processor.process(mysql);
   }
 
   private auto getRemainingNotBracketExpression(subtree) {

@@ -10,7 +10,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the TABLE statements.
-class TableProcessor : DProcessor {
+class TableProcessor : DSqlProcessor {
 
   protected auto getReservedType(myToken) {
     return createExpression("RESERVED"), "base_expr" : mytoken];

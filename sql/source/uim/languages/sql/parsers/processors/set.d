@@ -10,7 +10,7 @@ import uim.languages.sql;
 @safe:
 
 // Processes the SET statements.
-class SetProcessor : DProcessor {
+class SetProcessor : DSqlProcessor {
 
     protected override Json processExpressionList(tokens) {
         auto myProcessor = new ExpressionListProcessor(this.options);

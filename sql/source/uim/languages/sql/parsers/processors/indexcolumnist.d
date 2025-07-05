@@ -9,7 +9,7 @@ import uim.languages.sql;
 
 @safe:
 // Processor for index column lists.
-class IndexColumnListProcessor : DProcessor {
+class IndexColumnListProcessor : DSqlProcessor {
     protected auto initExpression() {
         return ["name" : false, "no_quotes" : false, "length" : false, "dir" : false];
     }

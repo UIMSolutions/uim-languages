@@ -10,7 +10,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the INSERT statements.
-class InsertProcessor : DProcessor {
+class InsertProcessor : DSqlProcessor {
 
     protected override Json processOptions(Json tokenList) {
         Json result = Json.emptyArray;

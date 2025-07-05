@@ -9,16 +9,16 @@ import uim.languages.sql;
 
 @safe:
 // This class processes the UNION statements.
-class UnionProcessor : DProcessor {
+class UnionProcessor : DSqlProcessor {
 
     protected override Json processDefault(myToken) {
-        auto myProcessor = new DefaultProcessor(this.options);
-        return myProcessor.process(myToken);
+        auto processor = new DefaultProcessor(this.options);
+        return processor.process(myToken);
     }
 
     protected override Json processSQL(myToken) {
-        auto myProcessor = new SQLProcessor(this.options);
-        return myProcessor.process(myToken);
+        auto processor = new SQLProcessor(this.options);
+        return processor.process(myToken);
     }
 
     static auto isUnion(queries) {

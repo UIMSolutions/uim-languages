@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes expression lists.
-class ExpressionListProcessor : DProcessor {
+class ExpressionListProcessor : DSqlProcessor {
 
     override Json process(tokens) {
         myresultList = [];

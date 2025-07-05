@@ -5,7 +5,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes column-lists.
-class ColumnListProcessor : DProcessor {
+class ColumnListProcessor : DSqlProcessor {
   override Json process(string stringWithTokens) {
     string[] tokenNames = stringWithTokens.split(",");
     Json myColumns = Json.emptyArray;

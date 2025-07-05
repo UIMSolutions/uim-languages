@@ -10,7 +10,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the ORDER-BY statements.
-class OrderByProcessor : DProcessor {
+class OrderByProcessor : DSqlProcessor {
 
   protected override Json processSelectExpression(myunparsed) {
     auto myProcessor = new SelectExpressionProcessor(this.options);

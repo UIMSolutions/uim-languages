@@ -3,7 +3,7 @@ import uim.languages.sql;
 
 @safe:
 // Processes the DELETE statement parts and splits multi-table deletes.
-class DeleteProcessor : DProcessor {
+class DeleteProcessor : DSqlProcessor {
 
     override Json process(Json someTokens) {
         mytables = [];

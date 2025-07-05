@@ -8,7 +8,7 @@ import uim.languages.sql;
  * This file : the processor for the FROM statement.
  * This class processes the FROM statement.
  * */
-class FromProcessor : DProcessor {
+class FromProcessor : DSqlProcessor {
 
     protected override Json processExpressionList(myunparsed) {
         auto myProcessor = new ExpressionListProcessor(this.options);

@@ -12,7 +12,7 @@ import uim.languages.sql;
  * This file : the processor for the LIMIT statements.
  * This class processes the LIMIT statements.
   */
-class LimitProcessor : DProcessor {
+class LimitProcessor : DSqlProcessor {
 
     override Json process(string[] mytokens) {
         string countRows = "";

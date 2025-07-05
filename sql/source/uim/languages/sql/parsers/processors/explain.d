@@ -10,7 +10,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the EXPLAIN statements.
-class ExplainProcessor : DProcessor {
+class ExplainProcessor : DSqlProcessor {
 
   protected auto isStatement(myKeys, myneedle = "EXPLAIN") {
     mypos = array_search(myneedle, myKeys);

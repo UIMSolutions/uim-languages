@@ -9,7 +9,7 @@ import uim.languages.sql;
 
 @safe:
 // This class processes records of an INSERT statement.
-class RecordProcessor : DProcessor {
+class RecorDSqlProcessor : DSqlProcessor {
 
   protected override Json processExpressionList(Json unparsed) {
     auto myProcessor = new ExpressionListProcessor(this.options);

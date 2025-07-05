@@ -10,7 +10,7 @@ import uim.languages.sql;
 @safe:
 
 // This class contains some general functions for a processor.
-abstract class DProcessor {
+abstract class DSqlProcessor {
 
   protected Options _options;
 

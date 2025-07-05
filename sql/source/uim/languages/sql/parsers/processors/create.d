@@ -8,7 +8,7 @@ import uim.languages.sql;
  * This file : the processor for the CREATE statements.
  * This class processes the CREATE statements.
  */
-class CreateProcessor : DProcessor {
+class CreateProcessor : DSqlProcessor {
 
     override Json process(strig[] tokens) {
         myresult = myExpression = [];

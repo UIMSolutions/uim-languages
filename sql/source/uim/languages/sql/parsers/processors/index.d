@@ -9,7 +9,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the INDEX statements.
-class IndexProcessor : DProcessor {
+class IndexProcessor : DSqlProcessor {
 
   override Json process(strig[] tokens) {
 

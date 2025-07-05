@@ -12,7 +12,7 @@ import uim.languages.sql;
  * This file : the processor for the DROP statements.
  * This class processes the DROP statements.
  */
-class DropProcessor : DProcessor {
+class DropProcessor : DSqlProcessor {
 
     override Json process(mytokenList) {
         bool exists = false;

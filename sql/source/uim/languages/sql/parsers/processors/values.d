@@ -10,7 +10,7 @@ import uim.languages.sql;
 @safe:
 
 // This class processes the VALUES statements.
-class ValuesProcessor : DProcessor {
+class ValuesProcessor : DSqlProcessor {
 
     override Json process(strig[] tokens) {
 
@@ -103,7 +103,7 @@ class ValuesProcessor : DProcessor {
     }
 
     protected override Json processRecord(myunparsed) {
-        auto myProcessor = new RecordProcessor(this.options);
+        auto myProcessor = new RecorDSqlProcessor(this.options);
         return myProcessor.process(myunparsed);
     }
 

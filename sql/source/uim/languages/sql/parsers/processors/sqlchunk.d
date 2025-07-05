@@ -8,7 +8,7 @@ import uim.languages.sql;
 
 @safe:
 // This class processes the SQL chunks.
-class SQLChunkProcessor : DProcessor {
+class SQLChunkProcessor : DSqlProcessor {
 
   protected auto moveLIKE(ref sqlOut) {
     if (!sqlOut.isSet("Table") 
