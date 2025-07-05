@@ -36,23 +36,23 @@ class ForeignKeyBuilder : IBuilder {
   }
 
   protected string buildConstant(Json parsedSql) {
-    auto myBuilder = new ConstantBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ConstantBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildColumnList(Json parsedSql) {
-    auto myBuilder = new ColumnListBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ColumnListBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildReserved(Json parsedSql) {
-    auto myBuilder = new ReservedBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ReservedBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildForeignRef(Json parsedSql) {
-    auto myBuilder = new ForeignRefBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ForeignRefBuilder();
+    return builder.build(parsedSql);
   }
 }
 

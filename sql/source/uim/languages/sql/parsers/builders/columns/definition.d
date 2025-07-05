@@ -34,13 +34,13 @@ class ColumnDefinitionBuilder : DSqlBuilder {
   }
 
   protected string buildColRef(Json parsedSql) {
-    auto myBuilder = new ColumnReferenceBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ColumnReferenceBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildColumnType(Json parsedSql) {
-    auto myBuilder = new ColumnTypeBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ColumnTypeBuilder();
+    return builder.build(parsedSql);
   }
 
 }

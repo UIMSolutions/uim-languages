@@ -38,33 +38,33 @@ class PrimaryKeyBuilder : DSqlBuilder {
   }
 
   protected string buildColumnList(Json parsedSql) {
-    auto myBuilder = new ColumnListBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ColumnListBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildConstraint(Json parsedSql) {
-    auto myBuilder = new ConstraintBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ConstraintBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildReserved(Json parsedSql) {
-    auto myBuilder = new ReservedBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ReservedBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildIndexType(Json parsedSql) {
-    auto myBuilder = new IndexTypeBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new IndexTypeBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildIndexSize(Json parsedSql) {
-    auto myBuilder = new IndexSizeBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new IndexSizeBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildIndexParser(Json parsedSql) {
-    auto myBuilder = new IndexParserBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new IndexParserBuilder();
+    return builder.build(parsedSql);
   }
 }
 

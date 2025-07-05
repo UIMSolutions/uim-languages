@@ -39,23 +39,23 @@ class ColumnTypeBuilder : DSqlBuilder {
   }
 
   protected string buildColumnTypeBracketExpression(Json parsedSql) {
-    auto myBuilder = new ColumnTypeBracketExpressionBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ColumnTypeBracketExpressionBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildReserved(Json parsedSql) {
-    auto myBuilder = new ReservedBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new ReservedBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildDataType(Json parsedSql) {
-    auto myBuilder = new DataTypeBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new DataTypeBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildDefaultValue(Json parsedSql) {
-    auto myBuilder = new DefaultValueBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new DefaultValueBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildCharacterSet(Json parsedSql) {

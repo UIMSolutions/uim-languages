@@ -34,17 +34,17 @@ class DCreateSqlBuilder : DSqlBuilder {
   }
 
   protected string buildCreateTable(Json parsedSql) {
-    auto myBuilder = new CreateTableBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new CreateTableBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildCreateIndex(Json parsedSql) {
-    auto myBuilder = new CreateIndexBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new CreateIndexBuilder();
+    return builder.build(parsedSql);
   }
 
   protected string buildSubTree(Json parsedSql) {
-    auto myBuilder = new SubTreeBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new SubTreeBuilder();
+    return builder.build(parsedSql);
   }
 }

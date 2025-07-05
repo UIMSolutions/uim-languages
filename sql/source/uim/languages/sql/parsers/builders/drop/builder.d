@@ -40,20 +40,20 @@ class DropBuilder : DSqlBuilder {
   }
 
   protected string buildDropIndex(Json parsedSql) {
-    auto myBuilder = new DropIndexBuilder();
+    auto builder = new DropIndexBuilder();
 
-    return myBuilder.build(parsedSql);
+    return builder.build(parsedSql);
   }
 
   protected string buildReserved(Json parsedSql) {
-    auto myBuilder = new ReservedBuilder();
+    auto builder = new ReservedBuilder();
 
-    return myBuilder.build(parsedSql);
+    return builder.build(parsedSql);
   }
 
   protected string buildExpression(Json parsedSql) {
-    auto myBuilder = new DropExpressionBuilder();
+    auto builder = new DropExpressionBuilder();
 
-    return myBuilder.build(parsedSql);
+    return builder.build(parsedSql);
   }
 }

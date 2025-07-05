@@ -42,42 +42,42 @@ class TableBracketExpressionBuilder : DSqlBuilder {
     }
 
         protected string buildColDef(Json parsedSql) {
-        auto myBuilder = new ColumnDefinitionBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new ColumnDefinitionBuilder();
+        return builder.build(parsedSql);
     }
 
     protected string buildPrimaryKey(Json parsedSql) {
-        auto myBuilder = new PrimaryKeyBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new PrimaryKeyBuilder();
+        return builder.build(parsedSql);
     }
 
     protected string buildForeignKey(Json parsedSql) {
-        auto myBuilder = new ForeignKeyBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new ForeignKeyBuilder();
+        return builder.build(parsedSql);
     }
 
     protected string buildCheck(Json parsedSql) {
-        auto myBuilder = new CheckBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new CheckBuilder();
+        return builder.build(parsedSql);
     }
 
     protected string buildLikeExpression(Json parsedSql) {
-        auto myBuilder = new LikeExpressionBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new LikeExpressionBuilder();
+        return builder.build(parsedSql);
     }
 
     protected string buildIndexKey(Json parsedSql) {
-        auto myBuilder = new IndexKeyBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new IndexKeyBuilder();
+        return builder.build(parsedSql);
     }
 
     protected string buildUniqueIndex(Json parsedSql) {
-        auto myBuilder = new UniqueIndexBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new UniqueIndexBuilder();
+        return builder.build(parsedSql);
     }
 
     protected string buildFulltextIndex(Json parsedSql) {
-        auto myBuilder = new FulltextIndexBuilder();
-        return myBuilder.build(parsedSql);
+        auto builder = new FulltextIndexBuilder();
+        return builder.build(parsedSql);
     }
 }
