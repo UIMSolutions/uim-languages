@@ -11,8 +11,8 @@ class DropStatementBuilder : IBuilder {
   }
 
   protected string buildDROP(parsedSql) {
-    auto myBuilder = new DropBuilder();
-    return myBuilder.build(parsedSql);
+    auto builder = new DropBuilder();
+    return builder.build(parsedSql);
   }
 
 }
